@@ -1,0 +1,7 @@
+/.bundle/
+/doc/
+/log/*.log
+/pkg/
+/tmp/
+
+.internal_test_app
