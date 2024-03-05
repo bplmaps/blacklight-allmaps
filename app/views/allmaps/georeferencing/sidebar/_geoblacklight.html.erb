@@ -1,0 +1,13 @@
+<div class="card mb-3" id="allmaps-sidebar" data-iiif-manifest="<%=@document.iiif_manifest_url %>">
+  <div class="card-header">
+    <h2 class="mb-0 h6"><%= t('home.georeferencing') %></h2>
+  </div>
+
+  <div class="card-body" id="georeferencing">
+    <%# content will be updated via updateGeorefLinks(); %>
+    <div id="georef_loading">
+      Loading...
+      <%= @document.iiif_manifest_url %>
+    </div>
+  </div>
+</div>

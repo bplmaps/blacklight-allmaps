@@ -1,0 +1,20 @@
+<%= render :partial => 'show_sidebar_static_map' if render_sidebar_map?(@document) %>
+<%= render :partial => 'show_tools' %>
+
+<% if georeferenceable? %>
+  <%= render :partial => "allmaps/georeferencing/sidebar/geoblacklight" %>
+<% end %>
+
+<div class="sidebar-buttons">
+<%= render :partial => "show_web_services" %>
+<%= render :partial => "show_downloads" %>
+</div>
+
+<% unless @document.more_like_this.empty? %>
+  <div class="card">
+    <div class="card-header">More Like This</div>
+    <div class="card-body">
+      <%= render :collection => @document.more_like_this, :partial => 'show_more_like_this', :as => :document %>
+    </div>
+  </div>
+<% end %>
