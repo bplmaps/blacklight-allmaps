@@ -1,0 +1,139 @@
+<!-- URL: https://www.loc.gov/resource/g4050m.gct00105a/?sp=26 -->
+<!-- MARCXML: https://lccn.loc.gov/03026075/marcxml -->
+<!-- IIIF Manifest: https://collections.leventhalmap.org/search/commonwealth:7h14b311s/manifest -->
+<?xml version="1.0" encoding="UTF-8"?><record xmlns="http://www.loc.gov/MARC21/slim" xmlns:zs="http://docs.oasis-open.org/ns/search-ws/sruResponse">
+  <leader>01937cam a22004211  4500</leader>
+  <controlfield tag="001">6325305</controlfield>
+  <controlfield tag="005">20110629135546.0</controlfield>
+  <controlfield tag="007">cr |||||||||||</controlfield>
+  <controlfield tag="008">830216s1889    dcuab        f000 0 eng  </controlfield>
+  <datafield ind1=" " ind2=" " tag="035">
+    <subfield code="9">(DLC)   03026075</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="906">
+    <subfield code="a">0</subfield>
+    <subfield code="b">cbc</subfield>
+    <subfield code="c">premver</subfield>
+    <subfield code="d">u</subfield>
+    <subfield code="e">ncip</subfield>
+    <subfield code="f">19</subfield>
+    <subfield code="g">y-gencatlg</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="010">
+    <subfield code="a">   03026075 </subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="040">
+    <subfield code="a">DLC</subfield>
+    <subfield code="c">CarP</subfield>
+    <subfield code="d">DLC</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="043">
+    <subfield code="a">n-us---</subfield>
+  </datafield>
+  <datafield ind1="0" ind2="0" tag="050">
+    <subfield code="a">QE74</subfield>
+    <subfield code="b">.W6</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="051">
+    <subfield code="a">G1380</subfield>
+    <subfield code="b">.U56 1873 Vault</subfield>
+  </datafield>
+  <datafield ind1="2" ind2=" " tag="110">
+    <subfield code="a">Geographical Surveys West of the 100th Meridian (U.S.)</subfield>
+  </datafield>
+  <datafield ind1="1" ind2="0" tag="245">
+    <subfield code="a">Report upon United States Geographical surveys west of the one hundredth meridian /</subfield>
+    <subfield code="c">in charge of ... Geo. M. Wheeler ; under the direction of the chief of engineers, US Army.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="260">
+    <subfield code="a">Washington :</subfield>
+    <subfield code="b">Govt. Print. Off.,</subfield>
+    <subfield code="c">1889.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="300">
+    <subfield code="a">v. &lt;1, 3, 6-7) :</subfield>
+    <subfield code="b">ill., maps (some col.) ;</subfield>
+    <subfield code="c">30 cm.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">A. A. Humphreys, chief of engineers until June 1879. Succeeded by H. G. Wright.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Date of publication for vol. 2. Astronomy and barometric hypsometry: 1877 (t.p.)</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="530">
+    <subfield code="a">Available also through the Library of Congress Web site as a raster image.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="0" tag="651">
+    <subfield code="a">United States</subfield>
+    <subfield code="x">Surveys.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="0" tag="651">
+    <subfield code="a">United States</subfield>
+    <subfield code="x">Discovery and exploration.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="0" tag="651">
+    <subfield code="a">West (U.S.)</subfield>
+    <subfield code="x">Description and travel.</subfield>
+  </datafield>
+  <datafield ind1="1" ind2=" " tag="700">
+    <subfield code="a">Wheeler, George M.</subfield>
+    <subfield code="q">(George Montague),</subfield>
+    <subfield code="d">1842-1905.</subfield>
+  </datafield>
+  <datafield ind1="1" ind2=" " tag="700">
+    <subfield code="a">Humphreys, A. A.</subfield>
+    <subfield code="q">(Andrew Atkinson),</subfield>
+    <subfield code="d">1810-1883.</subfield>
+  </datafield>
+  <datafield ind1="1" ind2=" " tag="700">
+    <subfield code="a">Wright, Horatio Gouverneur,</subfield>
+    <subfield code="d">1820-1899.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="752">
+    <subfield code="a">United States.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="752">
+    <subfield code="a">United States</subfield>
+    <subfield code="c">West.</subfield>
+  </datafield>
+  <datafield ind1="0" ind2=" " tag="852">
+    <subfield code="a">Library of Congress</subfield>
+    <subfield code="b">Geography and Map Division</subfield>
+    <subfield code="e">Washington, D.C. 20540-4650 USA</subfield>
+    <subfield code="n">dcu</subfield>
+  </datafield>
+  <datafield ind1="4" ind2="1" tag="856">
+    <subfield code="3">Atlas, Vol. 1</subfield>
+    <subfield code="d">g4050m</subfield>
+    <subfield code="f">gct00105a</subfield>
+    <subfield code="u">http://hdl.loc.gov/loc.gmd/g4050m.gct00105a</subfield>
+    <subfield code="q">c</subfield>
+  </datafield>
+  <datafield ind1="4" ind2="1" tag="856">
+    <subfield code="3">Atlas, Vol. 2</subfield>
+    <subfield code="d">g4050m</subfield>
+    <subfield code="f">gct00105b</subfield>
+    <subfield code="u">http://hdl.loc.gov/loc.gmd/g4050m.gct00105b</subfield>
+    <subfield code="q">c</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="952">
+    <subfield code="a">Form AACR2: ga10 2004-03-02</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="985">
+    <subfield code="a">GMD/CT</subfield>
+    <subfield code="e">ammem</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="985">
+    <subfield code="a">GMD/DSXPMAP</subfield>
+    <subfield code="e">ammem</subfield>
+    <subfield code="h">20090310</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="991">
+    <subfield code="b">c-GenColl</subfield>
+    <subfield code="h">QE74</subfield>
+    <subfield code="i">.W6</subfield>
+    <subfield code="t">Copy 1</subfield>
+    <subfield code="w">PREM</subfield>
+  </datafield>
+</record>

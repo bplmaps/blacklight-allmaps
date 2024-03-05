@@ -1,0 +1,110 @@
+<!-- URL: https://www.loc.gov/resource/g4061p.rr001150/ -->
+<!-- MARCXML: https://lccn.loc.gov/98688388/marcxml -->
+<!-- IIIF Manifest: https://www.loc.gov/item/98688388/manifest.json -->
+<?xml version="1.0" encoding="UTF-8"?><record xmlns="http://www.loc.gov/MARC21/slim" xmlns:zs="http://docs.oasis-open.org/ns/search-ws/sruResponse">
+  <leader>01582cem a22003731  4500</leader>
+  <controlfield tag="001">5571969</controlfield>
+  <controlfield tag="005">20021214203411.0</controlfield>
+  <controlfield tag="007">aj|aanzn</controlfield>
+  <controlfield tag="007">cr||||</controlfield>
+  <controlfield tag="008">980520s185u    ilu       a     0   eng  </controlfield>
+  <datafield ind1=" " ind2=" " tag="035">
+    <subfield code="9">(DLC)   98688388</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="906">
+    <subfield code="a">7</subfield>
+    <subfield code="b">cbc</subfield>
+    <subfield code="c">orignew</subfield>
+    <subfield code="d">u</subfield>
+    <subfield code="e">ncip</subfield>
+    <subfield code="f">19</subfield>
+    <subfield code="g">y-geogmaps</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="955">
+    <subfield code="a">ga33 01-04-00</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="010">
+    <subfield code="a">   98688388 </subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="040">
+    <subfield code="a">DLC</subfield>
+    <subfield code="c">DLC</subfield>
+    <subfield code="d">DLC</subfield>
+  </datafield>
+  <datafield ind1="0" ind2="0" tag="050">
+    <subfield code="a">G4061.P3 185-</subfield>
+    <subfield code="b">.M4</subfield>
+    <subfield code="u">RR 115</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="052">
+    <subfield code="a">4061</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="7" tag="072">
+    <subfield code="a">P3</subfield>
+    <subfield code="2">lcg</subfield>
+  </datafield>
+  <datafield ind1="1" ind2=" " tag="100">
+    <subfield code="a">Mendel, Edward,</subfield>
+    <subfield code="d">1827-1884.</subfield>
+  </datafield>
+  <datafield ind1="1" ind2="0" tag="245">
+    <subfield code="a">Map showing the position of Chicago in connection with the North West &amp; the principal lines of rail roads, canals, navigable streams and lakes, together with the most important towns, and their distances from Chicago.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="260">
+    <subfield code="a">Chicago,</subfield>
+    <subfield code="c">[185-]</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="300">
+    <subfield code="a">map</subfield>
+    <subfield code="c">43 x 64 cm.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="507">
+    <subfield code="a">Scale ca. 1:2,800,000.</subfield>
+  </datafield>
+  <datafield ind1="4" ind2=" " tag="510">
+    <subfield code="a">LC Railroad maps,</subfield>
+    <subfield code="c">115</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Description derived from published bibliography.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="520">
+    <subfield code="a">Map of the north-central United States, east of the Mississippi River, showing the railroad network.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Inset: Illinois geological survey. Diagram of the state of Illinois. col. 20 x 12 cm.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="530">
+    <subfield code="a">Available also through the Library of Congress Web site as a raster image.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="0" tag="650">
+    <subfield code="a">Railroads</subfield>
+    <subfield code="z">Middle West</subfield>
+    <subfield code="v">Maps.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="752">
+    <subfield code="a">United States</subfield>
+    <subfield code="c">Middle West.</subfield>
+  </datafield>
+  <datafield ind1="0" ind2=" " tag="852">
+    <subfield code="a">Library of Congress</subfield>
+    <subfield code="b">Geography and Map Division</subfield>
+    <subfield code="e">Washington, D.C. 20540-4650 USA</subfield>
+    <subfield code="n">dcu</subfield>
+  </datafield>
+  <datafield ind1="4" ind2="1" tag="856">
+    <subfield code="d">g4061p</subfield>
+    <subfield code="f">rr001150</subfield>
+    <subfield code="u">http://hdl.loc.gov/loc.gmd/g4061p.rr001150</subfield>
+    <subfield code="q">c</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="985">
+    <subfield code="a">GMD/RRMAP</subfield>
+    <subfield code="e">ammem</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="985">
+    <subfield code="a">GMD/TRNSMAP</subfield>
+    <subfield code="e">ammem</subfield>
+    <subfield code="h">20000216</subfield>
+  </datafield>
+</record>

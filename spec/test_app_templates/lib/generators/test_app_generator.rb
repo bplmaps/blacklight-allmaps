@@ -32,4 +32,12 @@ class TestAppGenerator < Rails::Generators::Base
     say_status("warning", "GENERATING BL Allmaps", :yellow)
     generate "blacklight:allmaps:install", "--force"
   end
+
+  # Symlink fixture document directories so the test app doesn't have to be
+  # regenerated when they are changed or updated.
+  def fixtures
+    solr_docs_path = Rails.root.join("..", "spec", "fixtures", "solr_documents")
+    FileUtils.mkdir_p "spec/fixtures"
+    FileUtils.symlink solr_docs_path, "spec/fixtures/solr_documents"
+  end
 end
