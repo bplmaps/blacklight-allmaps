@@ -2,6 +2,6 @@ require "blacklight"
 
 module Blacklight
   module Allmaps
-    # Your code goes here...
+    require "blacklight/allmaps/engine"
   end
 end

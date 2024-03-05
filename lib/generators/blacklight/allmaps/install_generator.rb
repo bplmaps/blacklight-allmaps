@@ -20,6 +20,10 @@ module Blacklight
       def asset_config_manifest
         copy_file "manifest.js", "app/assets/config/manifest.js"
       end
+
+      def copy_rake_tasks
+        append_to_file "Rakefile", "require 'blacklight/allmaps/rake_task'\n"
+      end
     end
   end
 end

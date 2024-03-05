@@ -2,6 +2,8 @@ require "rake"
 require "bundler"
 Bundler::GemHelper.install_tasks
 
+require "bundler/gem_tasks"
+
 require "rspec/core/rake_task"
 require "engine_cart/rake_task"
 require "solr_wrapper"
@@ -20,7 +22,7 @@ task ci: ["engine_cart:generate"] do
   end
 end
 
-namespace :test do
+namespace :blacklight_allmaps do
   desc "Put sample data into solr"
   task seed: ["engine_cart:generate"] do
     within_test_app do
@@ -30,9 +32,10 @@ namespace :test do
       # system "rake blacklight:index:seed"
 
       # Seed GeoBlacklight data
-      # Rake::Task["geoblacklight:index:seed"].invoke
+      system "rake geoblacklight:index:seed[:remote]"
 
-      # @TODO: local seed data
+      # Seed Blacklight Allmaps GBL data
+      system "rake blacklight_allmaps:index:gbl_fixtures"
     end
   end
 
@@ -48,7 +51,7 @@ namespace :test do
 
     SolrWrapper.wrap(port: "8983") do |solr|
       solr.with_collection(name: "blacklight-core", dir: File.join(__dir__, "solr", "conf")) do
-        Rake::Task["test:seed"].invoke
+        Rake::Task["blacklight_allmaps:seed"].invoke
 
         within_test_app do
           system "bundle exec rails s #{args[:rails_server_args]}"
