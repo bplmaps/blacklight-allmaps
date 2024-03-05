@@ -7,7 +7,32 @@
     <%# content will be updated via updateGeorefLinks(); %>
     <div id="georef_loading">
       Loading...
-      <%= @document.iiif_manifest_url %>
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+  var updateGeorefLinks = async function () {
+    var manifestUrl = document.getElementById('allmaps-sidebar').getAttribute('data-iiif-manifest');
+    var georefDiv = document.getElementById('georeferencing');
+    var annotationUrlByIIIFUri = "https://annotations.allmaps.org/?url=" + manifestUrl;
+
+    try {
+      var response = await fetch(annotationUrlByIIIFUri);
+      var annotationUrl = response.url; // Corrected variable name
+      console.log(annotationUrl);
+    } catch (error) {
+      console.error("Fetch error:", error);
+    }
+
+    if (annotationUrl) {
+      georefDiv.innerHTML = '<a href="https://viewer.allmaps.org/?url=' + annotationUrl + '">View this georeferenced map</a>';
+    } else {
+      georefDiv.innerHTML = 'This item is not georeferenceable';
+    }
+  };
+
+  document.addEventListener('DOMContentLoaded', function() {
+    updateGeorefLinks();
+  });
+</script>
