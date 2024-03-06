@@ -1,0 +1,36 @@
+<div class="card mb-3" id="allmaps-sidebar" data-iiif-manifest="<%=@document.iiif_manifest_url %>">
+  <div class="card-header">
+    <h2 class="mb-0 h6"><%= t('home.georeferencing') %></h2>
+  </div>
+
+  <div class="card-body" id="georeferencing">
+    <%# content will be updated via updateGeorefLinks(); %>
+    <div id="georef_loading">
+      Loading...
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', () => {
+    const updateGeorefLinks = async () => {
+      const manifestUrl = document.getElementById('allmaps-sidebar').getAttribute('data-iiif-manifest');
+      const georefDiv = document.getElementById('georeferencing');
+      const annotationUrlByIIIFUri = `https://annotations.allmaps.org/?url=${manifestUrl}`;
+
+      try {
+        const response = await fetch(annotationUrlByIIIFUri);
+        if (!response.ok) {
+          georefDiv.innerHTML = `<a href="https://editor.allmaps.org/#/collection?url=${manifestUrl}">Georeference this item</a>`;
+        } else {
+          const annotationUrl = response.url;
+          georefDiv.innerHTML = `<a href="https://viewer.allmaps.org/?url=${annotationUrl}">View this georeferenced item</a>`;
+        }
+      } catch (error) {
+        console.error("Fetch error:", error);
+      }
+    };
+
+    updateGeorefLinks();
+  });
+</script>

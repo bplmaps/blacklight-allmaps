@@ -24,6 +24,11 @@ module Blacklight
       def copy_rake_tasks
         append_to_file "Rakefile", "require 'blacklight/allmaps/rake_task'\n"
       end
+
+      def prioritize_blacklight_allmaps_views
+        inject_into_file "config/application.rb", "\nrequire \"blacklight/allmaps/engine\"\n", after: "require \"action_cable/engine\""
+        inject_into_file "config/application.rb", "\nconfig.railties_order = [Blacklight::Allmaps::Engine, :main_app, :all]\n", after: "class Application < Rails::Application\n"
+      end
     end
   end
 end

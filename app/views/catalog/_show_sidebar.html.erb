@@ -1,0 +1,5 @@
+<% if Geoblacklight::VERSION %>
+  <%= render :partial => 'show_sidebar_geoblacklight' %>
+<% elsif Blacklight::VERSION %>
+  <%= render :partial => 'show_sidebar_blacklight' %>
+<% end %>
