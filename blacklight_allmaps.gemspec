@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   end
 
   spec.add_dependency "blacklight", ">= 7.25.2", "< 9"
-  spec.add_dependency "geoblacklight", ">= 4", "< 5"
+  spec.add_dependency "geoblacklight", "4.1"
 
   spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_development_dependency "rspec-rails"
