@@ -57,7 +57,6 @@ namespace :blacklight_allmaps do
     end
   end
 
-
   desc "Run Solr and seed with sample data"
   task :solr do
     if File.exist? EngineCart.destination
