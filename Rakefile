@@ -7,6 +7,7 @@ require "bundler/gem_tasks"
 require "rspec/core/rake_task"
 require "engine_cart/rake_task"
 require "solr_wrapper"
+require "blacklight/allmaps/rake_task"
 
 task default: :ci
 
@@ -16,7 +17,7 @@ RSpec::Core::RakeTask.new
 task ci: ["engine_cart:generate"] do
   SolrWrapper.wrap do |solr|
     solr.with_collection(name: "blacklight-core", dir: File.join(__dir__, "solr", "conf")) do
-      Rake::Task["test:seed"].invoke
+      system "rake blacklight_allmaps:seed"
       Rake::Task["spec"].invoke
     end
   end
@@ -32,7 +33,7 @@ namespace :blacklight_allmaps do
       # system "rake blacklight:index:seed"
 
       # Seed GeoBlacklight data
-      system "rake geoblacklight:index:seed[:remote]"
+      # system "rake geoblacklight:index:seed[:remote]"
 
       # Seed Blacklight Allmaps GBL data
       system "rake blacklight_allmaps:index:gbl_fixtures"

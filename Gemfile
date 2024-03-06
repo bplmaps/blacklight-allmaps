@@ -4,11 +4,19 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # Specify your gem's dependencies in blacklight_allmaps.gemspec.
 gemspec
 
-gem "puma"
-
-gem "sqlite3"
-
-gem "sprockets-rails"
+group :test do
+  gem "capybara", require: false
+  # gem "database_cleaner", require: false
+  gem "engine_cart", require: false
+  # gem "factory_bot_rails", require: false
+  # gem "foreman", require: false
+  gem "rails-controller-testing", require: false
+  gem "rspec-rails", require: false
+  # gem "simplecov", require: false
+  gem "standardrb", require: false
+  gem "webdrivers", require: false
+  # gem "webmock", require: false
+end
 
 # Start debugger with binding.b [https://github.com/ruby/debug]
 # gem "debug", ">= 1.0.0"
@@ -33,12 +41,6 @@ else
       ENV["ENGINE_CART_RAILS_OPTIONS"] = "--edge --skip-turbolinks"
     else
       gem "rails", ENV["RAILS_VERSION"]
-    end
-
-    case ENV["RAILS_VERSION"]
-    when /^6.0/
-      gem "sass-rails", ">= 6"
-      gem "webpacker", "~> 4.0"
     end
   end
 end

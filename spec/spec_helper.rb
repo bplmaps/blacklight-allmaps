@@ -1,13 +1,15 @@
+# frozen_string_literal: true
+
 ENV["RAILS_ENV"] ||= "test"
-require "rsolr"
+
+require "action_cable/engine"
 require "engine_cart"
 EngineCart.load_application!
 
+require "rails-controller-testing" if Rails::VERSION::MAJOR >= 5
 require "rspec/rails"
 require "capybara/rspec"
-require "selenium-webdriver"
-
-Capybara.javascript_driver = :headless_chrome
+require "webdrivers"
 
 Capybara.register_driver :headless_chrome do |app|
   Capybara::Selenium::Driver.load_selenium
@@ -19,6 +21,10 @@ Capybara.register_driver :headless_chrome do |app|
   end
   Capybara::Selenium::Driver.new(app, browser: :chrome, options: browser_options)
 end
+
+Capybara.javascript_driver = :headless_chrome
+
+require "blacklight/allmaps"
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -35,4 +41,6 @@ RSpec.configure do |config|
   #       # Equivalent to being in spec/controllers
   #     end
   config.infer_spec_type_from_file_location!
+
+  config.include Devise::Test::ControllerHelpers, type: :controller
 end
