@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - 9-GitHub-Actions-CI
   pull_request:
 
 jobs:
