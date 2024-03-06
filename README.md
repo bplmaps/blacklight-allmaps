@@ -1,4 +1,7 @@
 # BlacklightAllmaps
+
+![CI](https://github.com/bplmaps/blacklight-allmaps/actions/workflows/ci.yml/badge.svg) 
+
 Source code of Allmaps plugins for Blacklight/GeoBlacklight software.
 
 ## Usage
