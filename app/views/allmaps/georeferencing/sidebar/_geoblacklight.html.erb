@@ -12,25 +12,25 @@
 </div>
 
 <script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  const updateGeorefLinks = async () => {
-    const manifestUrl = document.getElementById('allmaps-sidebar').getAttribute('data-iiif-manifest');
-    const georefDiv = document.getElementById('georeferencing');
-    const annotationUrlByIIIFUri = `https://annotations.allmaps.org/?url=${manifestUrl}`;
+  document.addEventListener('DOMContentLoaded', () => {
+    const updateGeorefLinks = async () => {
+      const manifestUrl = document.getElementById('allmaps-sidebar').getAttribute('data-iiif-manifest');
+      const georefDiv = document.getElementById('georeferencing');
+      const annotationUrlByIIIFUri = `https://annotations.allmaps.org/?url=${manifestUrl}`;
 
-    try {
-      const response = await fetch(annotationUrlByIIIFUri);
-      if (!response.ok) {
-        georefDiv.innerHTML = `<a href="https://editor.allmaps.org/#/collection?url=${manifestUrl}">Georeference this item</a>`;
-      } else {
-        const annotationUrl = response.url;
-        georefDiv.innerHTML = `<a href="https://viewer.allmaps.org/?url=${annotationUrl}">View this georeferenced item</a>`;
+      try {
+        const response = await fetch(annotationUrlByIIIFUri);
+        if (!response.ok) {
+          georefDiv.innerHTML = `<a href="https://editor.allmaps.org/#/collection?url=${manifestUrl}">Georeference this item</a>`;
+        } else {
+          const annotationUrl = response.url;
+          georefDiv.innerHTML = `<a href="https://viewer.allmaps.org/?url=${annotationUrl}">View this georeferenced item</a>`;
+        }
+      } catch (error) {
+        console.error("Fetch error:", error);
       }
-    } catch (error) {
-      console.error("Fetch error:", error);
-    }
-  };
+    };
 
-  updateGeorefLinks();
-});
+    updateGeorefLinks();
+  });
 </script>
