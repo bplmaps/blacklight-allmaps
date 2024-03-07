@@ -44,8 +44,7 @@
       
       <% if document.sidecar.georeferenced? %>
         <div class="tab-pane fade" id="georeferenced-tab" role="tabpanel" aria-labelledby="georeferenced-tab">
-          <h3>Georeferenced Map</h3>
-          <div id="allmaps-map" data-controller="map" data-map-target="placeholder" class="leaflet-container mb-3" style="min-height: 200px;"></div>
+          <%= render partial: 'allmaps/show/geoblacklight', locals: { document: document } %>
         </div>
       <% end %>
     </div>
