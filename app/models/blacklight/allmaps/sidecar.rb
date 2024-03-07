@@ -16,7 +16,7 @@ module Blacklight
       end
 
       def set_allmaps_id
-        self.allmaps_id = Digest::SHA1.hexdigest(manifest_id)[0..16] if manifest_id.present?
+        self.allmaps_id = Digest::SHA1.hexdigest(manifest_id)[0..15] if manifest_id.present?
       end
     end
   end
