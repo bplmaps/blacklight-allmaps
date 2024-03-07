@@ -1,0 +1,53 @@
+<% document ||= @document %>
+<div class='row'>
+  <div id='viewer-container' class="col-md-12">
+
+    Georeferenced: <%= document.sidecar.georeferenced? %>
+
+    <ul class="nav nav-tabs mt-3" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="item-viewer" data-toggle="tab" data-target="#item-viewer-tab" type="button" role="tab" aria-controls="home" aria-selected="true">Item Viewer</button>
+      </li>
+      <% if document.sidecar.georeferenced? %>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="georeferenced-viewer" data-toggle="tab" data-target="#georeferenced-tab" type="button" role="tab" aria-controls="profile" aria-selected="false">Georeferenced Map</button>
+        </li>
+      <% end %>
+    </ul>
+
+    <div class="tab-content mt-3">
+      <div class="tab-pane fade show active" id="item-viewer-tab" role="tabpanel" aria-labelledby="item-viewer-tab">
+        <% if show_help_text?('viewer_protocol', document.viewer_protocol) %>
+          <%= render_help_text_entry('viewer_protocol', document.viewer_protocol) %>
+        <% end %>
+
+        <% if document.item_viewer.index_map %>
+          <div class="index-map-legend">
+            <div class="index-map-legend-info">
+              <span class="index-map-legend-default"></span>
+              <p><span class="sr-only">Green tile indicates </span>Map held by collection</p>
+            </div>
+            <div class="index-map-legend-info">
+              <span class="index-map-legend-unavailable"></span>
+              <p><span class="sr-only">Yellow tile indicates </span>Map not held by collection</p>
+            </div>
+            <div class="index-map-legend-info">
+              <span class="index-map-legend-selected"></span>
+              <p><span class="sr-only">Blue tile indicates </span>Selected map tile</p>
+            </div>
+          </div>
+        <% end %>
+
+        <%= content_tag :div, id: 'map', aria: { label: t('geoblacklight.map.label') }, data: { map: 'item', protocol: document.viewer_protocol.camelize, url: document.viewer_endpoint, 'layer-id' => document.wxs_identifier, 'map-geom' => document.geometry.geojson, 'catalog-path'=> search_catalog_path, available: document_available?, inspect: show_attribute_table?, basemap: geoblacklight_basemap, leaflet_options: leaflet_options } do %>
+        <% end %>
+      </div>
+      
+      <% if document.sidecar.georeferenced? %>
+        <div class="tab-pane fade" id="georeferenced-tab" role="tabpanel" aria-labelledby="georeferenced-tab">
+          <h3>Georeferenced Map</h3>
+          <div id="allmaps-map" data-controller="map" data-map-target="placeholder" class="leaflet-container mb-3" style="min-height: 200px;"></div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
