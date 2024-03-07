@@ -7,6 +7,8 @@ module Blacklight
     class Sidecar < ApplicationRecord
       self.table_name = "blacklight_allmaps_sidecars"
 
+      alias_attribute :georeferenced, :annotated
+
       before_save :set_allmaps_id
 
       def solr_document
