@@ -1,30 +1,41 @@
 <!-- Georeferenced Map -->
-<script src="https://cdn.jsdelivr.net/npm/@allmaps/leaflet/dist/bundled/allmaps-leaflet-1.9.umd.js"></script>
-
 <h3 class="h6">Georeferenced Map</h3>
 <div id="allmaps-map" style="height: 400px;"></div>
 
+<script src="https://cdn.jsdelivr.net/npm/@allmaps/leaflet/dist/bundled/allmaps-leaflet-1.9.umd.js"></script>
 <script>
-$(document).ready(function() {
-  var map = L.map('allmaps-map', {
-    center: [43.063518, -89.3906863],
-    zoom: 10,
-    zoomAnimationThreshold: 1
+  $(document).ready(function() {
+    var map = L.map('allmaps-map', {
+      center: [43.063518, -89.3906863],
+      zoom: 10,
+      zoomAnimationThreshold: 1
+    });
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 18,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // https://annotations.allmaps.org/manifests/c2f9fc8490151424
+    var annotationUrl = "https://annotations.allmaps.org/manifests/<%= document.sidecar.allmaps_id %>";
+    // var annotationUrl = 'https://annotations.allmaps.org/manifests/c2f9fc8490151424';
+    
+    var warpedMapLayer = new Allmaps.WarpedMapLayer(annotationUrl);
+    warpedMapLayer.addTo(map);
+
+    warpedMapLayer.on('load', function() {
+      var bounds = warpedMapLayer.getBounds();
+      map.fitBounds(bounds);
+    });
+
+    // Tab is hidden by default
+    // Need to watch the DOM mutate to set the map size
+    var geoTab = document.getElementById('georeferenced-tab');
+    var observer2 = new MutationObserver(function(){
+      if(geoTab.style.display != 'none'){
+        map.invalidateSize();
+      }
+    });
+    observer2.observe(geoTab, {attributes: true});
   });
-
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 18,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-  }).addTo(map);
-
-  var annotationUrl = "https://annotations.allmaps.org/manifests/c2f9fc8490151424";
-  
-  var warpedMapLayer = new Allmaps.WarpedMapLayer(annotationUrl);
-  warpedMapLayer.addTo(map);
-
-  warpedMapLayer.on('load', function() {
-    var bounds = warpedMapLayer.getBounds();
-    map.fitBounds(bounds);
-  });
-});
 </script>
