@@ -13,7 +13,7 @@ module Blacklight
       DESCRIPTION
 
       def asset_config_manifest
-        copy_file "manifest.js", "app/assets/config/manifest.js"
+        copy_file "manifest.js", "app/assets/config/manifest.js", force: true
       end
 
       def copy_rake_tasks
