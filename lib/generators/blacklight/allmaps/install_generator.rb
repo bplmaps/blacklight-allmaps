@@ -29,6 +29,19 @@ module Blacklight
         inject_into_file "config/application.rb", "\nrequire \"blacklight/allmaps/engine\"\n", after: "require \"action_cable/engine\""
         inject_into_file "config/application.rb", "\nconfig.railties_order = [Blacklight::Allmaps::Engine, :main_app, :all]\n", after: "class Application < Rails::Application\n"
       end
+
+      def add_importmap_pins
+        append_to_file 'config/importmap.rb' do
+          <<~CONTENT
+          pin "leaflet" # @1.9.4
+          pin '@allmaps/leaflet', to: "@allmaps--leaflet.js"
+          CONTENT
+        end
+      end
+
+      def copy_base_layout
+        copy_file "base.html.erb", "app/views/layouts/blacklight/base.html.erb"
+      end
     end
   end
 end

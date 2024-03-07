@@ -19,17 +19,17 @@ class TestAppGenerator < Rails::Generators::Base
   end
 
   def run_blacklight_generator
-    say_status("warning", "GENERATING BL", :yellow)
+    say_status("warning", "GENERATING BLACKLIGHT", :yellow)
     generate "blacklight:install", "--devise"
   end
 
   def run_geoblacklight_generator
-    say_status("warning", "GENERATING GBL", :yellow)
+    say_status("warning", "GENERATING GEOBLACKLIGHT", :yellow)
     generate "geoblacklight:install", "--force"
   end
 
   def run_geoblacklight_admin_generator
-    say_status("warning", "GENERATING BL Allmaps", :yellow)
+    say_status("warning", "GENERATING BLACKLIGHT ALLMAPS", :yellow)
     generate "blacklight:allmaps:install", "--force"
   end
 
