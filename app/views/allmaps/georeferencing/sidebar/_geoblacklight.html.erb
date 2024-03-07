@@ -27,6 +27,10 @@
         } else {
           const annotationUrl = response.url;
           georefDiv.innerHTML = `<a href="https://viewer.allmaps.org/?url=${annotationUrl}">View this georeferenced item</a>`;
+          
+          // TODO: Ping Blacklight::Allmaps::AnnotationsController to save the annotation data
+          
+
         }
       } catch (error) {
         console.error("Fetch error:", error);
