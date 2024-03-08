@@ -23,7 +23,7 @@ namespace :blacklight_allmaps do
       # 5. Re-index the georeferenced documents
 
       # 1. Get all the documents from Solr
-      solr_docs = Blacklight.default_index.connection.get(
+      Blacklight.default_index.connection.get(
         "select",
         params: {
           q: "*:*", fl: "*", rows: 100_000_000
@@ -32,20 +32,20 @@ namespace :blacklight_allmaps do
         # 2. Determine which documents have georeferenced data
         solr_document = SolrDocument.find(doc["id"])
         if solr_document.sidecar.present? && solr_document.sidecar.allmaps_id.present?
-          
+
           # 3. Clean JSON for re-indexing
           keys_for_deletion = %w[
-            _version_ 
+            _version_
             timestamp
             solr_bboxtype
-            solr_bboxtype__minX 
+            solr_bboxtype__minX
             solr_bboxtype__minY
             solr_bboxtype__maxX
             solr_bboxtype__maxY
           ]
 
           cleaned_doc = doc.except!(*keys_for_deletion)
-          
+
           # 4. Add gbl_georeferenced_b value
           # @TODO: add allmaps_id
           cleaned_doc["gbl_georeferenced_b"] = true
