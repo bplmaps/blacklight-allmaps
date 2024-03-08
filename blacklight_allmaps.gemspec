@@ -19,7 +19,6 @@ Gem::Specification.new do |spec|
   end
 
   spec.add_dependency "blacklight", ">= 7.25.2", "< 9"
-  spec.add_dependency "geoblacklight", "4.1"
   spec.add_dependency "httparty"
 
   spec.add_development_dependency "solr_wrapper"
