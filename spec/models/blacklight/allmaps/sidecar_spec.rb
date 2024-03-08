@@ -12,9 +12,11 @@ describe Blacklight::Allmaps::Sidecar do
       expect(document.sidecar).to respond_to :solr_document_id
       expect(document.sidecar).to respond_to :document_type
       expect(document.sidecar).to respond_to :manifest_id
+      expect(document.sidecar).to respond_to :annotated
+      expect(document.sidecar).to respond_to :allmaps_id
+      expect(document.sidecar).to respond_to :iiif_manifest
       expect(document.sidecar).to respond_to :allmaps_annotation
       expect(document.sidecar).to respond_to :solr_version
-      expect(document.sidecar).to respond_to :state
     end
   end
 end
