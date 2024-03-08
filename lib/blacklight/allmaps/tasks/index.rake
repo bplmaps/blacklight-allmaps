@@ -21,17 +21,18 @@ namespace :blacklight_allmaps do
       # 5. Re-index the georeferenced documents
 
       # 1. Get all the documents from Solr
-      cursorMark = '*'
+      cursor_mark = "*"
       loop do
         response = Blacklight.default_index.connection.get(
-          "select", params: { 
-            q: '*:*', # all docs
+          "select", params: {
+            q: "*:*", # all docs
             fl: "*",  # all fields
-            cursorMark: cursorMark, # use the cursor mark to handle paging
+            cursorMark: cursor_mark, # use the cursor mark to handle paging
             rows: 1000,
             sort: "id asc" # must sort by id to use the cursor mark
-        })
-        
+          }
+        )
+
         response["response"]["docs"].each do |doc|
           # 2. Determine which documents have georeferenced data
           solr_document = SolrDocument.find(doc["id"])
@@ -59,8 +60,8 @@ namespace :blacklight_allmaps do
           end
         end
 
-        break if response["nextCursorMark"] == cursorMark # this means the result set is finished
-        cursorMark = response["nextCursorMark"]
+        break if response["nextCursorMark"] == cursor_mark # this means the result set is finished
+        cursor_mark = response["nextCursorMark"]
       end
       Blacklight.default_index.connection.commit
     end
