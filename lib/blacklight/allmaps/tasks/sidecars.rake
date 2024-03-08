@@ -5,6 +5,9 @@ namespace :blacklight_allmaps do
     namespace :harvest do
       desc "Harvest - crawl SolrDocuments to store Allmaps data locally"
       task allmaps: [:environment] do
+        # @TODO: Optimize to work in "batches".
+        # Ex. https://github.com/projectblacklight/blacklight/wiki/Search-engine-harvesting
+        # See use of nextCursorMark above
         Blacklight.default_index.connection.get(
           "select",
           params: {

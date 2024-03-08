@@ -13,7 +13,9 @@ namespace :blacklight_allmaps do
 
     desc "Index - add Allmaps facet data to GBL solr"
     task gbl_georeferenced_facet: [:environment] do
-      # @TODO: Rewrite to work in batches.
+      # @TODO: Optimize to work in "batches".
+      # Ex. https://github.com/projectblacklight/blacklight/wiki/Search-engine-harvesting
+      # See use of nextCursorMark above
 
       # Steps
       # 1. Get all the documents from Solr
