@@ -4,6 +4,7 @@ PATH
     blacklight_allmaps (0.1.0)
       blacklight (>= 7.25.2, < 9)
       geoblacklight (= 4.1)
+      httparty
 
 GEM
   remote: https://rubygems.org/
@@ -185,6 +186,9 @@ GEM
     http-cookie (1.0.5)
       domain_name (~> 0.5)
     http-form_data (2.3.0)
+    httparty (0.21.0)
+      mini_mime (>= 1.0.0)
+      multi_xml (>= 0.5.2)
     i18n (1.14.3)
       concurrent-ruby (~> 1.0)
       racc (~> 1.7)
@@ -193,7 +197,7 @@ GEM
       activesupport (>= 6.0.0)
       railties (>= 6.0.0)
     io-console (0.7.2)
-    irb (1.11.2)
+    irb (1.12.0)
       rdoc
       reline (>= 0.4.2)
     jbuilder (2.11.5)
@@ -241,6 +245,7 @@ GEM
     mini_portile2 (2.8.5)
     minitar (0.9)
     minitest (5.22.2)
+    multi_xml (0.6.0)
     net-http (0.4.1)
       uri
     net-http-persistent (4.0.2)

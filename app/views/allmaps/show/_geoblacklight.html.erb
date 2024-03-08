@@ -1,0 +1,50 @@
+<!-- Georeferenced Map -->
+<h3 class="h6">Georeferenced Map</h3>
+<div id="allmaps-map" data-map-geom="<%= document.geometry.geojson %>" style="height: 400px;"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@allmaps/leaflet/dist/bundled/allmaps-leaflet-1.9.umd.js"></script>
+<script>
+  // GBLs Leaflet plugin to fit the map to its GeoJSON bounds
+  L.geoJSONToBounds = function(geojson) {
+    var layer = L.geoJSON();
+    layer.addData(geojson);
+    return layer.getBounds();
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const map = L.map('allmaps-map', {
+      center: [43.063518, -89.3906863],
+      zoom: 10,
+      zoomAnimationThreshold: 1
+    });
+
+    // @TODO: Fit the map to the bounds of the GeoJSON
+    const element = document.getElementById('allmaps-map');
+    const value = element.getAttribute('data-map-geom');
+    console.log(value); // Outputs: value
+    const bounds = L.geoJSONToBounds(JSON.parse(value));
+    console.log(bounds); // Outputs: bounds
+    // map.fitBounds(bounds);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 18,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    const annotationUrl = "https://annotations.allmaps.org/manifests/<%= document.sidecar.allmaps_id %>";
+
+    // WarpedMapLayer used to be called outside MutationObserver
+
+    // Need to watch the DOM mutate to set the map size
+    const geoTab = document.getElementById('georeferenced-tab');
+    const observer = new MutationObserver(function(){
+      if(geoTab.style.display != 'none'){
+        const warpedMapLayer = new Allmaps.WarpedMapLayer(annotationUrl);
+        warpedMapLayer.addTo(map);
+        map.invalidateSize();
+      }
+    });
+
+    observer.observe(geoTab, { attributes: true });
+  });
+</script>

@@ -7,27 +7,18 @@ module Blacklight
 
       desc "Install BlacklightAllmaps"
 
+      def generate_config
+        generate "blacklight:allmaps:config"
+      end
+
+      def generate_models
+        generate "blacklight:allmaps:models"
+      end
+
       def bundle_install
         Bundler.with_unbundled_env do
           run "bundle install"
         end
-      end
-
-      def seed_data
-        run "rake \"geoblacklight:index:seed[:remote]\""
-      end
-
-      def asset_config_manifest
-        copy_file "manifest.js", "app/assets/config/manifest.js"
-      end
-
-      def copy_rake_tasks
-        append_to_file "Rakefile", "require 'blacklight/allmaps/rake_task'\n"
-      end
-
-      def prioritize_blacklight_allmaps_views
-        inject_into_file "config/application.rb", "\nrequire \"blacklight/allmaps/engine\"\n", after: "require \"action_cable/engine\""
-        inject_into_file "config/application.rb", "\nconfig.railties_order = [Blacklight::Allmaps::Engine, :main_app, :all]\n", after: "class Application < Rails::Application\n"
       end
     end
   end
