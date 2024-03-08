@@ -33,7 +33,7 @@ namespace :blacklight_allmaps do
       )["response"]["docs"].each do |doc|
         # 2. Determine which documents have georeferenced data
         solr_document = SolrDocument.find(doc["id"])
-        if solr_document.sidecar.present? && solr_document.sidecar.allmaps_id.present?
+        if solr_document.sidecar.present? && solr_document.sidecar.annotated?
 
           # 3. Clean JSON for re-indexing
           keys_for_deletion = %w[
