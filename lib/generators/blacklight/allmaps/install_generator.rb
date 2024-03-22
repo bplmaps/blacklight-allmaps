@@ -5,6 +5,8 @@ module Blacklight
     class InstallGenerator < Rails::Generators::Base
       source_root File.expand_path("templates", __dir__)
 
+      class_option :geoblacklight, type: :boolean, default: false, aliases: "-geo", desc: "Install with GeoBlacklight."
+
       desc "Install BlacklightAllmaps"
 
       def generate_config

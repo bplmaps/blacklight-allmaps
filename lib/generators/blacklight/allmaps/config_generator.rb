@@ -37,6 +37,11 @@ module Blacklight
       def set_active_job_config
         inject_into_file "config/environments/development.rb", "  config.active_job.queue_adapter = :inline\n", after: "Rails.application.configure do\n"
       end
+
+      def add_geoblacklight
+        return unless options[:geoblacklight]
+        append_to_file "Gemfile", '"geoblacklight", "4.1"'
+      end
     end
   end
 end
