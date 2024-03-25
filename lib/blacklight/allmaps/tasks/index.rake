@@ -4,7 +4,6 @@ require "blacklight"
 
 namespace :blacklight_allmaps do
   namespace :index do
-
     desc "Index - add Allmaps fixture data to Blacklight solr"
     task :bl_fixtures do
       # @TODO: JSON works when pasted into Solr, but fails here?
