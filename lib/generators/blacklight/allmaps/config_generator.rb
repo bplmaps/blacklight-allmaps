@@ -42,6 +42,12 @@ module Blacklight
         return unless options[:geoblacklight]
         append_to_file "Gemfile", '"geoblacklight", "4.1"'
       end
+
+      def include_blacklight_allmaps_solrdocument
+        inject_into_file "app/models/solr_document.rb", after: "include Blacklight::Solr::Document" do
+          "\n include Blacklight::Allmaps::SolrDocument"
+        end
+      end
     end
   end
 end
