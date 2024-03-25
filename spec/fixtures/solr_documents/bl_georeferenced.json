@@ -1,0 +1,44 @@
+{
+  "lc_1letter_ssim": [
+    "G - Geography, Anthropology, Recreation"
+  ],
+  "author_tsim": [
+    "United States. National Park Service."
+  ],
+  "published_ssim": [
+    {
+      "Washington,D.C.": "The Service, [1989]"
+    }
+  ],
+  "lc_callnum_ssim": [
+    "G3842.C4 1989 .U5"
+  ],
+  "title_tsim": [
+    "Chesapeake and Ohio Canal, Washington, D.C., Maryland, West Virginia, official map and guide [Allmaps - Georeferenced]"
+  ],
+  "pub_date_ssim": [
+    "1989"
+  ],
+  "pub_date_si": 1989,
+  "format": "Map",
+  "material_type_ssim": [
+    {
+      "1 map": "col. ; 55 x 21 cm., on sheet 60 x 21 cm., folded to 10 x 21 cm."
+    }
+  ],
+  "lc_b4cutter_ssim": [
+    "G3842.C4"
+  ],
+  "title_si": "Chesapeake and Ohio Canal, Washington, D.C., Maryland, West Virginia, official map and guide [Allmaps - Georeferenced]",
+  "id": 89696911,
+  "author_si": "United States. National Park Service.",
+  "lc_alpha_ssim": [
+    "G"
+  ],
+  "language_ssim": [
+    "English"
+  ],
+  "iiif_manifest_url_ssi": "https://www.loc.gov/item/88695674/manifest.json",
+  "timestamp": "2024-03-25T18:42:53.056Z",
+  "marc_ss": "<!-- URL: https://www.loc.gov/item/89696911/ -->\n<!-- MARCXML: https://lccn.loc.gov/89696911/marcxml -->\n<!-- IIIF Manifest: https://www.loc.gov/item/88695674/manifest.json -->\n<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<record xmlns=\"http://www.loc.gov/MARC21/slim\" xmlns:zs=\"http://docs.oasis-open.org/ns/search-ws/sruResponse\">\n  <leader>02265cem a2200481 a 4500</leader>\n  <controlfield tag=\"001\">5511356</controlfield>\n  <controlfield tag=\"005\">20180117141654.0</controlfield>\n  <controlfield tag=\"007\">aj|canzn</controlfield>\n  <controlfield tag=\"007\">cr |||||||||||</controlfield>\n  <controlfield tag=\"008\">891025s1989    dcu       a  f  0   eng  </controlfield>\n  <datafield ind1=\" \" ind2=\" \" tag=\"035\">\n    <subfield code=\"9\">(DLC)   89696911</subfield>\n  </datafield>\n  <datafield ind1=\" \" ind2=\" \" tag=\"906\">\n    <subfield code=\"a\">7</subfield>\n    <subfield code=\"b\">cbc</subfield>\n    <subfield code=\"c\">orignew</subfield>\n    <subfield code=\"d\">u</subfield>\n    <subfield code=\"e\">ncip</subfield>\n    <subfield code=\"f\">19</subfield>\n    <subfield code=\"g\">y-geogmaps</subfield>\n  </datafield>\n  <datafield ind1=\" \" ind2=\" \" tag=\"955\">\n    <subfield code=\"i\">ga05; ga15</subfield>\n  </datafield>\n  <datafield ind1=\" \" ind2=\" \" tag=\"010\">\n    <subfield code=\"a\">   89696911 </subfield>\n  </datafield>\n  <datafield ind1=\"1\" ind2=\" \" tag=\"034\">\n    <subfield code=\"a\">a</subfield>\n    <subfield code=\"b\">325000</subfield>\n  </datafield>\n  <datafield ind1=\" \" ind2=\" \" tag=\"040\">\n    <subfield code=\"a\">DLC</subfield>\n    <subfield code=\"c\">DLC</subfield>\n    <subfield code=\"d\">DLC</subfield>\n  </datafield>\n  <datafield ind1=\"0\" ind2=\"0\" tag=\"050\">\n    <subfield code=\"a\">G3842.C4 1989</subfield>\n    <subfield code=\"b\">.U5</subfield>\n  </datafield>\n  <datafield ind1=\" \" ind2=\" \" tag=\"052\">\n    <subfield code=\"a\">3842</subfield>\n    <subfield code=\"b\">C4</subfield>\n  </datafield>\n  <datafield ind1=\" \" ind2=\" \" tag=\"052\">\n    <subfield code=\"a\">3792</subfield>\n    <subfield code=\"b\">C4</subfield>\n  </datafield>\n  <datafield ind1=\"1\" ind2=\" \" tag=\"110\">\n    <subfield code=\"a\">United States.</subfield>\n    <subfield code=\"b\">National Park Service.</subfield>\n  </datafield>\n  <datafield ind1=\"1\" ind2=\"0\" tag=\"245\">\n    <subfield code=\"a\">Chesapeake and Ohio Canal, Washington, D.C., Maryland, West Virginia, official map and guide /</subfield>\n    <subfield code=\"c\">National Park Service, U.S. Department of the Interior.</subfield>\n  </datafield>\n  <datafield ind1=\" \" ind2=\" \" tag=\"250\">\n    <subfield code=\"a\">[1989 rev. ed.].</subfield>\n  </datafield>\n  <datafield ind1=\" \" ind2=\" \" tag=\"255\">\n    <subfield code=\"a\">Scale [ca. 1:325,000].</subfield>\n  </datafield>\n  <datafield ind1=\" \" ind2=\" \" tag=\"260\">\n    <subfield code=\"a\">[Washington, D.C.] :</subfield>\n    <subfield code=\"b\">The Service,</subfield>\n    <subfield code=\"c\">[1989]</subfield>\n  </datafield>\n  <datafield ind1=\" \" ind2=\" \" tag=\"300\">\n    <subfield code=\"a\">1 map :</subfield>\n    <subfield code=\"b\">col. ;</subfield>\n    <subfield code=\"c\">55 x 21 cm., on sheet 60 x 21 cm., folded to 10 x 21 cm.</subfield>\n  </datafield>\n  <datafield ind1=\" \" ind2=\" \" tag=\"500\">\n    <subfield code=\"a\">\"*GPO: 1989--242-345/00044. Reprint 1989.\"</subfield>\n  </datafield>\n  <datafield ind1=\" \" ind2=\" \" tag=\"500\">\n    <subfield code=\"a\">Title at top: Chesapeake and Ohio Canal National Historical Park.</subfield>\n  </datafield>\n  <datafield ind1=\" \" ind2=\" \" tag=\"500\">\n    <subfield code=\"a\">Oriented with north toward the upper right.</subfield>\n  </datafield>\n  <datafield ind1=\" \" ind2=\" \" tag=\"500\">\n    <subfield code=\"a\">Text, map of lower canal, and ill. on verso.</subfield>\n  </datafield>\n  <datafield ind1=\" \" ind2=\" \" tag=\"530\">\n    <subfield code=\"a\">Available also through the Library of Congress Web site as a raster image.</subfield>\n  </datafield>\n  <datafield ind1=\" \" ind2=\"0\" tag=\"651\">\n    <subfield code=\"a\">Chesapeake and Ohio Canal (Md. and Washington, D.C.)</subfield>\n    <subfield code=\"v\">Maps.</subfield>\n  </datafield>\n  <datafield ind1=\" \" ind2=\"0\" tag=\"651\">\n    <subfield code=\"a\">Chesapeake and Ohio Canal National Historical Park</subfield>\n    <subfield code=\"v\">Maps.</subfield>\n  </datafield>\n  <datafield ind1=\" \" ind2=\" \" tag=\"662\">\n    <subfield code=\"a\">United States</subfield>\n    <subfield code=\"b\">Maryland</subfield>\n    <subfield code=\"c\">Chesapeake and Ohio Canal.</subfield>\n    <subfield code=\"2\">lcsh</subfield>\n  </datafield>\n  <datafield ind1=\" \" ind2=\" \" tag=\"662\">\n    <subfield code=\"a\">United States</subfield>\n    <subfield code=\"b\">District of Columbia</subfield>\n    <subfield code=\"c\">Chesapeake and Ohio Canal.</subfield>\n    <subfield code=\"2\">lcsh</subfield>\n  </datafield>\n  <datafield ind1=\" \" ind2=\" \" tag=\"662\">\n    <subfield code=\"a\">United States</subfield>\n    <subfield code=\"b\">Maryland</subfield>\n    <subfield code=\"c\">Chesapeake and Ohio Canal National Historical Park.</subfield>\n    <subfield code=\"2\">lcsh</subfield>\n  </datafield>\n  <datafield ind1=\" \" ind2=\" \" tag=\"662\">\n    <subfield code=\"a\">United States</subfield>\n    <subfield code=\"b\">District of Columbia</subfield>\n    <subfield code=\"c\">Chesapeake and Ohio Canal National Historical Park.</subfield>\n    <subfield code=\"2\">lcsh</subfield>\n  </datafield>\n  <datafield ind1=\" \" ind2=\" \" tag=\"662\">\n    <subfield code=\"a\">United States</subfield>\n    <subfield code=\"b\">West Virginia</subfield>\n    <subfield code=\"c\">Chesapeake and Ohio Canal National Historical Park.</subfield>\n    <subfield code=\"2\">lcsh</subfield>\n  </datafield>\n  <datafield ind1=\"0\" ind2=\" \" tag=\"740\">\n    <subfield code=\"a\">Chesapeake and Ohio Canal National Historical Park.</subfield>\n  </datafield>\n  <datafield ind1=\"0\" ind2=\" \" tag=\"852\">\n    <subfield code=\"a\">Library of Congress</subfield>\n    <subfield code=\"b\">Geography and Map Division</subfield>\n    <subfield code=\"e\">Washington, D.C. 20540-4650 USA</subfield>\n    <subfield code=\"n\">dcu</subfield>\n  </datafield>\n  <datafield ind1=\"4\" ind2=\"1\" tag=\"856\">\n    <subfield code=\"d\">g3842c</subfield>\n    <subfield code=\"f\">ct008616</subfield>\n    <subfield code=\"u\">http://hdl.loc.gov/loc.gmd/g3842c.ct008616</subfield>\n    <subfield code=\"q\">c</subfield>\n  </datafield>\n  <datafield ind1=\" \" ind2=\" \" tag=\"985\">\n    <subfield code=\"a\">GMD/CT</subfield>\n    <subfield code=\"e\">ammem</subfield>\n  </datafield>\n  <datafield ind1=\" \" ind2=\" \" tag=\"985\">\n    <subfield code=\"a\">GMD/GNRLMAP</subfield>\n    <subfield code=\"e\">ammem</subfield>\n    <subfield code=\"h\">20180213</subfield>\n  </datafield>\n  <datafield ind1=\" \" ind2=\" \" tag=\"991\">\n    <subfield code=\"b\">c-G&amp;M</subfield>\n    <subfield code=\"h\">G3842.C4 1989</subfield>\n    <subfield code=\"i\">.U5</subfield>\n    <subfield code=\"t\">Copy 1</subfield>\n    <subfield code=\"w\">MAPS</subfield>\n  </datafield>\n</record>\n"
+}
