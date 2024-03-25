@@ -12,36 +12,38 @@
   }
 
   document.addEventListener('DOMContentLoaded', () => {
-    const map = L.map('allmaps-map', {
-      center: [43.063518, -89.3906863],
-      zoom: 10,
-      zoomAnimationThreshold: 1
-    });
-
-    // @TODO: Fit the map to the bounds of the GeoJSON
     const element = document.getElementById('allmaps-map');
     const value = element.getAttribute('data-map-geom');
-    console.log(value); // Outputs: value
     const bounds = L.geoJSONToBounds(JSON.parse(value));
-    console.log(bounds); // Outputs: bounds
-    // map.fitBounds(bounds);
+    const annotationUrl = "https://annotations.allmaps.org/manifests/<%= document.sidecar.allmaps_id %>";
+    const warpedMapLayer = new Allmaps.WarpedMapLayer(annotationUrl);
+    const geoTab = document.getElementById('georeferenced-tab');
+    const map = L.map('allmaps-map');
 
+    // Attribution
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 18,
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    const annotationUrl = "https://annotations.allmaps.org/manifests/<%= document.sidecar.allmaps_id %>";
+    // Fullscreen control
+    map.addControl(new L.Control.Fullscreen({
+      position: 'topright'
+    }));
 
-    // WarpedMapLayer used to be called outside MutationObserver
+    // Layer opacity control
+    map.addControl(new L.Control.LayerOpacity(warpedMapLayer));
 
-    // Need to watch the DOM mutate to set the map size
-    const geoTab = document.getElementById('georeferenced-tab');
+    // Leaflet: Multiple maps on the same page is a challenge...
+    // 1. Need to watch the page DOM mutate
+    // 2. When the georeferenced tab is visible, invalidate the map size
+    // 3. Add the WarpedMapLayer to the map
+    // 4. Fit the map to the GeoJSON bounds
     const observer = new MutationObserver(function(){
       if(geoTab.style.display != 'none'){
-        const warpedMapLayer = new Allmaps.WarpedMapLayer(annotationUrl);
-        warpedMapLayer.addTo(map);
         map.invalidateSize();
+        warpedMapLayer.addTo(map);
+        map.fitBounds(bounds);
       }
     });
 
