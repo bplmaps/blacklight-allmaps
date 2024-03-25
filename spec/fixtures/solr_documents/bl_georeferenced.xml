@@ -1,101 +1,132 @@
-<!-- URL: https://www.loc.gov/resource/g4050m.gct00105a/?sp=26 -->
-<!-- MARCXML: https://lccn.loc.gov/03026075/marcxml -->
-<!-- IIIF Manifest: https://collections.leventhalmap.org/search/commonwealth:7h14b311s/manifest -->
-<?xml version="1.0" encoding="UTF-8"?><record xmlns="http://www.loc.gov/MARC21/slim" xmlns:zs="http://docs.oasis-open.org/ns/search-ws/sruResponse">
-  <leader>01937cam a22004211  4500</leader>
-  <controlfield tag="001">6325305</controlfield>
-  <controlfield tag="005">20110629135546.0</controlfield>
+<!-- URL: https://www.loc.gov/item/89696911/ -->
+<!-- MARCXML: https://lccn.loc.gov/89696911/marcxml -->
+<!-- IIIF Manifest: https://www.loc.gov/item/88695674/manifest.json -->
+<?xml version="1.0" encoding="UTF-8"?>
+<record xmlns="http://www.loc.gov/MARC21/slim" xmlns:zs="http://docs.oasis-open.org/ns/search-ws/sruResponse">
+  <leader>02265cem a2200481 a 4500</leader>
+  <controlfield tag="001">5511356</controlfield>
+  <controlfield tag="005">20180117141654.0</controlfield>
+  <controlfield tag="007">aj|canzn</controlfield>
   <controlfield tag="007">cr |||||||||||</controlfield>
-  <controlfield tag="008">830216s1889    dcuab        f000 0 eng  </controlfield>
+  <controlfield tag="008">891025s1989    dcu       a  f  0   eng  </controlfield>
   <datafield ind1=" " ind2=" " tag="035">
-    <subfield code="9">(DLC)   03026075</subfield>
+    <subfield code="9">(DLC)   89696911</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="906">
-    <subfield code="a">0</subfield>
+    <subfield code="a">7</subfield>
     <subfield code="b">cbc</subfield>
-    <subfield code="c">premver</subfield>
+    <subfield code="c">orignew</subfield>
     <subfield code="d">u</subfield>
     <subfield code="e">ncip</subfield>
     <subfield code="f">19</subfield>
-    <subfield code="g">y-gencatlg</subfield>
+    <subfield code="g">y-geogmaps</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="955">
+    <subfield code="i">ga05; ga15</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="010">
-    <subfield code="a">   03026075 </subfield>
+    <subfield code="a">   89696911 </subfield>
+  </datafield>
+  <datafield ind1="1" ind2=" " tag="034">
+    <subfield code="a">a</subfield>
+    <subfield code="b">325000</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="040">
     <subfield code="a">DLC</subfield>
-    <subfield code="c">CarP</subfield>
+    <subfield code="c">DLC</subfield>
     <subfield code="d">DLC</subfield>
   </datafield>
-  <datafield ind1=" " ind2=" " tag="043">
-    <subfield code="a">n-us---</subfield>
-  </datafield>
   <datafield ind1="0" ind2="0" tag="050">
-    <subfield code="a">QE74</subfield>
-    <subfield code="b">.W6</subfield>
+    <subfield code="a">G3842.C4 1989</subfield>
+    <subfield code="b">.U5</subfield>
   </datafield>
-  <datafield ind1=" " ind2=" " tag="051">
-    <subfield code="a">G1380</subfield>
-    <subfield code="b">.U56 1873 Vault</subfield>
+  <datafield ind1=" " ind2=" " tag="052">
+    <subfield code="a">3842</subfield>
+    <subfield code="b">C4</subfield>
   </datafield>
-  <datafield ind1="2" ind2=" " tag="110">
-    <subfield code="a">Geographical Surveys West of the 100th Meridian (U.S.)</subfield>
+  <datafield ind1=" " ind2=" " tag="052">
+    <subfield code="a">3792</subfield>
+    <subfield code="b">C4</subfield>
+  </datafield>
+  <datafield ind1="1" ind2=" " tag="110">
+    <subfield code="a">United States.</subfield>
+    <subfield code="b">National Park Service.</subfield>
   </datafield>
   <datafield ind1="1" ind2="0" tag="245">
-    <subfield code="a">Report upon United States Geographical surveys west of the one hundredth meridian /</subfield>
-    <subfield code="c">in charge of ... Geo. M. Wheeler ; under the direction of the chief of engineers, US Army.</subfield>
+    <subfield code="a">Chesapeake and Ohio Canal, Washington, D.C., Maryland, West Virginia, official map and guide /</subfield>
+    <subfield code="c">National Park Service, U.S. Department of the Interior.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="250">
+    <subfield code="a">[1989 rev. ed.].</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="255">
+    <subfield code="a">Scale [ca. 1:325,000].</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="260">
-    <subfield code="a">Washington :</subfield>
-    <subfield code="b">Govt. Print. Off.,</subfield>
-    <subfield code="c">1889.</subfield>
+    <subfield code="a">[Washington, D.C.] :</subfield>
+    <subfield code="b">The Service,</subfield>
+    <subfield code="c">[1989]</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="300">
-    <subfield code="a">v. &lt;1, 3, 6-7) :</subfield>
-    <subfield code="b">ill., maps (some col.) ;</subfield>
-    <subfield code="c">30 cm.</subfield>
+    <subfield code="a">1 map :</subfield>
+    <subfield code="b">col. ;</subfield>
+    <subfield code="c">55 x 21 cm., on sheet 60 x 21 cm., folded to 10 x 21 cm.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">A. A. Humphreys, chief of engineers until June 1879. Succeeded by H. G. Wright.</subfield>
+    <subfield code="a">"*GPO: 1989--242-345/00044. Reprint 1989."</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Date of publication for vol. 2. Astronomy and barometric hypsometry: 1877 (t.p.)</subfield>
+    <subfield code="a">Title at top: Chesapeake and Ohio Canal National Historical Park.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Oriented with north toward the upper right.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Text, map of lower canal, and ill. on verso.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="530">
     <subfield code="a">Available also through the Library of Congress Web site as a raster image.</subfield>
   </datafield>
   <datafield ind1=" " ind2="0" tag="651">
-    <subfield code="a">United States</subfield>
-    <subfield code="x">Surveys.</subfield>
+    <subfield code="a">Chesapeake and Ohio Canal (Md. and Washington, D.C.)</subfield>
+    <subfield code="v">Maps.</subfield>
   </datafield>
   <datafield ind1=" " ind2="0" tag="651">
+    <subfield code="a">Chesapeake and Ohio Canal National Historical Park</subfield>
+    <subfield code="v">Maps.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="662">
     <subfield code="a">United States</subfield>
-    <subfield code="x">Discovery and exploration.</subfield>
+    <subfield code="b">Maryland</subfield>
+    <subfield code="c">Chesapeake and Ohio Canal.</subfield>
+    <subfield code="2">lcsh</subfield>
   </datafield>
-  <datafield ind1=" " ind2="0" tag="651">
-    <subfield code="a">West (U.S.)</subfield>
-    <subfield code="x">Description and travel.</subfield>
-  </datafield>
-  <datafield ind1="1" ind2=" " tag="700">
-    <subfield code="a">Wheeler, George M.</subfield>
-    <subfield code="q">(George Montague),</subfield>
-    <subfield code="d">1842-1905.</subfield>
-  </datafield>
-  <datafield ind1="1" ind2=" " tag="700">
-    <subfield code="a">Humphreys, A. A.</subfield>
-    <subfield code="q">(Andrew Atkinson),</subfield>
-    <subfield code="d">1810-1883.</subfield>
-  </datafield>
-  <datafield ind1="1" ind2=" " tag="700">
-    <subfield code="a">Wright, Horatio Gouverneur,</subfield>
-    <subfield code="d">1820-1899.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="752">
-    <subfield code="a">United States.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="752">
+  <datafield ind1=" " ind2=" " tag="662">
     <subfield code="a">United States</subfield>
-    <subfield code="c">West.</subfield>
+    <subfield code="b">District of Columbia</subfield>
+    <subfield code="c">Chesapeake and Ohio Canal.</subfield>
+    <subfield code="2">lcsh</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="662">
+    <subfield code="a">United States</subfield>
+    <subfield code="b">Maryland</subfield>
+    <subfield code="c">Chesapeake and Ohio Canal National Historical Park.</subfield>
+    <subfield code="2">lcsh</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="662">
+    <subfield code="a">United States</subfield>
+    <subfield code="b">District of Columbia</subfield>
+    <subfield code="c">Chesapeake and Ohio Canal National Historical Park.</subfield>
+    <subfield code="2">lcsh</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="662">
+    <subfield code="a">United States</subfield>
+    <subfield code="b">West Virginia</subfield>
+    <subfield code="c">Chesapeake and Ohio Canal National Historical Park.</subfield>
+    <subfield code="2">lcsh</subfield>
+  </datafield>
+  <datafield ind1="0" ind2=" " tag="740">
+    <subfield code="a">Chesapeake and Ohio Canal National Historical Park.</subfield>
   </datafield>
   <datafield ind1="0" ind2=" " tag="852">
     <subfield code="a">Library of Congress</subfield>
@@ -104,36 +135,25 @@
     <subfield code="n">dcu</subfield>
   </datafield>
   <datafield ind1="4" ind2="1" tag="856">
-    <subfield code="3">Atlas, Vol. 1</subfield>
-    <subfield code="d">g4050m</subfield>
-    <subfield code="f">gct00105a</subfield>
-    <subfield code="u">http://hdl.loc.gov/loc.gmd/g4050m.gct00105a</subfield>
+    <subfield code="d">g3842c</subfield>
+    <subfield code="f">ct008616</subfield>
+    <subfield code="u">http://hdl.loc.gov/loc.gmd/g3842c.ct008616</subfield>
     <subfield code="q">c</subfield>
-  </datafield>
-  <datafield ind1="4" ind2="1" tag="856">
-    <subfield code="3">Atlas, Vol. 2</subfield>
-    <subfield code="d">g4050m</subfield>
-    <subfield code="f">gct00105b</subfield>
-    <subfield code="u">http://hdl.loc.gov/loc.gmd/g4050m.gct00105b</subfield>
-    <subfield code="q">c</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="952">
-    <subfield code="a">Form AACR2: ga10 2004-03-02</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="985">
     <subfield code="a">GMD/CT</subfield>
     <subfield code="e">ammem</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="985">
-    <subfield code="a">GMD/DSXPMAP</subfield>
+    <subfield code="a">GMD/GNRLMAP</subfield>
     <subfield code="e">ammem</subfield>
-    <subfield code="h">20090310</subfield>
+    <subfield code="h">20180213</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="991">
-    <subfield code="b">c-GenColl</subfield>
-    <subfield code="h">QE74</subfield>
-    <subfield code="i">.W6</subfield>
+    <subfield code="b">c-G&amp;M</subfield>
+    <subfield code="h">G3842.C4 1989</subfield>
+    <subfield code="i">.U5</subfield>
     <subfield code="t">Copy 1</subfield>
-    <subfield code="w">PREM</subfield>
+    <subfield code="w">MAPS</subfield>
   </datafield>
 </record>
