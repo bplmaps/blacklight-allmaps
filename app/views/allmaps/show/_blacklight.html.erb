@@ -1,0 +1,213 @@
+<!-- Georeferenced Map -->
+<h3 class="h6">Georeferenced Map</h3>
+<div id="allmaps-map" style="height: 400px;"></div>
+
+<!-- Leaflet -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.css">
+<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.js"></script>
+
+<!-- Leaflet Fullscreen -->
+<script src="https://cdn.jsdelivr.net/npm/leaflet-fullscreen@1.0.2/dist/Leaflet.fullscreen.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-fullscreen@1.0.2/dist/leaflet.fullscreen.min.css">
+
+<!-- Leaflet Layer Opacity -->
+<script>
+// Adopts the Mapbox opacity control into a Leaflet plugin
+
+!function(global) {
+  'use strict';
+
+  L.Control.LayerOpacity = L.Control.extend({
+    initialize: function(layer) {
+      var options = { position: 'topleft' };
+
+      // check if layer is actually a layer group
+      if (typeof layer.getLayers !== 'undefined') {
+
+        // add first layer from layer group to options
+        options.layer = layer.getLayers()[0];
+      } else {
+
+        // add layer to options
+        options.layer = layer;
+      }
+
+      L.Util.setOptions(this, options);
+    },
+
+    onAdd: function(map) {
+      var container = L.DomUtil.create('div', 'opacity-control unselectable'),
+        controlArea = L.DomUtil.create('div', 'opacity-area', container),
+        handle = L.DomUtil.create('div', 'opacity-handle', container),
+        handleArrowUp = L.DomUtil.create('div', 'opacity-arrow-up', handle),
+        handleText = L.DomUtil.create('div', 'opacity-text', handle),
+        handleArrowDown = L.DomUtil.create('div', 'opacity-arrow-down', handle),
+        bottom = L.DomUtil.create('div', 'opacity-bottom', container);
+
+      L.DomEvent.stopPropagation(container);
+      L.DomEvent.disableClickPropagation(container);
+
+      this.setListeners(handle, bottom, handleText);
+      handle.style.top = handle.offsetTop - 13 + 50 + 'px';
+      handleText.innerHTML = parseInt(this.options.layer.options.opacity * 100) + '%';
+      return container;
+    },
+
+    setListeners: function(handle, bottom, handleText) {
+      var _this = this,
+        start = false,
+        startTop;
+
+      L.DomEvent.on(document, 'mousemove', function(e) {
+        if (!start) return;
+        var percentInverse = Math.max(0, Math.min(200, startTop + parseInt(e.clientY, 10) - start)) / 2;
+        handle.style.top = ((percentInverse * 2) - 13) + 'px';
+        handleText.innerHTML = Math.round((1 - (percentInverse / 100)) * 100) + '%';
+        bottom.style.height = Math.max(0, (((100 - percentInverse) * 2) - 13)) + 'px';
+        bottom.style.top = Math.min(200, (percentInverse * 2) + 13) + 'px';
+        _this.options.layer.setOpacity(1 - (percentInverse / 100));
+      });
+
+      L.DomEvent.on(handle, 'mousedown', function(e) {
+        start = parseInt(e.clientY, 10);
+        startTop = handle.offsetTop - 12;
+        return false;
+      });
+
+      L.DomEvent.on(document, 'mouseup', function(e) {
+        start = null;
+      });
+    }
+  });
+}(this);
+</script>
+<style>
+.leaflet-control.opacity-control {
+  background-color: #a9acb1;
+  border-radius: 15px;
+  color: black;
+  font: bold 18px 'Lucida Console', Monaco, monospace;
+  display: block;
+  height: 200px;
+  left: 11px;
+  position: relative;
+  top: 15px;
+  width: 5px;
+  
+  .opacity-handle {
+    background-color: #fff;
+    border-radius: 4px;
+    border: 1px solid #eee;
+    cursor: ns-resize;
+    font-size: 10px;
+    height: 26px;
+    left: -11px;
+    line-height: 26px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 26px;
+    @include map-control-shadow;
+    
+    &:hover {
+      background-color: #f4f4f4;
+    }
+  }
+  
+  .opacity-arrow-up {
+    color: #aaa;
+    position: absolute;
+    top: -11px;
+    text-align: center;
+    width: 100%;
+    
+    &:before {
+      content: '=';
+    } 
+  }
+  
+  .opacity-arrow-down {
+    bottom: -10px;
+    color: #aaa;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    
+    &:before {
+      content: '=';
+    }  
+  }
+
+  .opacity-bottom {
+    background-color: #017afd;
+    border-radius: 15px;
+    display: block;
+    height: 137px;
+    left: 0px;
+    position: relative;
+    top: 63px;
+    width: 5px;  
+  }
+  
+  // Area underneath slider to prevent unintentioned map clicks
+  .opacity-area {
+    padding: 14px;
+    cursor: default;
+    height: 200px;
+    left: -11px;
+    position: absolute;
+    top: 0px;
+    width: 20px;
+  }
+}
+
+.opacity-control.unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+</style>
+
+<!-- Allmaps -->
+<script src="https://cdn.jsdelivr.net/npm/@allmaps/leaflet/dist/bundled/allmaps-leaflet-1.9.umd.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const element = document.getElementById('allmaps-map');
+
+    const map = L.map('allmaps-map', {
+      center: [0, 0],
+      zoom: 15,
+      zoomAnimationThreshold: 1
+    })
+    
+    // Basemap and Attribution
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 18,
+      attribution: '&copy; <a href=https://www.openstreetmap.org/copyright>OpenStreetMap</a> contributors'
+    }).addTo(map)
+    
+    // Fullscreen control
+    map.addControl(new L.Control.Fullscreen({
+      position: 'topright'
+    }));
+
+    const annotationUrl = "https://annotations.allmaps.org/manifests/<%= document.sidecar.allmaps_id %>";
+    const warpedMapLayer = new Allmaps.WarpedMapLayer(annotationUrl)
+      .addTo(map)
+
+    // Layer opacity control
+    map.addControl(new L.Control.LayerOpacity(warpedMapLayer));
+
+    map.on(
+      'warpedmapadded',
+      (event) => {
+        map.fitBounds(warpedMapLayer.getBounds())
+      },
+      map
+    );
+  });
+</script>

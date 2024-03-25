@@ -6,7 +6,7 @@ module Blacklight
       queue_as :default
 
       def perform(document_id)
-        solr_document = SolrDocument.find(document_id)
+        solr_document = ::SolrDocument.find(document_id)
         sidecar = solr_document.sidecar
 
         if ApplicationController.helpers.georeferenceable?(solr_document)
