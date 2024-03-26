@@ -2,16 +2,11 @@
 
 ![CI](https://github.com/bplmaps/blacklight-allmaps/actions/workflows/ci.yml/badge.svg) 
 
-<img alt="Allmaps Logo" src="app/assets/images/blacklight/allmaps/allmaps-logo.svg" height="24px"/> <img alt="Blacklight Logo" src="app/assets/images/blacklight/allmaps/blacklight-logo.png" height="24px"/> <img alt="GeoBlackliht Logo" src="app/assets/images/blacklight/allmaps/geoblacklight-logo.png" height="24px"/>
+<img alt="Allmaps Logo" src="app/assets/images/blacklight/allmaps/allmaps-logo.svg" height="40px"/> <img alt="Blacklight Logo" src="app/assets/images/blacklight/allmaps/blacklight-logo.png" height="40px"/> <img alt="GeoBlackliht Logo" src="app/assets/images/blacklight/allmaps/geoblacklight-logo.png" height="40px"/>
 
 A [Blacklight](https://projectblacklight.org/) / [GeoBlacklight](https://geoblacklight.org/) plugin for including [Allmaps](https://allmaps.org/) georeferenced maps inside your application.
 
-### Example
-
 ![Screen shot](doc/screenshot_layers.png)
-
-## Usage
-How to use my plugin.
 
 ## Installation
 Add this line to your application's Gemfile:
@@ -39,9 +34,30 @@ LIGHT=geoblacklight bundle exec rake blacklight:allmaps:install
 
 ## Rake Tasks
 
-rake blacklight_allmaps:sidecars:harvest:allmaps
+### Harvest Allmaps IIIF Annotation Data
 
+We harvest and store Allmaps IIIF Annotation data locally — see the Blacklight::Allmaps::Sidecar section below.
+
+The rake task here kicks off a background harvest process that walks through your Solr index documents (using CursorMark) and checks each document for `georeferenceable?` - the presence of a IIIF Manifest. If the document is indeed georeferenceable? (true) we ping the Allmaps API to determine if the map/item has already been georeferenced in Allmaps.
+
+```bash
+rake blacklight_allmaps:sidecars:harvest:allmaps
+```
+
+### Populate the Georeferenced Facet
+
+We expose the georeferenced items in the Blacklight user interface via a Georeferenced facet:
+
+![Screen shot](doc/georeferenced_facet.png)
+
+#### Blacklight
+@TODO
+
+#### GeoBlacklight
+
+```bash
 rake blacklight_allmaps:index:gbl_georeferenced_facet
+```
 
 ## ActiveRecord Objects — Blacklight::Allmaps::Sidecar 
 
@@ -61,7 +77,7 @@ The Blacklight::Allmaps::Sidecar object contains:
 * created_at: created at
 * updated_at: updated at
 
-```irb
+```ruby
 #<Blacklight::Allmaps::Sidecar:0x0000000141991a50
  id: 1,
  solr_document_id: "harvard-g4124-m2-1855-m3",
@@ -79,6 +95,8 @@ The Blacklight::Allmaps::Sidecar object contains:
 ```
 
 ## Contributing
+
+@TODO
 Contribution directions go here.
 
 ## License
