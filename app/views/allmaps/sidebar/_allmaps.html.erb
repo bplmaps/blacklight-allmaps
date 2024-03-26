@@ -4,10 +4,16 @@
   </div>
 
   <div class="card-body" id="georeferencing">
-    <%# content will be updated via updateGeorefLinks(); %>
-    <div id="georef_loading">
-      Loading...
-    </div>
+    <% if @document.sidecar.georeferenced? %>
+      <div id="georef_present">
+        <%= link_to 'View this georeferenced item', 'https://viewer.allmaps.org/?url=https://annotations.allmaps.org/?url=' + @document.iiif_manifest_url, target: '_blank' %>
+      </div>
+    <% else %>    
+      <%# content will be updated via updateGeorefLinks(); %>
+      <div id="georef_loading">
+        Loading...
+      </div>
+    <% end %>
   </div>
 </div>
 
