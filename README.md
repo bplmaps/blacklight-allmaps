@@ -2,9 +2,7 @@
 
 ![CI](https://github.com/bplmaps/blacklight-allmaps/actions/workflows/ci.yml/badge.svg) 
 
-<img alt="Allmaps Logo" src="app/assets/images/blacklight/allmaps/allmaps-logo.svg" height="16px"/>
-<img alt="Blacklight Logo" src="app/assets/images/blacklight/allmaps/blacklight-logo.png" height="16px"/> 
-<img alt="GeoBlackliht Logo" src="app/assets/images/blacklight/allmaps/geoblacklight-logo.png" height="16px"/>
+<img alt="Allmaps Logo" src="app/assets/images/blacklight/allmaps/allmaps-logo.svg" height="24px"/> <img alt="Blacklight Logo" src="app/assets/images/blacklight/allmaps/blacklight-logo.png" height="24px"/> <img alt="GeoBlackliht Logo" src="app/assets/images/blacklight/allmaps/geoblacklight-logo.png" height="24px"/>
 
 A [Blacklight](https://projectblacklight.org/) / [GeoBlacklight](https://geoblacklight.org/) plugin for including [Allmaps](https://allmaps.org/) georeferenced maps inside your application.
 
