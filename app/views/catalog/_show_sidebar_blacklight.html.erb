@@ -1,7 +1,10 @@
-<% if Blacklight::VERSION > '8.0.0' %>
+<% if Blacklight::VERSION.to_i > 8 %>
   <% presenter = document_presenter(document) %>
   <%= render presenter.view_config.sidebar_component.new(presenter: presenter) %>
 <% else %>
-  <%= render 'show_tools', document: document %>
-  <%= render(Blacklight::Document::MoreLikeThisComponent.new(document: document)) %>
+  <%= render 'show_tools', document: @document %>
+  <%= render(Blacklight::Document::MoreLikeThisComponent.new(document: @document)) %>
+  <% if georeferenceable? %>
+    <%= render :partial => "allmaps/sidebar/allmaps" %>
+  <% end %>
 <% end %>

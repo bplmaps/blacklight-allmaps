@@ -11,7 +11,10 @@ class TestAppGenerator < Rails::Generators::Base
 
   def add_gems
     gem "blacklight", "~> 7.0"
-    gem "geoblacklight", ">= 4.0"
+
+    if ENV["LIGHT"] == "geoblacklight"
+      gem "geoblacklight", "4.1"
+    end
 
     Bundler.with_unbundled_env do
       run "bundle install"
@@ -24,6 +27,7 @@ class TestAppGenerator < Rails::Generators::Base
   end
 
   def run_geoblacklight_generator
+    return unless ENV["LIGHT"] == "geoblacklight"
     say_status("warning", "GENERATING GEOBLACKLIGHT", :yellow)
     generate "geoblacklight:install", "--force"
   end

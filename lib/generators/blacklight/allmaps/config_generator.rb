@@ -37,6 +37,17 @@ module Blacklight
       def set_active_job_config
         inject_into_file "config/environments/development.rb", "  config.active_job.queue_adapter = :inline\n", after: "Rails.application.configure do\n"
       end
+
+      def add_geoblacklight
+        return unless options[:geoblacklight]
+        append_to_file "Gemfile", '"geoblacklight", "4.1"'
+      end
+
+      def include_blacklight_allmaps_solrdocument
+        inject_into_file "app/models/solr_document.rb", after: "include Blacklight::Solr::Document" do
+          "\n include Blacklight::Allmaps::SolrDocument"
+        end
+      end
     end
   end
 end

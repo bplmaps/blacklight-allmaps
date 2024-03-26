@@ -33,6 +33,9 @@ namespace :blacklight_allmaps do
 
       # Seed Blacklight Allmaps GBL data
       system "rake blacklight_allmaps:index:gbl_fixtures"
+
+      # Harvest Allmaps data
+      system "rake blacklight_allmaps:sidecars:harvest:allmaps"
     end
   end
 
@@ -47,7 +50,7 @@ namespace :blacklight_allmaps do
     end
 
     SolrWrapper.wrap(port: "8983") do |solr|
-      solr.with_collection(name: "blacklight-core", dir: File.join(__dir__, "solr", "conf")) do
+      solr.with_collection(name: "blacklight-core", dir: File.join(__dir__, "solr", ENV["LIGHT"], "conf")) do
         Rake::Task["blacklight_allmaps:seed"].invoke
 
         within_test_app do
@@ -58,7 +61,7 @@ namespace :blacklight_allmaps do
   end
 
   desc "Run Solr and seed with sample data"
-  task :solr do
+  task :solr do |_t, args|
     if File.exist? EngineCart.destination
       within_test_app do
         system "bundle update"
@@ -68,7 +71,10 @@ namespace :blacklight_allmaps do
     end
 
     SolrWrapper.wrap(port: "8983") do |solr|
-      solr.with_collection(name: "blacklight-core", dir: File.join(File.expand_path(".", File.dirname(__FILE__)), "solr", "conf")) do
+      solr.with_collection(
+        name: "blacklight-core",
+        dir: File.join(File.expand_path(".", File.dirname(__FILE__)), "solr", ENV["LIGHT"], "conf")
+      ) do
         system "rake blacklight_allmaps:seed"
 
         within_test_app do

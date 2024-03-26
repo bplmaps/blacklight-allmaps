@@ -29,7 +29,7 @@ namespace :blacklight_allmaps do
     end
 
     desc "Sidecars - Purage all: Destroy all harvested images and sidecar AR objects"
-    task purge_all: :environment do
+    task purge_all: [:environment] do
       Blacklight::Allmaps::Sidecar.destroy_all
     end
 
