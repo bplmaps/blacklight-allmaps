@@ -7,6 +7,13 @@
   <%= render (document_component).new(document_component.collection_parameter => document_presenter(@document), component: :div, show: true, partials: blacklight_config.view_config(:show).partials) do |component| %>
     <% component.with_title(as: 'h1', classes: '', link_to_document: false, actions: false) %>
     <% component.with_footer do %>
+
+      <% unless defined?(Geoblacklight) %>
+        <% if @document.sidecar.georeferenced? %>
+          <%= render partial: 'allmaps/show/blacklight', locals: { document: @document } %>
+        <% end %>
+      <% end %>
+      
       <% if @document.respond_to?(:export_as_openurl_ctx_kev) %>
         <!-- COinS, for Zotero among others. -->
         <span class="Z3988" title="<%= @document.export_as_openurl_ctx_kev(document_presenter(@document).display_type) %>"></span>
@@ -23,8 +30,10 @@
   <%= render (blacklight_config.view_config(:show).document_component || Blacklight::DocumentComponent).new(presenter: document_presenter(@document), component: :div, title_component: :h1, show: true) do |component| %>
     <% component.with_footer do %>
 
-      <% if @document.sidecar.georeferenced? %>
-        <%= render partial: 'allmaps/show/blacklight', locals: { document: @document } %>
+      <% unless defined?(Geoblacklight) %>
+        <% if @document.sidecar.georeferenced? %>
+          <%= render partial: 'allmaps/show/blacklight', locals: { document: @document } %>
+        <% end %>
       <% end %>
 
       <% if @document.respond_to?(:export_as_openurl_ctx_kev) %>
