@@ -100,8 +100,9 @@ document.sidecar =>
 
 ## Contributing
 
-@TODO
-Contribution directions go here.
+For Developer documentation see [doc/developer.md](./doc/development.md)
+
+@TODO: Additional Contribution directions go here.
 
 ## License
 The gem is available as open source under the terms of the [Apache 2.0 License](https://opensource.org/license/apache-2-0).
