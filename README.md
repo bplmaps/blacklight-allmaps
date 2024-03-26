@@ -8,6 +8,11 @@ A [Blacklight](https://projectblacklight.org/) / [GeoBlacklight](https://geoblac
 
 ![Screen shot](doc/screenshot_layers.png)
 
+## Dependencies
+
+* Blacklight v7
+* GeoBlacklight v4.1
+
 ## Installation
 Add this line to your application's Gemfile:
 
@@ -20,15 +25,13 @@ And then execute:
 bundle
 ```
 
-For BLACKLIGHT run the install generator:
+Run the install generator:
 
 ```bash
+# For Blacklight...
 bundle exec rake blacklight:allmaps:install
-```
 
-For GEOBLACKLIGHT run the install generator like so: 
-
-```bash
+# For GeoBlacklight
 LIGHT=geoblacklight bundle exec rake blacklight:allmaps:install
 ```
 
@@ -61,7 +64,7 @@ rake blacklight_allmaps:index:gbl_georeferenced_facet
 
 ## ActiveRecord Objects — Blacklight::Allmaps::Sidecar 
 
-Blacklight::Allmaps adopts the "sidecar" pattern from Spotlight, adding an ActiveRecord object to the database for each SolrDocument object in the index.
+Blacklight::Allmaps adopts the SolrDocumentSidecar "sidecar" pattern from [Spotlight](https://github.com/projectblacklight/spotlight), adding an ActiveRecord object to the database for each SolrDocument object in the index.
 
 The Blacklight::Allmaps::Sidecar object contains:
 
@@ -78,6 +81,7 @@ The Blacklight::Allmaps::Sidecar object contains:
 * updated_at: updated at
 
 ```ruby
+document.sidecar =>
 #<Blacklight::Allmaps::Sidecar:0x0000000141991a50
  id: 1,
  solr_document_id: "harvard-g4124-m2-1855-m3",
