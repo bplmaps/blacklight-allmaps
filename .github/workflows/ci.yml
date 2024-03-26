@@ -55,3 +55,4 @@ jobs:
           RAILS_VERSION: ${{ matrix.rails_version }}
           ENGINE_CART_RAILS_OPTIONS: '--skip-git --skip-listen --skip-spring --skip-keeps --skip-action-cable --skip-coffee --skip-test'
           SOLR_URL: http://solr:SolrRocks@localhost:8983/solr/blacklight-core
+          LIGHT: geoblacklight
