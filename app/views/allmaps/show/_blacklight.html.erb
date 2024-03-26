@@ -175,37 +175,37 @@
 <script src="https://cdn.jsdelivr.net/npm/@allmaps/leaflet/dist/bundled/allmaps-leaflet-1.9.umd.js"></script>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const element = document.getElementById('allmaps-map');
+  document.addEventListener("DOMContentLoaded", () => {
+    const element = document.getElementById("allmaps-map");
 
-    const map = L.map('allmaps-map', {
+    const map = L.map("allmaps-map", {
       center: [0, 0],
       zoom: 15,
       zoomAnimationThreshold: 1
-    })
+    });
     
     // Basemap and Attribution
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 18,
-      attribution: '&copy; <a href=https://www.openstreetmap.org/copyright>OpenStreetMap</a> contributors'
-    }).addTo(map)
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: "&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors",
+      maxZoom: 18
+    }).addTo(map);
     
     // Fullscreen control
     map.addControl(new L.Control.Fullscreen({
-      position: 'topright'
+      position: "topright"
     }));
 
     const annotationUrl = "https://annotations.allmaps.org/manifests/<%= document.sidecar.allmaps_id %>";
     const warpedMapLayer = new Allmaps.WarpedMapLayer(annotationUrl)
-      .addTo(map)
+      .addTo(map);
 
     // Layer opacity control
     map.addControl(new L.Control.LayerOpacity(warpedMapLayer));
 
     map.on(
-      'warpedmapadded',
+      "warpedmapadded",
       (event) => {
-        map.fitBounds(warpedMapLayer.getBounds())
+        map.fitBounds(warpedMapLayer.getBounds());
       },
       map
     );

@@ -4,31 +4,26 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@allmaps/leaflet/dist/bundled/allmaps-leaflet-1.9.umd.js"></script>
 <script>
-  // GBLs Leaflet plugin to fit the map to its GeoJSON bounds
-  L.geoJSONToBounds = function(geojson) {
-    var layer = L.geoJSON();
-    layer.addData(geojson);
-    return layer.getBounds();
-  }
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const element = document.getElementById('allmaps-map');
-    const value = element.getAttribute('data-map-geom');
-    const bounds = L.geoJSONToBounds(JSON.parse(value));
+  document.addEventListener("DOMContentLoaded", () => {
+    const element = document.getElementById("allmaps-map");
+    const value = element.getAttribute("data-map-geom");
+    const layer = L.geoJSON();
+    layer.addData(JSON.parse(value));
+    const bounds = layer.getBounds();
     const annotationUrl = "https://annotations.allmaps.org/manifests/<%= document.sidecar.allmaps_id %>";
     const warpedMapLayer = new Allmaps.WarpedMapLayer(annotationUrl);
-    const geoTab = document.getElementById('georeferenced-tab');
-    const map = L.map('allmaps-map');
+    const geoTab = document.getElementById("georeferenced-tab");
+    const map = L.map("allmaps-map");
 
     // Basemap and Attribution
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 18,
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: "&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors",
+      maxZoom: 18
     }).addTo(map);
 
     // Fullscreen control
     map.addControl(new L.Control.Fullscreen({
-      position: 'topright'
+      position: "topright"
     }));
 
     // Layer opacity control
@@ -40,7 +35,7 @@
     // 3. Add the WarpedMapLayer to the map
     // 4. Fit the map to the GeoJSON bounds
     const observer = new MutationObserver(function(){
-      if(geoTab.style.display != 'none'){
+      if(geoTab.style.display !== "none"){
         map.invalidateSize();
         warpedMapLayer.addTo(map);
         map.fitBounds(bounds);
