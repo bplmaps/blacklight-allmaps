@@ -32,7 +32,10 @@ namespace :blacklight_allmaps do
       # system "rake geoblacklight:index:seed[:remote]"
 
       # Seed Blacklight Allmaps GBL data
-      # system "rake blacklight_allmaps:index:gbl_fixtures"
+      system "rake blacklight_allmaps:index:gbl_fixtures"
+
+      # Harvest Allmaps data
+      system "rake blacklight_allmaps:sidecars:harvest:allmaps"
     end
   end
 

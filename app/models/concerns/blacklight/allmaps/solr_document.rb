@@ -4,10 +4,11 @@
 module Blacklight
   module Allmaps
     module SolrDocument
+      # Blacklight
       # @TODO: Make this field configurable
-      def iiif_manifest_url
-        self["iiif_manifest_url_ssi"]
-      end
+      # def iiif_manifest_url
+      #  self["iiif_manifest_url"]
+      # end
     end
   end
 end
