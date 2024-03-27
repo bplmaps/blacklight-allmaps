@@ -7,7 +7,7 @@ module Blacklight
 
       def perform(document_id)
         solr_document = ::SolrDocument.find(document_id)
-        sidecar = solr_document.sidecar
+        sidecar = solr_document.sidecar_allmaps
 
         if ApplicationController.helpers.georeferenceable?(solr_document)
           # Store the IIIF Manifest

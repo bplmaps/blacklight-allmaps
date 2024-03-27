@@ -10,7 +10,7 @@
     const layer = L.geoJSON();
     layer.addData(JSON.parse(value));
     const bounds = layer.getBounds();
-    const annotationUrl = "https://annotations.allmaps.org/manifests/<%= document.sidecar.allmaps_id %>";
+    const annotationUrl = "https://annotations.allmaps.org/manifests/<%= document.sidecar_allmaps.allmaps_id %>";
     const warpedMapLayer = new Allmaps.WarpedMapLayer(annotationUrl);
     const geoTab = document.getElementById("georeferenced-tab");
     const map = L.map("allmaps-map");

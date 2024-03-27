@@ -21,10 +21,10 @@ module Blacklight
         rake "blacklight_allmaps_engine:install:migrations"
       end
 
-      def include_sidecar_solrdocument
+      def include_sidecar_allmaps_solrdocument
         sidecar = <<-SIDECAR
   
-  def sidecar
+  def sidecar_allmaps
     # Find or create, and set version
     sidecar = Blacklight::Allmaps::Sidecar.where(
       solr_document_id: id,
