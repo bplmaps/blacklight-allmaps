@@ -31,8 +31,13 @@ namespace :blacklight_allmaps do
       # Seed GeoBlacklight data
       # system "rake geoblacklight:index:seed[:remote]"
 
-      # Seed Blacklight Allmaps GBL data
-      system "rake blacklight_allmaps:index:gbl_fixtures"
+      if ENV["LIGHT"] == "geoblacklight"
+        # Seed Blacklight Allmaps GeoBlacklight data
+        system "rake blacklight_allmaps:index:gbl_fixtures"
+      else
+        # Seed Blacklight Allmaps Blacklight data
+        system "rake blacklight_allmaps:index:bl_fixtures"
+      end
 
       # Harvest Allmaps data
       system "rake blacklight_allmaps:sidecars:harvest:allmaps"
