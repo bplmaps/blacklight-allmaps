@@ -10,8 +10,8 @@ A [Blacklight](https://projectblacklight.org/) / [GeoBlacklight](https://geoblac
 
 ## Dependencies
 
-* Blacklight v7
-* GeoBlacklight v4.1
+* Blacklight v7 (v8 forthcoming)
+* GeoBlacklight: v4.1 (4.2+ forthcoming)
 
 ## Installation
 Add this line to your application's Gemfile:
