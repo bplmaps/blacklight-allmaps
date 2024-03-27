@@ -2,7 +2,7 @@
 
 ![CI](https://github.com/bplmaps/blacklight-allmaps/actions/workflows/ci.yml/badge.svg) 
 
-<img alt="Allmaps Logo" src="app/assets/images/blacklight/allmaps/allmaps-logo.svg" height="40px"/> <img alt="Blacklight Logo" src="app/assets/images/blacklight/allmaps/blacklight-logo.png" height="40px"/> <img alt="GeoBlackliht Logo" src="app/assets/images/blacklight/allmaps/geoblacklight-logo.png" height="40px"/>
+<img alt="Allmaps Logo" src="app/assets/images/blacklight/allmaps/allmaps-logo.svg" height="40px"/> <img alt="Blacklight Logo" src="app/assets/images/blacklight/allmaps/blacklight-logo.png" height="40px"/> <img alt="GeoBlacklight Logo" src="app/assets/images/blacklight/allmaps/geoblacklight-logo.png" height="40px"/>
 
 A [Blacklight](https://projectblacklight.org/) / [GeoBlacklight](https://geoblacklight.org/) plugin for including [Allmaps](https://allmaps.org/) georeferenced maps inside your application.
 
@@ -10,8 +10,8 @@ A [Blacklight](https://projectblacklight.org/) / [GeoBlacklight](https://geoblac
 
 ## Dependencies
 
-* Blacklight v7
-* GeoBlacklight v4.1
+* Blacklight v7 (v8 forthcoming)
+* GeoBlacklight v4.1 (v4.2+ forthcoming)
 
 ## Installation
 Add this line to your application's Gemfile:
@@ -54,6 +54,7 @@ We expose the georeferenced items in the Blacklight user interface via a Georefe
 ![Screen shot](doc/georeferenced_facet.png)
 
 #### Blacklight
+
 @TODO
 
 #### GeoBlacklight
@@ -102,7 +103,7 @@ document.sidecar =>
 
 For Developer documentation see [doc/developer.md](./doc/development.md)
 
-@TODO: Additional Contribution directions go here.
+Additional Contribution directions to come...
 
 ## License
 The gem is available as open source under the terms of the [Apache 2.0 License](https://opensource.org/license/apache-2-0).
