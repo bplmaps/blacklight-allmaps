@@ -195,7 +195,7 @@
       position: "topright"
     }));
 
-    const annotationUrl = "https://annotations.allmaps.org/manifests/<%= document.sidecar.allmaps_id %>";
+    const annotationUrl = "https://annotations.allmaps.org/manifests/<%= document.sidecar_allmaps.allmaps_id %>";
     const warpedMapLayer = new Allmaps.WarpedMapLayer(annotationUrl)
       .addTo(map);
 

@@ -39,11 +39,12 @@ module Blacklight
       end
 
       def add_geoblacklight
-        return unless options[:geoblacklight]
+        return unless ENV["LIGHT"] == "geoblacklight"
         append_to_file "Gemfile", '"geoblacklight", "4.1"'
       end
 
       def include_blacklight_allmaps_solrdocument
+        return unless ENV["LIGHT"] == "blacklight"
         inject_into_file "app/models/solr_document.rb", after: "include Blacklight::Solr::Document" do
           "\n include Blacklight::Allmaps::SolrDocument"
         end
