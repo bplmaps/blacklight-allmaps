@@ -29,7 +29,7 @@ Run the install generator:
 
 ```bash
 # For Blacklight...
-bundle exec rake blacklight:allmaps:install
+LIGHT=blacklight bundle exec rake blacklight:allmaps:install
 
 # For GeoBlacklight
 LIGHT=geoblacklight bundle exec rake blacklight:allmaps:install
@@ -59,7 +59,7 @@ We expose the georeferenced items in the Blacklight user interface via a Georefe
 #### GeoBlacklight
 
 ```bash
-rake blacklight_allmaps:index:gbl_georeferenced_facet
+LIGHT=geoblacklight rake blacklight_allmaps:index:gbl_georeferenced_facet
 ```
 
 ## ActiveRecord Objects — Blacklight::Allmaps::Sidecar 
