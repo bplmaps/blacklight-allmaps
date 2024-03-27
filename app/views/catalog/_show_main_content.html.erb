@@ -9,7 +9,7 @@
     <% component.with_footer do %>
 
       <% unless defined?(Geoblacklight) %>
-        <% if @document.sidecar.georeferenced? %>
+        <% if @document.sidecar_allmaps.georeferenced? %>
           <%= render partial: 'allmaps/show/blacklight', locals: { document: @document } %>
         <% end %>
       <% end %>
@@ -31,7 +31,7 @@
     <% component.with_footer do %>
 
       <% unless defined?(Geoblacklight) %>
-        <% if @document.sidecar.georeferenced? %>
+        <% if @document.sidecar_allmaps.georeferenced? %>
           <%= render partial: 'allmaps/show/blacklight', locals: { document: @document } %>
         <% end %>
       <% end %>
