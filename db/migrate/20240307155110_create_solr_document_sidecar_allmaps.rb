@@ -1,4 +1,4 @@
-class CreateSolrDocumentSidecars < ActiveRecord::Migration[7.0]
+class CreateSolrDocumentSidecarAllmaps < ActiveRecord::Migration[7.0]
   def change
     create_table :blacklight_allmaps_sidecars do |t|
       t.string :solr_document_id, index: true
