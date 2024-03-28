@@ -29,10 +29,10 @@ Run the install generator:
 
 ```bash
 # For Blacklight...
-LIGHT=blacklight bundle exec rake blacklight:allmaps:install
+LIGHT=blacklight bundle exec rails generate blacklight:allmaps:install
 
 # For GeoBlacklight
-LIGHT=geoblacklight bundle exec rake blacklight:allmaps:install
+LIGHT=geoblacklight bundle exec rails generate blacklight:allmaps:install
 ```
 
 ## Rake Tasks
