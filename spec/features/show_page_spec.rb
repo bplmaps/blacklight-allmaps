@@ -12,7 +12,7 @@ feature "GEOBLACKLIGHT Catalog#show > Tabbed View", js: true do
     expect(page).to have_css "#georeferenced-viewer", count: 1
     expect(page).to have_text "Item Viewer"
     expect(page).to have_text "Georeferenced Map"
-    
+
     click_on "Georeferenced Map"
 
     # See Allmaps Overlay
