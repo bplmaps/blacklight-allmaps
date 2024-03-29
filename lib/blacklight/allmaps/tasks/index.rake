@@ -7,14 +7,14 @@ namespace :blacklight_allmaps do
     desc "Index - add Allmaps fixture data to Blacklight solr"
     task :bl_fixtures do
       # @TODO: JSON works when pasted into Solr, but fails here?
-      docs = Dir["spec/fixtures/solr_documents/bl_*.json"].map { |f| JSON.parse File.read(f) }.flatten
+      docs = Dir["#{Blacklight::Allmaps.root}/spec/fixtures/solr_documents/bl_*.json"].map { |f| JSON.parse File.read(f) }.flatten
       Blacklight.default_index.connection.add docs
       Blacklight.default_index.connection.commit
     end
 
     desc "Index - add Allmaps fixture data to GeoBlacklight solr"
     task :gbl_fixtures do
-      docs = Dir["spec/fixtures/solr_documents/gbl_*.json"].map { |f| JSON.parse File.read(f) }.flatten
+      docs = Dir["#{Blacklight::Allmaps.root}/spec/fixtures/solr_documents/gbl_*.json"].map { |f| JSON.parse File.read(f) }.flatten
       Blacklight.default_index.connection.add docs
       Blacklight.default_index.connection.commit
     end
