@@ -68,21 +68,22 @@ LIGHT=geoblacklight rake blacklight_allmaps:index:gbl_georeferenced_facet
 Blacklight::Allmaps adopts the SolrDocumentSidecar "sidecar" pattern from [Spotlight](https://github.com/projectblacklight/spotlight), adding an ActiveRecord object to the database for each SolrDocument object in the index.
 
 The Blacklight::Allmaps::Sidecar object contains:
-
-* id: primary key
-* solr_document_id: solr document primary key
-* document_type SolrDocument
-* manifest_id: IIIF Manifest ID
-* annotated: boolean (true|false)
-* allmaps_id: Allmaps ID
-* iiif_manifest: Copy of the IIIF Manifest
-* allmaps_annotation: Copy of the Allmaps IIIF Annotation
-* solr_version: solr document version number
-* created_at: created at
-* updated_at: updated at
+| Field | Value |
+| --- | --- |
+| id | primary key |
+| solr_document_id | solr document primary key |
+| document_type | SolrDocument |
+| manifest_id | IIIF Manifest ID |
+| annotated | boolean (true|false) |
+| allmaps_id | Allmaps ID |
+| iiif_manifest | Copy of the IIIF Manifest |
+| allmaps_annotation | Copy of the Allmaps IIIF Annotation |
+| solr_version | solr document version number |
+| created_at | timestamp |
+| updated_at | timestamp |
 
 ```ruby
-document.sidecar =>
+document.sidecar_allmaps =>
 #<Blacklight::Allmaps::Sidecar:0x0000000141991a50
  id: 1,
  solr_document_id: "harvard-g4124-m2-1855-m3",
