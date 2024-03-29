@@ -37,6 +37,18 @@ LIGHT=geoblacklight bundle exec rails generate blacklight:allmaps:install
 
 ## Rake Tasks
 
+### Seed Fixtures
+
+To populate Solr with some example data, you can run these tasks
+
+```bash
+# For Blacklight...
+LIGHT=blacklight rake blacklight_allmaps:index:bl_fixtures
+
+# For GeoBlacklight...
+LIGHT=geoblacklight rake rake blacklight_allmaps:index:gbl_fixtures
+```
+
 ### Harvest Allmaps IIIF Annotation Data
 
 We harvest and store Allmaps IIIF Annotation data locally — see the Blacklight::Allmaps::Sidecar section below.
@@ -44,6 +56,7 @@ We harvest and store Allmaps IIIF Annotation data locally — see the Blacklight
 The rake task here kicks off a background harvest process that walks through your Solr index documents (using CursorMark) and checks each document for `georeferenceable?` - the presence of a IIIF Manifest. If the document is indeed georeferenceable? (true) we ping the Allmaps API to determine if the map/item has already been georeferenced in Allmaps.
 
 ```bash
+# For Blacklight or GeoBlacklight
 rake blacklight_allmaps:sidecars:harvest:allmaps
 ```
 
@@ -55,17 +68,19 @@ We expose the georeferenced items in the Blacklight user interface via a Georefe
 
 #### Blacklight
 
-@TODO
-
-#### GeoBlacklight
-
 ```bash
+# For Blacklight...
+LIGHT=blacklight rake blacklight_allmaps:index:bl_georeferenced_facet
+
+# For GeoBlacklight...
 LIGHT=geoblacklight rake blacklight_allmaps:index:gbl_georeferenced_facet
 ```
 
 ## ActiveRecord Objects — Blacklight::Allmaps::Sidecar 
 
 Blacklight::Allmaps adopts the SolrDocumentSidecar "sidecar" pattern from [Spotlight](https://github.com/projectblacklight/spotlight), adding an ActiveRecord object to the database for each SolrDocument object in the index.
+
+We use this `document.sidecar_allmaps` object to hold the results of the Allmaps Annotation harvest task.
 
 The Blacklight::Allmaps::Sidecar object contains:
 | Field | Value |
