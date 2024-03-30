@@ -66,8 +66,6 @@ We expose the georeferenced items in the Blacklight user interface via a Georefe
 
 ![Screen shot](doc/georeferenced_facet.png)
 
-#### Blacklight
-
 ```bash
 # For Blacklight...
 LIGHT=blacklight rake blacklight_allmaps:index:bl_georeferenced_facet
