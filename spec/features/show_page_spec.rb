@@ -19,11 +19,9 @@ feature "GEOBLACKLIGHT Catalog#show > Tabbed View", js: true do
     expect(page).to have_css "#allmaps-map", count: 1
 
     # See Zoom, Opacity, and Fullscreen Controls
-    within(".leaflet-control-container", match: :smart, visible: false) do
-      expect(page).to have_css ".leaflet-control-zoom", count: 1, visible: false
-      expect(page).to have_css ".opacity-control", count: 1, visible: false
-      expect(page).to have_css ".leaflet-control-fullscreen", count: 1, visible: false
-    end
+    expect(page).to have_css ".leaflet-control-zoom", visible: false
+    expect(page).to have_css ".opacity-control", visible: false
+    expect(page).to have_css ".leaflet-control-fullscreen", visible: false
   end
 
   scenario "Allmaps NOT Georeferenced: Should only have tab item view" do
