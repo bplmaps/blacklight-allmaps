@@ -1,6 +1,7 @@
 # Blacklight::Allmaps
 
 ![CI](https://github.com/bplmaps/blacklight-allmaps/actions/workflows/ci.yml/badge.svg) 
+[![Gem Version](https://img.shields.io/gem/v/blacklight_allmaps.svg)](https://github.com/bplmaps/blacklight-allmaps/releases)
 
 <img alt="Allmaps Logo" src="app/assets/images/blacklight/allmaps/allmaps-logo.svg" height="40px"/> <img alt="Blacklight Logo" src="app/assets/images/blacklight/allmaps/blacklight-logo.png" height="40px"/> <img alt="GeoBlacklight Logo" src="app/assets/images/blacklight/allmaps/geoblacklight-logo.png" height="40px"/>
 
