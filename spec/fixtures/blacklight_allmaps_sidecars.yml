@@ -1,0 +1,1203 @@
+---
+blacklight_allmaps_sidecars_001:
+  id: 1
+  solr_document_id: harvard-g4124-m2-1855-m3
+  document_type: SolrDocument
+  manifest_id: https://ark.digitalcommonwealth.org/ark:/50959/4m90f9436/manifest
+  annotated: 1
+  allmaps_id: c2f9fc8490151424
+  iiif_manifest: '{"@context":"http://iiif.io/api/presentation/2/context.json","@id":"https://ark.digitalcommonwealth.org/ark:/50959/4m90f9436/manifest","@type":"sc:Manifest","label":"Map
+    of Madison and the Four Lake Country, Dane Co. Wis","thumbnail":{"@id":"https://ark.digitalcommonwealth.org/ark:/50959/4m90f9436/thumbnail","service":{"@context":"http://iiif.io/api/image/2/context.json","@id":"https://iiif.digitalcommonwealth.org/iiif/2/commonwealth:4m90f944g","profile":"http://iiif.io/api/image/2/level2.json"}},"viewingHint":"individuals","metadata":[{"label":"Title","value":"Map
+    of Madison and the Four Lake Country, Dane Co. Wis"},{"label":"Date","value":"1855"},{"label":"Publisher","value":"S.l
+    : [s.n.]"},{"label":"Type of Resource","value":"Cartographic"},{"label":"Format","value":"Maps"},{"label":"Language","value":"English"},{"label":"Subjects","value":["Madison
+    (Wis.)--Maps","Dane County (Wis.)--Maps"]},{"label":"Location","value":"Boston
+    Public Library"},{"label":"Collection (local)","value":"Norman B. Leventhal Map
+    Center Collection"},{"label":"Identifier","value":["https://ark.digitalcommonwealth.org/ark:/50959/4m90f9436","06_01_011351","G4124.M2
+    1855 .M37","39999065684670"]},{"label":"Terms of Use","value":["No known copyright
+    restrictions.","No known restrictions on use."]}],"attribution":"No known copyright
+    restrictions. No known restrictions on use.","seeAlso":"https://ark.digitalcommonwealth.org/ark:/50959/4m90f9436","sequences":[{"@type":"sc:Sequence","canvases":[{"@id":"https://ark.digitalcommonwealth.org/ark:/50959/4m90f9436/canvas/4m90f944g","@type":"sc:Canvas","label":"image
+    1","width":5280,"height":3524,"images":[{"@id":"https://ark.digitalcommonwealth.org/ark:/50959/4m90f9436/annotation/4m90f944g","@type":"oa:Annotation","motivation":"sc:painting","resource":{"@id":"https://ark.digitalcommonwealth.org/ark:/50959/4m90f944g/large_image","@type":"dctypes:Image","format":"image/jpeg","width":5280,"height":3524,"service":{"@context":"http://iiif.io/api/image/2/context.json","@id":"https://iiif.digitalcommonwealth.org/iiif/2/commonwealth:4m90f944g","profile":"http://iiif.io/api/image/2/level2.json"}},"on":"https://ark.digitalcommonwealth.org/ark:/50959/4m90f9436/canvas/4m90f944g"}]}]}]}'
+  allmaps_annotation: |-
+    {
+      "type": "AnnotationPage",
+      "@context": "http://www.w3.org/ns/anno.jsonld",
+      "items": [
+        {
+          "id": "https://annotations.allmaps.org/maps/3740c2822f443181",
+          "type": "Annotation",
+          "@context": [
+            "http://iiif.io/api/extension/georef/1/context.json",
+            "http://iiif.io/api/presentation/3/context.json"
+          ],
+          "created": "2024-02-15T21:56:21.178Z",
+          "modified": "2024-03-06T15:30:40.215Z",
+          "motivation": "georeferencing",
+          "target": {
+            "type": "SpecificResource",
+            "source": {
+              "id": "https://iiif.digitalcommonwealth.org/iiif/2/commonwealth:4m90f944g",
+              "type": "ImageService2",
+              "height": 3524,
+              "width": 5280,
+              "partOf": [
+                {
+                  "id": "https://ark.digitalcommonwealth.org/ark:/50959/4m90f9436/canvas/4m90f944g",
+                  "type": "Canvas",
+                  "label": {
+                    "none": [
+                      "image 1"
+                    ]
+                  },
+                  "partOf": [
+                    {
+                      "id": "https://ark.digitalcommonwealth.org/ark:/50959/4m90f9436/manifest",
+                      "type": "Manifest",
+                      "label": {
+                        "none": [
+                          "Map of Madison and the Four Lake Country, Dane Co. Wis"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "selector": {
+              "type": "SvgSelector",
+              "value": "<svg width=\"5280\" height=\"3524\"><polygon points=\"0,0 0,3524 5280,3524 5280,0\" /></svg>"
+            }
+          },
+          "body": {
+            "type": "FeatureCollection",
+            "features": [
+              {
+                "type": "Feature",
+                "properties": {
+                  "resourceCoords": [
+                    2103,
+                    2050
+                  ]
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    -89.3906863,
+                    43.063518
+                  ]
+                }
+              },
+              {
+                "type": "Feature",
+                "properties": {
+                  "resourceCoords": [
+                    1661,
+                    1875
+                  ]
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    -89.4153397,
+                    43.0898488
+                  ]
+                }
+              },
+              {
+                "type": "Feature",
+                "properties": {
+                  "resourceCoords": [
+                    3232,
+                    2419
+                  ]
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    -89.3468133,
+                    42.991941
+                  ]
+                }
+              },
+              {
+                "type": "Feature",
+                "properties": {
+                  "resourceCoords": [
+                    2969,
+                    1775
+                  ]
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    -89.3216873,
+                    43.034958
+                  ]
+                }
+              },
+              {
+                "type": "Feature",
+                "properties": {
+                  "resourceCoords": [
+                    2112,
+                    1481
+                  ]
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    -89.3541899,
+                    43.0854213
+                  ]
+                }
+              }
+            ],
+            "_allmaps": {
+              "id": "https://annotations.allmaps.org/maps/3740c2822f443181",
+              "version": "https://annotations.allmaps.org/maps/3740c2822f443181@6780f83e95a691ac",
+              "image": {
+                "id": "https://annotations.allmaps.org/images/aab5f7eb40d1dc3d",
+                "version": "https://annotations.allmaps.org/images/aab5f7eb40d1dc3d@73af1f58c2428160",
+                "canvases": [
+                  {
+                    "id": "https://annotations.allmaps.org/canvases/1990717a096c4621",
+                    "manifests": [
+                      {
+                        "id": "https://annotations.allmaps.org/manifests/c2f9fc8490151424"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "scale": 0.135874,
+              "area": 1007851484.75
+            }
+          }
+        }
+      ]
+    }
+  solr_version: 1794894200817319936
+  created_at: '2024-03-29 20:41:24.473609'
+  updated_at: '2024-03-29 20:42:49.494823'
+blacklight_allmaps_sidecars_002:
+  id: 2
+  solr_document_id: osu-0r967h708
+  document_type: SolrDocument
+  manifest_id: https://library.osu.edu/dc/dc/concern/generic_works/0r967h708/manifest
+  annotated: 1
+  allmaps_id: 0a6b16061e689d04
+  iiif_manifest: '{"@context":"http://iiif.io/api/presentation/2/context.json","@id":"https://library.osu.edu/dc/dc/concern/generic_works/0r967h708/manifest","@type":"sc:Manifest","label":"Quaternary
+    geology of Ohio","metadata":[{"label":"Title","value":["Quaternary geology of
+    Ohio"]},{"label":"Unit","value":["Geology Library and Map Room"]},{"label":"Creator","value":["Ohio.
+    Division of Geological Survey"]},{"label":"Permanent Link","value":"\u003ca href=\"https://hdl.handle.net/1811/7bb2e628-711a-46aa-9e97-cf5f1d51a5ea\"\u003ehttps://hdl.handle.net/1811/7bb2e628-711a-46aa-9e97-cf5f1d51a5ea\u003c/a\u003e"},{"label":"Subject","value":["Geology"]},{"label":"Rights","value":"\u003ca  href=\"http://rightsstatements.org/vocab/InC/1.0/\"\u003ehttp://rightsstatements.org/vocab/InC/1.0/\u003c/a\u003e"},{"label":"Identifier","value":["i93634419"]}],"sequences":[{"@id":"https://library.osu.edu/dc/dc/concern/generic_works/0r967h708/sequence/normal","@type":"sc:Sequence","canvases":[{"@id":"https://library.osu.edu/dc/concern/file_sets/qz20t6962","@type":"sc:Canvas","width":15845,"height":15688,"label":"Canvas-qz20t6962","images":[{"@id":"https://library.osu.edu/dc/concern/file_sets/qz20t6962/images","@type":"oa:Annotation","motivation":"sc:painting","resource":{"@id":"https://library.osu.edu/dc/concern/file_sets/qz20t6962","@type":"dctypes:Image","format":"image/jpeg","width":15845,"height":15688,"service":{"@context":"http://iiif.io/api/image/2/context.json","@id":"https://library.osu.edu/loris/qz20t6962.jp2","profile":"http://iiif.io/api/image/2/level2.json","disableUi":["mediaDownload"]}},"on":"https://library.osu.edu/dc/concern/file_sets/qz20t6962"}]}]}]}'
+  allmaps_annotation: |-
+    {
+      "type": "AnnotationPage",
+      "@context": "http://www.w3.org/ns/anno.jsonld",
+      "items": [
+        {
+          "id": "https://annotations.allmaps.org/maps/ce267edce2c7efcd",
+          "type": "Annotation",
+          "@context": [
+            "http://iiif.io/api/extension/georef/1/context.json",
+            "http://iiif.io/api/presentation/3/context.json"
+          ],
+          "created": "2024-01-09T17:50:33.111Z",
+          "modified": "2024-01-09T17:51:23.768Z",
+          "motivation": "georeferencing",
+          "target": {
+            "type": "SpecificResource",
+            "source": {
+              "id": "https://library.osu.edu/loris/qz20t6962.jp2",
+              "type": "ImageService2",
+              "height": 3564,
+              "width": 3600,
+              "partOf": [
+                {
+                  "id": "https://library.osu.edu/dc/concern/file_sets/qz20t6962",
+                  "type": "Canvas",
+                  "label": {
+                    "none": [
+                      "Canvas-qz20t6962"
+                    ]
+                  },
+                  "partOf": [
+                    {
+                      "id": "https://library.osu.edu/dc/dc/concern/generic_works/0r967h708/manifest",
+                      "type": "Manifest",
+                      "label": {
+                        "none": [
+                          "Quaternary geology of Ohio"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "selector": {
+              "type": "SvgSelector",
+              "value": "<svg width=\"3600\" height=\"3564\"><polygon points=\"96,90 2821,86 2848,3055 67,3038\" /></svg>"
+            }
+          },
+          "body": {
+            "type": "FeatureCollection",
+            "features": [
+              {
+                "type": "Feature",
+                "properties": {
+                  "resourceCoords": [
+                    128,
+                    2383
+                  ]
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    -84.8244098,
+                    39.1124577
+                  ]
+                }
+              },
+              {
+                "type": "Feature",
+                "properties": {
+                  "resourceCoords": [
+                    2717,
+                    156
+                  ]
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    -80.5348739,
+                    41.9795642
+                  ]
+                }
+              },
+              {
+                "type": "Feature",
+                "properties": {
+                  "resourceCoords": [
+                    187,
+                    372
+                  ]
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    -84.8000245,
+                    41.6889821
+                  ]
+                }
+              },
+              {
+                "type": "Feature",
+                "properties": {
+                  "resourceCoords": [
+                    2736,
+                    1193
+                  ]
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    -80.5361066,
+                    40.6372563
+                  ]
+                }
+              }
+            ],
+            "_allmaps": {
+              "id": "https://annotations.allmaps.org/maps/ce267edce2c7efcd",
+              "version": "https://annotations.allmaps.org/maps/ce267edce2c7efcd@f7761b4328b727f4",
+              "image": {
+                "id": "https://annotations.allmaps.org/images/ea4ab0120c7b8d27",
+                "version": "https://annotations.allmaps.org/images/ea4ab0120c7b8d27@ec6f77255fb0f99c",
+                "canvases": [
+                  {
+                    "id": "https://annotations.allmaps.org/canvases/88940d1eb7571acb",
+                    "manifests": [
+                      {
+                        "id": "https://annotations.allmaps.org/manifests/0a6b16061e689d04"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "scale": 0.007021,
+              "area": 165230310899.32
+            }
+          }
+        }
+      ]
+    }
+  solr_version: 1794894200836194304
+  created_at: '2024-03-29 20:42:49.513472'
+  updated_at: '2024-03-29 20:42:52.742401'
+blacklight_allmaps_sidecars_003:
+  id: 3
+  solr_document_id: p16022coll230:1933
+  document_type: SolrDocument
+  manifest_id: https://cdm16022.contentdm.oclc.org/iiif/p16022coll230:1933/manifest.json
+  annotated: 1
+  allmaps_id: 669e0c0d5536d81b
+  iiif_manifest: '{"@context":"http://iiif.io/api/presentation/2/context.json","@type":"sc:Manifest","@id":"https://cdm16022.contentdm.oclc.org/iiif/p16022coll230:1933/manifest.json","label":"Lake
+    Superior and the northern part of Michigan","metadata":[{"label":"Additional Notes","value":"Relief
+    shown by hachures.; Prime meridians: Greenwich and Washington.; \"Entered according
+    to act of Congress in the year 1855 by J.H. Colton & Co. ...\"; From Colton''s
+    atlas of the world. New York: J.H. Colton & Co., 1855?. No. 43."},{"label":"Barcode
+    Identifier","value":"UMN_BARCODE:B4628043"},{"label":"Contact Information","value":"University
+    of Minnesota Libraries, John R. Borchert Map Library. S-76 Wilson Library, 309
+    19th Ave S, Minneapolis, MN 55455; https://www.lib.umn.edu/borchert"},{"label":"Continent","value":"North
+    America"},{"label":"Contributing Organization","value":"University of Minnesota
+    Libraries, John R. Borchert Map Library."},{"label":"Coordinates","value":"W0921500
+    W0832500 N0491000 N0450000; (W 92°15ʹ--W 83°25ʹ/N 49°10ʹ--N 45°00ʹ)"},{"label":"Country","value":"United
+    States"},{"label":"Creator","value":"J.H. Colton & Co"},{"label":"Date of Creation","value":"1855"},{"label":"Dimensions","value":"29
+    x 42 centimeters"},{"label":"DLS Identifier","value":"map11876"},{"label":"Item
+    Physical Format","value":"Maps | http://vocab.getty.edu/aat/300028094"},{"label":"Local
+    Identifier","value":"G4112.N6 1855 .C7"},{"label":"Language","value":"English"},{"label":"Local
+    Rights Statement","value":"Use of this item may be governed by US and international
+    copyright laws. You may be able to use this item, but copyright and other considerations
+    may apply. For possible additional information or guidance on your use, please
+    contact the contributing organization."},{"label":"Publisher","value":"J.H. Colton
+    & Co (New York)"},{"label":"Scale","value":"Scale approximately 1:1,625,000"},{"label":"State
+    or Province","value":"Michigan"},{"label":"System Identifier","value":"UMN_ALMA:9920722310001701"},{"label":"Title","value":"Lake
+    Superior and the northern part of Michigan"},{"label":"Item Type","value":"Cartographic"},{"label":"UMedia
+    Archive","value":"yes"},{"label":"Repository","value":"Minnesota Digital Library"},{"label":"Source","value":"<span>From:
+    <a href=\"https://cdm16022.contentdm.oclc.org/digital/collection/p16022coll230/id/1933\">Lake
+    Superior and the northern part of Michigan</a></span>"}],"attribution":["","Use
+    of this item may be governed by US and international copyright laws. You may be
+    able to use this item, but copyright and other considerations may apply. For possible
+    additional information or guidance on your use, please contact the contributing
+    organization."],"seeAlso":{"@id":"https://cdm16022.contentdm.oclc.org/oai/oai.php?verb=GetRecord&identifier=oai:cdm16022.contentdm.oclc.org:p16022coll230/1933&metadataPrefix=oai_qdc","format":"application/xml","profile":"http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd"},"within":"https://cdm16022.contentdm.oclc.org/iiif/p16022coll230/manifest.json","sequences":[{"@id":"https://cdm16022.contentdm.oclc.org/iiif/p16022coll230:1933/sequence/s0","@type":"sc:Sequence","label":"Lake
+    Superior and the northern part of Michigan","canvases":[{"@id":"https://cdm16022.contentdm.oclc.org/iiif/p16022coll230:1933/canvas/c0","@type":"sc:Canvas","label":"Lake
+    Superior and the northern part of Michigan","images":[{"@id":"https://cdm16022.contentdm.oclc.org/iiif/p16022coll230:1933/annotation/a0","@type":"oa:Annotation","motivation":"sc:painting","resource":{"@id":"https://cdm16022.contentdm.oclc.org/iiif/2/p16022coll230:1933/full/full/0/default.jpg","@type":"dctypes:Image","service":{"@context":"http://iiif.io/api/image/2/context.json","@id":"https://cdm16022.contentdm.oclc.org/iiif/2/p16022coll230:1933","width":5848,"height":4908,"tiles":[{"width":5848,"scaleFactors":[1,2,4,8,16]}],"profile":"http://iiif.io/api/image/2/level1.json","protocol":"http://iiif.io/api/image"},"format":"image/jpeg","width":5848,"height":4908},"on":"https://cdm16022.contentdm.oclc.org/iiif/p16022coll230:1933/canvas/c0"}],"width":5848,"height":4908}]}],"structures":[{"@id":"https://cdm16022.contentdm.oclc.org/iiif/p16022coll230:1933/range/r0","@type":"sc:Range","label":"Lake
+    Superior and the northern part of Michigan","ranges":[],"canvases":["https://cdm16022.contentdm.oclc.org/iiif/p16022coll230:1933/canvas/c0"]}]}'
+  allmaps_annotation: |-
+    {
+      "type": "AnnotationPage",
+      "@context": "http://www.w3.org/ns/anno.jsonld",
+      "items": [
+        {
+          "id": "https://annotations.allmaps.org/maps/c84bb0f895650a9c",
+          "type": "Annotation",
+          "@context": [
+            "http://iiif.io/api/extension/georef/1/context.json",
+            "http://iiif.io/api/presentation/3/context.json"
+          ],
+          "created": "2023-11-28T16:46:24.460Z",
+          "modified": "2023-11-30T19:06:05.042Z",
+          "motivation": "georeferencing",
+          "target": {
+            "type": "SpecificResource",
+            "source": {
+              "id": "https://cdm16022.contentdm.oclc.org/iiif/2/p16022coll230:1933",
+              "type": "ImageService2",
+              "height": 4908,
+              "width": 5848,
+              "partOf": [
+                {
+                  "id": "https://cdm16022.contentdm.oclc.org/iiif/p16022coll230:1933/canvas/c0",
+                  "type": "Canvas",
+                  "label": {
+                    "none": [
+                      "Lake Superior and the northern part of Michigan"
+                    ]
+                  },
+                  "partOf": [
+                    {
+                      "id": "https://cdm16022.contentdm.oclc.org/iiif/p16022coll230:1933/manifest.json",
+                      "type": "Manifest",
+                      "label": {
+                        "none": [
+                          "Lake Superior and the northern part of Michigan"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "selector": {
+              "type": "SvgSelector",
+              "value": "<svg width=\"5848\" height=\"4908\"><polygon points=\"0,0 0,4908 5848,4908 5848,0\" /></svg>"
+            }
+          },
+          "body": {
+            "type": "FeatureCollection",
+            "features": [
+              {
+                "type": "Feature",
+                "properties": {
+                  "resourceCoords": [
+                    3539,
+                    2941
+                  ]
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    -86.6425949,
+                    46.4578114
+                  ]
+                }
+              },
+              {
+                "type": "Feature",
+                "properties": {
+                  "resourceCoords": [
+                    4622,
+                    2301
+                  ]
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    -84.6465543,
+                    47.2395289
+                  ]
+                }
+              },
+              {
+                "type": "Feature",
+                "properties": {
+                  "resourceCoords": [
+                    1085,
+                    2137
+                  ]
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    -91.1975587,
+                    47.336153
+                  ]
+                }
+              },
+              {
+                "type": "Feature",
+                "properties": {
+                  "resourceCoords": [
+                    2107,
+                    1758
+                  ]
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    -89.1576061,
+                    47.9170972
+                  ]
+                }
+              },
+              {
+                "type": "Feature",
+                "properties": {
+                  "resourceCoords": [
+                    796,
+                    2421
+                  ]
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    -91.4569836,
+                    47.1427414
+                  ]
+                }
+              }
+            ],
+            "_allmaps": {
+              "id": "https://annotations.allmaps.org/maps/c84bb0f895650a9c",
+              "version": "https://annotations.allmaps.org/maps/c84bb0f895650a9c@ab4b911d70d9a032",
+              "image": {
+                "id": "https://annotations.allmaps.org/images/517e7f768e4b08f7",
+                "version": "https://annotations.allmaps.org/images/517e7f768e4b08f7@6c94218cebc28edb",
+                "canvases": [
+                  {
+                    "id": "https://annotations.allmaps.org/canvases/acebabfe442178c4",
+                    "manifests": [
+                      {
+                        "id": "https://annotations.allmaps.org/manifests/669e0c0d5536d81b"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "scale": 0.007382,
+              "area": 526651853313.59
+            }
+          }
+        }
+      ]
+    }
+  solr_version: 1794894200838291456
+  created_at: '2024-03-29 20:42:52.770013'
+  updated_at: '2024-03-29 20:42:55.066567'
+blacklight_allmaps_sidecars_004:
+  id: 4
+  solr_document_id: p16022coll230:360
+  document_type: SolrDocument
+  manifest_id: https://cdm16022.contentdm.oclc.org/iiif/p16022coll230:360/manifest.json
+  annotated: 1
+  allmaps_id: 2608330288df8f58
+  iiif_manifest: '{"@context":"http://iiif.io/api/presentation/2/context.json","@type":"sc:Manifest","@id":"https://cdm16022.contentdm.oclc.org/iiif/p16022coll230:360/manifest.json","label":"Tourist
+    map of Norway","metadata":[{"label":"Barcode Identifier","value":"UMN_BARCODE:B2861134"},{"label":"Contact
+    Information","value":"University of Minnesota Libraries, John R. Borchert Map
+    Library. S-76 Wilson Library, 309 19th Ave S, Minneapolis, MN 55455; https://www.lib.umn.edu/borchert"},{"label":"Continent","value":"Europe"},{"label":"Contributing
+    Organization","value":"University of Minnesota Libraries, John R. Borchert Map
+    Library."},{"label":"Coordinates","value":"E0320000 N0720000 N0580000; (E 4°--E
+    32°/N 72°--N 58°)"},{"label":"Country","value":"Norway"},{"label":"Creator","value":"Landslaget
+    for reiselivet i Norge."},{"label":"Date of Creation","value":"1920"},{"label":"Description","value":"Cartographic
+    Details: Scale approximately 1:1,612,903. (E 4°--E 32°/N 72°--N 58°). Panel title.
+    Relief shown by hachures and spot heights. Location map of Scandanavia inset on
+    recto. Photos credited to Wilse and text on verso. Text in English; map legend
+    in Norwegian, English, French, and German."},{"label":"Dimensions","value":"1
+    map in 2 parts on 1 sheet : color ; 101 x 47 centimeters, folded to 18 x 13 centimeters"},{"label":"DLS
+    Identifier","value":"B2861134"},{"label":"Item Physical Format","value":"Maps
+    | http://vocab.getty.edu/aat/300028094"},{"label":"Local Identifier","value":"G6941.E635
+    1920 .L3 "},{"label":"Language","value":"English; Norwegian; French; German"},{"label":"Local
+    Rights Statement","value":"Use of this item may be governed by US and international
+    copyright laws. You may be able to use this item, but copyright and other considerations
+    may apply. For possible additional information or guidance on your use, please
+    contact the contributing organization."},{"label":"Publisher","value":"Emil Moestue
+    (Norway)"},{"label":"Scale","value":"Scale approximately 1:1,612,903"},{"label":"Locally
+    Assigned Subject Headings","value":"Roads -- Norway -- Maps; Railroads -- Norway
+    -- Maps; Norway -- Maps; Tourist maps; Maps"},{"label":"System Identifier","value":"UMN_ALMA:9921525920001701"},{"label":"Title","value":"Tourist
+    map of Norway"},{"label":"Item Type","value":"Cartographic"},{"label":"UMedia
+    Archive","value":"yes"},{"label":"Repository","value":"Minnesota Digital Library"},{"label":"Source","value":"<span>From:
+    <a href=\"https://cdm16022.contentdm.oclc.org/digital/collection/p16022coll230/id/360\">Tourist
+    map of Norway</a></span>"}],"attribution":["","Use of this item may be governed
+    by US and international copyright laws. You may be able to use this item, but
+    copyright and other considerations may apply. For possible additional information
+    or guidance on your use, please contact the contributing organization."],"seeAlso":{"@id":"https://cdm16022.contentdm.oclc.org/oai/oai.php?verb=GetRecord&identifier=oai:cdm16022.contentdm.oclc.org:p16022coll230/360&metadataPrefix=oai_qdc","format":"application/xml","profile":"http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd"},"within":"https://cdm16022.contentdm.oclc.org/iiif/p16022coll230/manifest.json","sequences":[{"@id":"https://cdm16022.contentdm.oclc.org/iiif/p16022coll230:360/sequence/s0","@type":"sc:Sequence","label":"Tourist
+    map of Norway","canvases":[{"@id":"https://cdm16022.contentdm.oclc.org/iiif/p16022coll230:358/canvas/c0","@type":"sc:Canvas","label":"Map","images":[{"@id":"https://cdm16022.contentdm.oclc.org/iiif/p16022coll230:358/annotation/a0","@type":"oa:Annotation","motivation":"sc:painting","resource":{"@id":"https://cdm16022.contentdm.oclc.org/iiif/2/p16022coll230:358/full/full/0/default.jpg","@type":"dctypes:Image","service":{"@context":"http://iiif.io/api/image/2/context.json","@id":"https://cdm16022.contentdm.oclc.org/iiif/2/p16022coll230:358","width":6154,"height":8962,"tiles":[{"width":6154,"scaleFactors":[1,2,4,8,16]}],"profile":"http://iiif.io/api/image/2/level1.json","protocol":"http://iiif.io/api/image"},"format":"image/jpeg","width":6154,"height":8962},"on":"https://cdm16022.contentdm.oclc.org/iiif/p16022coll230:358/canvas/c0"}],"width":6154,"height":8962},{"@id":"https://cdm16022.contentdm.oclc.org/iiif/p16022coll230:359/canvas/c1","@type":"sc:Canvas","label":"Text","images":[{"@id":"https://cdm16022.contentdm.oclc.org/iiif/p16022coll230:359/annotation/a1","@type":"oa:Annotation","motivation":"sc:painting","resource":{"@id":"https://cdm16022.contentdm.oclc.org/iiif/2/p16022coll230:359/full/full/0/default.jpg","@type":"dctypes:Image","service":{"@context":"http://iiif.io/api/image/2/context.json","@id":"https://cdm16022.contentdm.oclc.org/iiif/2/p16022coll230:359","width":6112,"height":8909,"tiles":[{"width":6112,"scaleFactors":[1,2,4,8,16]}],"profile":"http://iiif.io/api/image/2/level1.json","protocol":"http://iiif.io/api/image"},"format":"image/jpeg","width":6112,"height":8909},"on":"https://cdm16022.contentdm.oclc.org/iiif/p16022coll230:359/canvas/c1"}],"width":6112,"height":8909}]}],"structures":[{"@id":"https://cdm16022.contentdm.oclc.org/iiif/p16022coll230:360/range/r0","@type":"sc:Range","label":"Tourist
+    map of Norway","ranges":[],"canvases":["https://cdm16022.contentdm.oclc.org/iiif/p16022coll230:358/canvas/c0","https://cdm16022.contentdm.oclc.org/iiif/p16022coll230:359/canvas/c1"],"viewingHint":"top"}]}'
+  allmaps_annotation: |-
+    {
+      "type": "AnnotationPage",
+      "@context": "http://www.w3.org/ns/anno.jsonld",
+      "items": [
+        {
+          "id": "https://annotations.allmaps.org/maps/a928211d1e0913b5",
+          "type": "Annotation",
+          "@context": [
+            "http://iiif.io/api/extension/georef/1/context.json",
+            "http://iiif.io/api/presentation/3/context.json"
+          ],
+          "created": "2023-12-07T15:55:01.115Z",
+          "modified": "2023-12-07T16:07:01.089Z",
+          "motivation": "georeferencing",
+          "target": {
+            "type": "SpecificResource",
+            "source": {
+              "id": "https://cdm16022.contentdm.oclc.org/iiif/2/p16022coll230:358",
+              "type": "ImageService2",
+              "height": 8962,
+              "width": 6154,
+              "partOf": [
+                {
+                  "id": "https://cdm16022.contentdm.oclc.org/iiif/p16022coll230:358/canvas/c0",
+                  "type": "Canvas",
+                  "label": {
+                    "none": [
+                      "Map"
+                    ]
+                  },
+                  "partOf": [
+                    {
+                      "id": "https://cdm16022.contentdm.oclc.org/iiif/p16022coll230:360/manifest.json",
+                      "type": "Manifest",
+                      "label": {
+                        "none": [
+                          "Tourist map of Norway"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "selector": {
+              "type": "SvgSelector",
+              "value": "<svg width=\"6154\" height=\"8962\"><polygon points=\"5906,2312 4824,2312 1808,5099 1820,8719 5929,8727\" /></svg>"
+            }
+          },
+          "body": {
+            "type": "FeatureCollection",
+            "features": [
+              {
+                "type": "Feature",
+                "properties": {
+                  "resourceCoords": [
+                    3633,
+                    3974
+                  ]
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    8.0413389,
+                    63.3393961
+                  ]
+                }
+              },
+              {
+                "type": "Feature",
+                "properties": {
+                  "resourceCoords": [
+                    5464,
+                    3336
+                  ]
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    12.8943884,
+                    64.0469502
+                  ]
+                }
+              },
+              {
+                "type": "Feature",
+                "properties": {
+                  "resourceCoords": [
+                    4992,
+                    2430
+                  ]
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    11.786806,
+                    65.1214229
+                  ]
+                }
+              },
+              {
+                "type": "Feature",
+                "properties": {
+                  "resourceCoords": [
+                    5896,
+                    3260
+                  ]
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    14.0501768,
+                    64.0907151
+                  ]
+                }
+              },
+              {
+                "type": "Feature",
+                "properties": {
+                  "resourceCoords": [
+                    4725,
+                    6929
+                  ]
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    10.6553461,
+                    59.8678174
+                  ]
+                }
+              },
+              {
+                "type": "Feature",
+                "properties": {
+                  "resourceCoords": [
+                    2568,
+                    6663
+                  ]
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    5.5970769,
+                    60.1425186
+                  ]
+                }
+              },
+              {
+                "type": "Feature",
+                "properties": {
+                  "resourceCoords": [
+                    2529,
+                    7729
+                  ]
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    5.6349017,
+                    58.8974039
+                  ]
+                }
+              },
+              {
+                "type": "Feature",
+                "properties": {
+                  "resourceCoords": [
+                    5237,
+                    5840
+                  ]
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    11.9842085,
+                    61.1077933
+                  ]
+                }
+              },
+              {
+                "type": "Feature",
+                "properties": {
+                  "resourceCoords": [
+                    3287,
+                    5838
+                  ]
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    7.2422784,
+                    61.1462158
+                  ]
+                }
+              },
+              {
+                "type": "Feature",
+                "properties": {
+                  "resourceCoords": [
+                    4659,
+                    2635
+                  ]
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    10.8328635,
+                    64.9715731
+                  ]
+                }
+              },
+              {
+                "type": "Feature",
+                "properties": {
+                  "resourceCoords": [
+                    3570,
+                    8399
+                  ]
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    7.9862861,
+                    58.1470634
+                  ]
+                }
+              },
+              {
+                "type": "Feature",
+                "properties": {
+                  "resourceCoords": [
+                    4558,
+                    3873
+                  ]
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    10.4511781,
+                    63.4603346
+                  ]
+                }
+              },
+              {
+                "type": "Feature",
+                "properties": {
+                  "resourceCoords": [
+                    4710,
+                    5868
+                  ]
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    10.6898319,
+                    61.0959564
+                  ]
+                }
+              }
+            ],
+            "_allmaps": {
+              "id": "https://annotations.allmaps.org/maps/a928211d1e0913b5",
+              "version": "https://annotations.allmaps.org/maps/a928211d1e0913b5@da1f5643a6cf6b14",
+              "image": {
+                "id": "https://annotations.allmaps.org/images/6d1e94910e168c77",
+                "version": "https://annotations.allmaps.org/images/6d1e94910e168c77@e76c4f5090036a43",
+                "canvases": [
+                  {
+                    "id": "https://annotations.allmaps.org/canvases/915214c4b22cb013",
+                    "manifests": [
+                      {
+                        "id": "https://annotations.allmaps.org/manifests/2608330288df8f58"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "scale": 0.007605,
+              "area": 382516586835.11
+            }
+          }
+        }
+      ]
+    }
+  solr_version: 1794894200841437184
+  created_at: '2024-03-29 20:42:55.094499'
+  updated_at: '2024-03-29 20:42:57.011804'
+blacklight_allmaps_sidecars_005:
+  id: 5
+  solr_document_id: p16022coll230:4038
+  document_type: SolrDocument
+  manifest_id: https://cdm16022.contentdm.oclc.org/iiif/p16022coll230:4038/manifest.json
+  annotated: 1
+  allmaps_id: 945e08a1a7c98ca3
+  iiif_manifest: '{"@context":"http://iiif.io/api/presentation/2/context.json","@type":"sc:Manifest","@id":"https://cdm16022.contentdm.oclc.org/iiif/p16022coll230:4038/manifest.json","label":"1929
+    Illinois : motor trails are calling","metadata":[{"label":"Additional Notes","value":"Panel
+    title.; Plate no. C-131 J.C.; Maps on verso (29 x 44 cm. and 21 x 19 cm.): Standard
+    Oil Company (Indiana) territorial road map [of the midwest United States] -- Chicago
+    and vicinity.; Panel art: Standard Oil Company logo."},{"label":"Alternative Title","value":"Standard
+    Oil Company (Indiana) 1929 official road map : Illinois"},{"label":"Barcode Identifier","value":"UMN_BARCODE:31951D03686964T"},{"label":"Contact
+    Information","value":"University of Minnesota Libraries, John R. Borchert Map
+    Library. S-76 Wilson Library, 309 19th Ave S, Minneapolis, MN 55455; https://www.lib.umn.edu/borchert"},{"label":"Continent","value":"North
+    America"},{"label":"Contributing Organization","value":"University of Minnesota
+    Libraries, John R. Borchert Map Library."},{"label":"Contributor","value":"H.M.
+    Gousha Company; Standard Oil Company; Rand McNally Collection (Newberry Library)"},{"label":"Coordinates","value":"W0913000
+    W0870100 N0423000 N0365800; (W 91°30''00\"--W 87°01''00\"/N 42°30''00\"--N 36°58''00\")."},{"label":"Country","value":"United
+    States"},{"label":"Creator","value":"Standard Oil Company (Ind.)"},{"label":"Date
+    of Creation","value":"1929"},{"label":"Dimensions","value":"58 x 38 Centimeters"},{"label":"DLS
+    Identifier","value":"map15953a; map15953b"},{"label":"Item Physical Format","value":"Maps
+    | http://vocab.getty.edu/aat/300028094"},{"label":"Local Identifier","value":"G4101.P2
+    1929 .S7"},{"label":"Language","value":"English"},{"label":"Local Rights Statement","value":"Use
+    of this item may be governed by US and international copyright laws. You may be
+    able to use this item, but copyright and other considerations may apply. For possible
+    additional information or guidance on your use, please contact the contributing
+    organization."},{"label":"Publisher","value":"H.M. Gousha Company (Chicago)"},{"label":"Scale","value":"Scale
+    not given"},{"label":"State or Province","value":"Illinois"},{"label":"System
+    Identifier","value":"UMN_ALMA:9976369504001701"},{"label":"Title","value":"1929
+    Illinois : motor trails are calling"},{"label":"Item Type","value":"Cartographic"},{"label":"UMedia
+    Archive","value":"yes"},{"label":"Repository","value":"Minnesota Digital Library"},{"label":"Source","value":"<span>From:
+    <a href=\"https://cdm16022.contentdm.oclc.org/digital/collection/p16022coll230/id/4038\">1929
+    Illinois : motor trails are calling</a></span>"}],"attribution":["","Use of this
+    item may be governed by US and international copyright laws. You may be able to
+    use this item, but copyright and other considerations may apply. For possible
+    additional information or guidance on your use, please contact the contributing
+    organization."],"seeAlso":{"@id":"https://cdm16022.contentdm.oclc.org/oai/oai.php?verb=GetRecord&identifier=oai:cdm16022.contentdm.oclc.org:p16022coll230/4038&metadataPrefix=oai_qdc","format":"application/xml","profile":"http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd"},"within":"https://cdm16022.contentdm.oclc.org/iiif/p16022coll230/manifest.json","sequences":[{"@id":"https://cdm16022.contentdm.oclc.org/iiif/p16022coll230:4038/sequence/s0","@type":"sc:Sequence","label":"1929
+    Illinois : motor trails are calling","canvases":[{"@id":"https://cdm16022.contentdm.oclc.org/iiif/p16022coll230:4036/canvas/c0","@type":"sc:Canvas","label":"Front","images":[{"@id":"https://cdm16022.contentdm.oclc.org/iiif/p16022coll230:4036/annotation/a0","@type":"oa:Annotation","motivation":"sc:painting","resource":{"@id":"https://cdm16022.contentdm.oclc.org/iiif/2/p16022coll230:4036/full/full/0/default.jpg","@type":"dctypes:Image","service":{"@context":"http://iiif.io/api/image/2/context.json","@id":"https://cdm16022.contentdm.oclc.org/iiif/2/p16022coll230:4036","width":4679,"height":6166,"tiles":[{"width":4679,"scaleFactors":[1,2,4,8,16]}],"profile":"http://iiif.io/api/image/2/level1.json","protocol":"http://iiif.io/api/image"},"format":"image/jpeg","width":4679,"height":6166},"on":"https://cdm16022.contentdm.oclc.org/iiif/p16022coll230:4036/canvas/c0"}],"width":4679,"height":6166},{"@id":"https://cdm16022.contentdm.oclc.org/iiif/p16022coll230:4037/canvas/c1","@type":"sc:Canvas","label":"Back","images":[{"@id":"https://cdm16022.contentdm.oclc.org/iiif/p16022coll230:4037/annotation/a1","@type":"oa:Annotation","motivation":"sc:painting","resource":{"@id":"https://cdm16022.contentdm.oclc.org/iiif/2/p16022coll230:4037/full/full/0/default.jpg","@type":"dctypes:Image","service":{"@context":"http://iiif.io/api/image/2/context.json","@id":"https://cdm16022.contentdm.oclc.org/iiif/2/p16022coll230:4037","width":6153,"height":4718,"tiles":[{"width":6153,"scaleFactors":[1,2,4,8,16]}],"profile":"http://iiif.io/api/image/2/level1.json","protocol":"http://iiif.io/api/image"},"format":"image/jpeg","width":6153,"height":4718},"on":"https://cdm16022.contentdm.oclc.org/iiif/p16022coll230:4037/canvas/c1"}],"width":6153,"height":4718}]}],"structures":[{"@id":"https://cdm16022.contentdm.oclc.org/iiif/p16022coll230:4038/range/r0","@type":"sc:Range","label":"1929
+    Illinois : motor trails are calling","ranges":[],"canvases":["https://cdm16022.contentdm.oclc.org/iiif/p16022coll230:4036/canvas/c0","https://cdm16022.contentdm.oclc.org/iiif/p16022coll230:4037/canvas/c1"],"viewingHint":"top"}]}'
+  allmaps_annotation: |-
+    {
+      "type": "AnnotationPage",
+      "@context": "http://www.w3.org/ns/anno.jsonld",
+      "items": [
+        {
+          "id": "https://annotations.allmaps.org/maps/8c45ed7acc513566",
+          "type": "Annotation",
+          "@context": [
+            "http://iiif.io/api/extension/georef/1/context.json",
+            "http://iiif.io/api/presentation/3/context.json"
+          ],
+          "created": "2023-01-19T20:56:55.306Z",
+          "modified": "2023-01-19T20:59:00.536Z",
+          "motivation": "georeferencing",
+          "target": {
+            "type": "SpecificResource",
+            "source": {
+              "id": "https://cdm16022.contentdm.oclc.org/iiif/2/p16022coll230:4036",
+              "type": "ImageService2",
+              "height": 6166,
+              "width": 4679,
+              "partOf": [
+                {
+                  "id": "https://cdm16022.contentdm.oclc.org/iiif/p16022coll230:4036/canvas/c0",
+                  "type": "Canvas",
+                  "label": {
+                    "none": [
+                      "Front"
+                    ]
+                  },
+                  "partOf": [
+                    {
+                      "id": "https://cdm16022.contentdm.oclc.org/iiif/p16022coll230:4038/manifest.json",
+                      "type": "Manifest",
+                      "label": {
+                        "none": [
+                          "1929 Illinois : motor trails are calling"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "selector": {
+              "type": "SvgSelector",
+              "value": "<svg width=\"4679\" height=\"6166\"><polygon points=\"0,0 0,6166 4679,6166 4679,0\" /></svg>"
+            }
+          },
+          "body": {
+            "type": "FeatureCollection",
+            "features": [
+              {
+                "type": "Feature",
+                "properties": {
+                  "resourceCoords": [
+                    3518,
+                    5413
+                  ]
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    -88.0486029,
+                    37.4773693
+                  ]
+                }
+              },
+              {
+                "type": "Feature",
+                "properties": {
+                  "resourceCoords": [
+                    1358,
+                    4006
+                  ]
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    -90.5996106,
+                    38.8770024
+                  ]
+                }
+              },
+              {
+                "type": "Feature",
+                "properties": {
+                  "resourceCoords": [
+                    3957,
+                    1156
+                  ]
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    -87.5041055,
+                    41.6980718
+                  ]
+                }
+              },
+              {
+                "type": "Feature",
+                "properties": {
+                  "resourceCoords": [
+                    2541,
+                    5924
+                  ]
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    -89.1785794,
+                    37.0139854
+                  ]
+                }
+              },
+              {
+                "type": "Feature",
+                "properties": {
+                  "resourceCoords": [
+                    3626,
+                    350
+                  ]
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    -87.8382964,
+                    42.4759132
+                  ]
+                }
+              },
+              {
+                "type": "Feature",
+                "properties": {
+                  "resourceCoords": [
+                    1591,
+                    4669
+                  ]
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    -90.3770394,
+                    38.2074579
+                  ]
+                }
+              },
+              {
+                "type": "Feature",
+                "properties": {
+                  "resourceCoords": [
+                    740,
+                    2411
+                  ]
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    -91.4080627,
+                    40.4383564
+                  ]
+                }
+              },
+              {
+                "type": "Feature",
+                "properties": {
+                  "resourceCoords": [
+                    3948,
+                    4185
+                  ]
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    -87.4836146,
+                    38.7302376
+                  ]
+                }
+              },
+              {
+                "type": "Feature",
+                "properties": {
+                  "resourceCoords": [
+                    1367,
+                    332
+                  ]
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    -90.678919,
+                    42.4647083
+                  ]
+                }
+              },
+              {
+                "type": "Feature",
+                "properties": {
+                  "resourceCoords": [
+                    3133,
+                    5843
+                  ]
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    -88.4252617,
+                    37.068649
+                  ]
+                }
+              },
+              {
+                "type": "Feature",
+                "properties": {
+                  "resourceCoords": [
+                    1000,
+                    1443
+                  ]
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    -91.0131099,
+                    41.4366736
+                  ]
+                }
+              }
+            ],
+            "_allmaps": {
+              "id": "https://annotations.allmaps.org/maps/8c45ed7acc513566",
+              "version": "https://annotations.allmaps.org/maps/8c45ed7acc513566@5eaad969be2e5858",
+              "image": {
+                "id": "https://annotations.allmaps.org/images/1013ecbf5c582ae9",
+                "version": "https://annotations.allmaps.org/images/1013ecbf5c582ae9@db96197f192d8f7f",
+                "canvases": [
+                  {
+                    "id": "https://annotations.allmaps.org/canvases/aea1b496cc37c7ac",
+                    "manifests": [
+                      {
+                        "id": "https://annotations.allmaps.org/manifests/945e08a1a7c98ca3"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "scale": 0.009381,
+              "area": 327853754397.98
+            }
+          }
+        }
+      ]
+    }
+  solr_version: 1794894200848777216
+  created_at: '2024-03-29 20:42:57.045393'
+  updated_at: '2024-03-29 20:42:58.464357'
+blacklight_allmaps_sidecars_006:
+  id: 6
+  solr_document_id: p16022coll245:868
+  document_type: SolrDocument
+  manifest_id: https://cdm16022.contentdm.oclc.org/iiif/p16022coll245:868/manifest.json
+  annotated: 0
+  allmaps_id: 34504b9e5a0307bf
+  iiif_manifest: '{"@context":"http://iiif.io/api/presentation/2/context.json","@type":"sc:Manifest","@id":"https://cdm16022.contentdm.oclc.org/iiif/p16022coll245:868/manifest.json","label":"Map
+    of the city of Minneapolis, Minn.","metadata":[{"label":"Additional Notes","value":"Includes
+    street index. Shows ward boundaries."},{"label":"Barcode Identifier","value":"UMN_BARCODE:CVB1902349-10"},{"label":"City
+    or Township","value":"Minneapolis"},{"label":"Contact Information","value":"University
+    of Minnesota Libraries, John R. Borchert Map Library. S-76 Wilson Library, 309
+    19th Ave S, Minneapolis, MN 55455; https://www.lib.umn.edu/borchert"},{"label":"Continent","value":"North
+    America"},{"label":"Contributing Organization","value":"University of Minnesota
+    Libraries, John R. Borchert Map Library."},{"label":"Contributor","value":"Benneche,
+    H. W."},{"label":"Country","value":"United States"},{"label":"Creator","value":"Minneapolis
+    Directory Company"},{"label":"Date of Creation","value":"1920"},{"label":"Dimensions","value":"60
+    x 45 centimeters"},{"label":"DLS Identifier","value":"map01424"},{"label":"Item
+    Physical Format","value":"Maps | http://vocab.getty.edu/aat/300028094"},{"label":"Local
+    Identifier","value":"G4144.M5 1920 .M53x"},{"label":"Language","value":"English"},{"label":"Local
+    Rights Statement","value":"Use of this item may be governed by US and international
+    copyright laws. You may be able to use this item, but copyright and other considerations
+    may apply. For possible additional information or guidance on your use, please
+    contact the contributing organization."},{"label":"Persistent URL (PURL)","value":"http://purl.umn.edu/187161"},{"label":"Publisher","value":"Minneapolis
+    Directory Co.  (Minneapolis, Minn.)"},{"label":"State or Province","value":"Minnesota"},{"label":"Locally
+    Assigned Subject Headings","value":"Election districts -- Minnesota -- Minneapolis
+    -- Maps; Minneapolis (Minn.) -- Maps; Maps"},{"label":"System Identifier","value":"UMN_ALMA:993881089000170"},{"label":"Title","value":"Map
+    of the city of Minneapolis, Minn."},{"label":"Item Type","value":"Cartographic"},{"label":"UMedia
+    Archive","value":"Yes"},{"label":"Repository","value":"Minnesota Digital Library"},{"label":"Source","value":"<span>From:
+    <a href=\"https://cdm16022.contentdm.oclc.org/digital/collection/p16022coll245/id/868\">Map
+    of the city of Minneapolis, Minn.</a></span>"}],"attribution":["","Use of this
+    item may be governed by US and international copyright laws. You may be able to
+    use this item, but copyright and other considerations may apply. For possible
+    additional information or guidance on your use, please contact the contributing
+    organization."],"seeAlso":{"@id":"https://cdm16022.contentdm.oclc.org/oai/oai.php?verb=GetRecord&identifier=oai:cdm16022.contentdm.oclc.org:p16022coll245/868&metadataPrefix=oai_qdc","format":"application/xml","profile":"http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd"},"within":"https://cdm16022.contentdm.oclc.org/iiif/p16022coll245/manifest.json","sequences":[{"@id":"https://cdm16022.contentdm.oclc.org/iiif/p16022coll245:868/sequence/s0","@type":"sc:Sequence","label":"Map
+    of the city of Minneapolis, Minn.","canvases":[{"@id":"https://cdm16022.contentdm.oclc.org/iiif/p16022coll245:868/canvas/c0","@type":"sc:Canvas","label":"Map
+    of the city of Minneapolis, Minn.","images":[{"@id":"https://cdm16022.contentdm.oclc.org/iiif/p16022coll245:868/annotation/a0","@type":"oa:Annotation","motivation":"sc:painting","resource":{"@id":"https://cdm16022.contentdm.oclc.org/iiif/2/p16022coll245:868/full/full/0/default.jpg","@type":"dctypes:Image","service":{"@context":"http://iiif.io/api/image/2/context.json","@id":"https://cdm16022.contentdm.oclc.org/iiif/2/p16022coll245:868","width":6269,"height":8474,"tiles":[{"width":6269,"scaleFactors":[1,2,4,8,16]}],"profile":"http://iiif.io/api/image/2/level1.json","protocol":"http://iiif.io/api/image"},"format":"image/jpeg","width":6269,"height":8474},"on":"https://cdm16022.contentdm.oclc.org/iiif/p16022coll245:868/canvas/c0"}],"width":6269,"height":8474}]}],"structures":[{"@id":"https://cdm16022.contentdm.oclc.org/iiif/p16022coll245:868/range/r0","@type":"sc:Range","label":"Map
+    of the city of Minneapolis, Minn.","ranges":[],"canvases":["https://cdm16022.contentdm.oclc.org/iiif/p16022coll245:868/canvas/c0"]}]}'
+  allmaps_annotation:
+  solr_version: 1794894200833048576
+  created_at: '2024-03-29 20:42:58.495579'
+  updated_at: '2024-03-29 20:42:59.987555'

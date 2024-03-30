@@ -40,7 +40,8 @@ namespace :blacklight_allmaps do
       end
 
       # Harvest Allmaps data
-      system "rake blacklight_allmaps:sidecars:harvest:allmaps"
+      # rake db:fixtures:load (if necessary)
+      # system "rake blacklight_allmaps:sidecars:harvest:allmaps"
     end
   end
 
