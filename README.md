@@ -87,7 +87,7 @@ The Blacklight::Allmaps::Sidecar object contains:
 | solr_document_id | solr document primary key |
 | document_type | SolrDocument |
 | manifest_id | IIIF Manifest ID |
-| annotated | boolean (true|false) |
+| annotated | boolean (true\|false) |
 | allmaps_id | Allmaps ID |
 | iiif_manifest | Copy of the IIIF Manifest |
 | allmaps_annotation | Copy of the Allmaps IIIF Annotation |
@@ -96,6 +96,7 @@ The Blacklight::Allmaps::Sidecar object contains:
 | updated_at | timestamp |
 
 ```ruby
+document = SolrDocument.find('harvard-g4124-m2-1855-m3')
 document.sidecar_allmaps =>
 #<Blacklight::Allmaps::Sidecar:0x0000000141991a50
  id: 1,
@@ -116,8 +117,6 @@ document.sidecar_allmaps =>
 ## Contributing
 
 For Developer documentation see [doc/developer.md](./doc/development.md)
-
-Additional Contribution directions to come...
 
 ## License
 The gem is available as open source under the terms of the [Apache 2.0 License](https://opensource.org/license/apache-2-0).
