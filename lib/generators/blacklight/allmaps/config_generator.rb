@@ -48,7 +48,7 @@ module Blacklight
 
       def add_geoblacklight
         return unless ENV["LIGHT"] == "geoblacklight"
-        append_to_file "Gemfile", '"geoblacklight", "4.1"'
+        append_to_file "Gemfile", '"geoblacklight", "~> 4.4"'
       end
 
       def include_blacklight_allmaps_solrdocument
@@ -58,10 +58,23 @@ module Blacklight
         end
       end
 
+      def add_gbl_tabbed_viewer
+        return unless ENV["LIGHT"] == "geoblacklight"
+        # Use the tabbed viewer
+        inject_into_file "app/controllers/catalog_controller.rb", after: "config.show.partials << \"show_default_viewer_container\"" do
+          "\n
+    # Blacklight::Allmaps Tabbed Viewer
+    config.show.partials << \"show_allmaps_tabbed_viewer_container\""
+        end
+
+        # Remove the default viewer
+        gsub_file("app/controllers/catalog_controller.rb", "config.show.partials << \"show_default_viewer_container\"", "#config.show.partials << \"show_default_viewer_container\"")
+      end
+
       def add_bl_georeferenced_facet
         return unless ENV["LIGHT"] == "blacklight"
         inject_into_file "app/controllers/catalog_controller.rb", after: "config.add_facet_field 'subject_era_ssim', label: 'Era'" do
-          "\n    config.add_facet_field 'bl_georeferenced_bsi', label: 'Georeferenced'"
+          "\n    config.add_facet_field 'bl_georeferenced_bsi', label: 'Allmaps Georeferenced'"
         end
       end
     end

@@ -13,7 +13,7 @@ class TestAppGenerator < Rails::Generators::Base
     gem "blacklight", "~> 7.0"
 
     if ENV["LIGHT"] == "geoblacklight"
-      gem "geoblacklight", "4.1"
+      gem "geoblacklight", "~> 4.4"
     end
 
     Bundler.with_unbundled_env do
