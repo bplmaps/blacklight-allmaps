@@ -52,8 +52,16 @@ module Blacklight
         end
       end
 
-      def add_stylesheets
+      def add_bl_stylesheets
+        return unless ENV["LIGHT"] == "blacklight"
         append_to_file "app/assets/stylesheets/blacklight.scss" do
+          "@import 'blacklight/allmaps/base';"
+        end
+      end
+
+      def add_gbl_stylesheets
+        return unless ENV["LIGHT"] == "geoblacklight"
+        append_to_file "app/assets/stylesheets/application.scss" do
           "@import 'blacklight/allmaps/base';"
         end
       end
