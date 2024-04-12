@@ -7,8 +7,8 @@ Gem::Specification.new do |spec|
   spec.authors = ["Eric Larson"]
   spec.email = ["ewlarson@gmail.com"]
   spec.homepage = "https://github.com/bplmaps/blacklight-allmaps"
-  spec.summary = "Blacklight Allmaps plugin"
-  spec.description = "Description of BlacklightAllmaps"
+  spec.summary = "Blacklight::Allmaps plugin"
+  spec.description = "Description of Blacklight::Allmaps"
   spec.license = "Apache 2.0"
 
   spec.metadata["homepage_uri"] = spec.homepage
@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   end
 
   spec.add_dependency "blacklight", ">= 7.25.2", "< 9"
-  spec.add_dependency "httparty"
+  spec.add_dependency "httparty", "~> 0.20"
 
   spec.add_development_dependency "solr_wrapper"
   spec.add_development_dependency "rails-controller-testing"

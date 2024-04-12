@@ -20,6 +20,7 @@ module Blacklight
         append_to_file "config/initializers/assets.rb" do
           "
           # Blacklight Allmaps
+          Rails.application.config.assets.paths << Rails.root.join('vendor', 'assets', 'images')
           Rails.application.config.assets.precompile += %w( blacklight/allmaps/allmaps-logo.svg )"
         end
       end
@@ -36,9 +37,23 @@ module Blacklight
       def add_importmap_pins
         append_to_file "config/importmap.rb" do
           <<~CONTENT
-            pin "leaflet" # @1.9.4
-            pin '@allmaps/leaflet', to: "@allmaps--leaflet.js"
+            pin "leaflet", to: "https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js", preload: true
+            pin "leaflet-fullscreen", to: "https://cdn.jsdelivr.net/npm/leaflet-fullscreen@1.0.2/dist/Leaflet.fullscreen.min.js", preload: true
+            pin "@allmaps/leaflet", to: "https://cdn.jsdelivr.net/npm/@allmaps/leaflet/dist/bundled/allmaps-leaflet-1.9.umd.js", preload: true
           CONTENT
+        end
+      end
+
+      def add_javascript
+        append_to_file "app/assets/javascripts/application.js" do
+          "\n // Required by Blacklight::Allmaps
+            //= require blacklight/allmaps/blacklight-allmaps"
+        end
+      end
+
+      def add_stylesheets
+        append_to_file "app/assets/stylesheets/application.scss" do
+          "@import 'blacklight/allmaps/base';"
         end
       end
 

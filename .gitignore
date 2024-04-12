@@ -6,3 +6,14 @@ Gemfile.lock
 /tmp/
 
 .internal_test_app
+
+# Setup local JavaScript ignores
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
+yarn.lock
+
+node_modules
+dist
+/app/assets/javascripts/blacklight/allmaps
