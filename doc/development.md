@@ -1,6 +1,6 @@
 # Development Notes
 
-## Running App
+## Running the Application
 
 ### Blacklight / MARC
 
@@ -51,3 +51,14 @@ rake blacklight_allmaps:sidecars:harvest:allmaps
 rake blacklight_allmaps:index:gbl_georeferenced_facet
 rails s
 ```
+
+## Building the Javascript / Publishing the NPM Package
+
+The javascript is built by npm from sources in `app/javascript` into a bundle
+in `app/assets/javascripts/blacklight/allmaps/blacklight-allmaps.js`. This file should not be edited by hand as any changes would be overwritten.  When any of the javascript
+components in the gem are changed, this bundle should be rebuild with the
+following steps:
+1. [Install npm](https://www.npmjs.com/get-npm)
+1. run `npm install` to download dependencies
+1. run `npm run prepare` to build the bundle
+1. run `npm publish` to push the javascript package to https://npmjs.org/package/blacklight-allmaps
