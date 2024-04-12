@@ -45,9 +45,10 @@ module Blacklight
       end
 
       def add_javascript
-        append_to_file "app/assets/javascripts/application.js" do
-          "\n // Required by Blacklight::Allmaps
-            //= require blacklight/allmaps/blacklight-allmaps"
+        inject_into_file "app/assets/javascripts/application.js", after: "//= require blacklight/blacklight" do
+          "\n
+    // Required by Blacklight::Allmaps
+    //= require blacklight/allmaps/blacklight-allmaps"
         end
       end
 
