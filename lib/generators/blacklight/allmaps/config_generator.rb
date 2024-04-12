@@ -108,7 +108,7 @@ module Blacklight
       def add_bl_georeferenced_facet
         return unless ENV["LIGHT"] == "blacklight"
         inject_into_file "app/controllers/catalog_controller.rb", after: "config.add_facet_field 'subject_era_ssim', label: 'Era'" do
-          "\n    config.add_facet_field 'bl_georeferenced_bsi', label: 'Allmaps Georeferenced'"
+          "\n    config.add_facet_field 'bl_georeferenced_bsi', label: I18n.t('allmaps.bl_facet_label')"
         end
       end
     end

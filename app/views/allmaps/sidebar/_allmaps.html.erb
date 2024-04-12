@@ -6,12 +6,12 @@
   <div class="card-body" id="georeferencing">
     <% if @document.sidecar_allmaps.georeferenced? %>
       <div id="georef_present">
-        <%= link_to 'View this georeferenced item', 'https://viewer.allmaps.org/?url=https://annotations.allmaps.org/?url=' + @document.iiif_manifest_url, target: '_blank' %>
+        <%= link_to t('allmaps.georeferenced_link'), 'https://viewer.allmaps.org/?url=https://annotations.allmaps.org/?url=' + @document.iiif_manifest_url, target: '_blank' %>
       </div>
     <% else %>    
       <%# content will be updated via updateGeorefLinks(); %>
       <div id="georef_loading">
-        Loading...
+        <%= t('allmaps.loading') %>
       </div>
     <% end %>
   </div>
@@ -36,14 +36,12 @@
       try {
         const response = await fetch(annotationUrlByIIIFUri);
         if (!response.ok) {
-          georefDiv.innerHTML = `<a href="https://editor.allmaps.org/#/collection?url=${manifestUrl}">Georeference this item</a>`;
+          georefDiv.innerHTML = `<a href="https://editor.allmaps.org/#/collection?url=${manifestUrl}"><%= t('allmaps.georeference_link') %></a>`;
         } else {
           const annotationUrl = response.url;
-          georefDiv.innerHTML = `<a href="https://viewer.allmaps.org/?url=${annotationUrl}">View this georeferenced item</a>`;
+          georefDiv.innerHTML = `<a href="https://viewer.allmaps.org/?url=${annotationUrl}"><%= t('allmaps.georeferenced_link') %></a>`;
           
           // TODO: Ping Blacklight::Allmaps::AnnotationsController to save the annotation data
-          
-
         }
       } catch (error) {
         console.error("Fetch error:", error);

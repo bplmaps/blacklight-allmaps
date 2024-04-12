@@ -1,0 +1,11 @@
+en:
+  allmaps:
+    bl_facet_label: 'Allmaps Georeferenced'
+    item_viewer: 'Item Viewer'
+    gbl_tab_label: 'Georeferenced Map'
+    georeference_link: 'Georeference this item'
+    georeferenced: 'Georeferenced'
+    georeferenced_link: 'View this georeferenced item'
+    loading: 'Loading...'
+    map_heading: 'Georeferenced Map'
+    

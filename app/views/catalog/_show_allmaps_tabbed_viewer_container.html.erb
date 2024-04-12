@@ -2,15 +2,15 @@
 <div class='row'>
   <div id='viewer-container' class="col-md-12">
 
-    <span class="sr-only">Georeferenced: <%= document.sidecar_allmaps.georeferenced? %></span>
+    <span class="sr-only"><%= t('allmaps.georeferenced')%>: <%= document.sidecar_allmaps.georeferenced? %></span>
 
     <ul class="nav nav-tabs mt-3" id="myTab" role="tablist">
       <li class="nav-item" role="presentation">
-        <button class="nav-link active" id="item-viewer" data-toggle="tab" data-target="#item-viewer-tab" type="button" role="tab" aria-controls="home" aria-selected="true">Item Viewer</button>
+        <button class="nav-link active" id="item-viewer" data-toggle="tab" data-target="#item-viewer-tab" type="button" role="tab" aria-controls="home" aria-selected="true"><%= t('allmaps.item_viewer')%></button>
       </li>
       <% if document.sidecar_allmaps.georeferenced? %>
         <li class="nav-item" role="presentation">
-          <button class="nav-link" id="georeferenced-viewer" data-toggle="tab" data-target="#georeferenced-tab" type="button" role="tab" aria-controls="profile" aria-selected="false">Georeferenced Map</button>
+          <button class="nav-link" id="georeferenced-viewer" data-toggle="tab" data-target="#georeferenced-tab" type="button" role="tab" aria-controls="profile" aria-selected="false"><%= t('allmaps.map_heading')%></button>
         </li>
       <% end %>
     </ul>
