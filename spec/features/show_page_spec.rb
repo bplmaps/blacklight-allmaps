@@ -16,7 +16,7 @@ feature "GEOBLACKLIGHT Catalog#show > Tabbed View", js: true do
     click_on "Georeferenced Map"
 
     # See Allmaps Overlay
-    expect(page).to have_css "#allmaps-map", count: 1
+    expect(page).to have_css "#geoblacklight-allmaps-map", count: 1
 
     # See Zoom, Opacity, and Fullscreen Controls
     expect(page).to have_css ".leaflet-control-zoom", visible: false

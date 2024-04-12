@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+// Blacklight::Allmaps
+@import "leaflet";
+@import "leaflet.fullscreen";
+@import "leaflet.opacity";
+
+#blacklight-allmaps-map { height: 400px; }
+#geoblacklight-allmaps-map { height: 400px; }
