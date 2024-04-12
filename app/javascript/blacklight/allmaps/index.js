@@ -1,5 +1,4 @@
 import L from "leaflet";
-import "leaflet-css";
 import "leaflet-fullscreen";
 import { WarpedMapLayer } from "@allmaps/leaflet"
 import LayerOpacityControl from "leaflet_layer_opacity";
