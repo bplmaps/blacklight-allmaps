@@ -53,7 +53,7 @@ module Blacklight
       end
 
       def add_stylesheets
-        append_to_file "app/assets/stylesheets/application.scss" do
+        append_to_file "app/assets/stylesheets/blacklight.scss" do
           "@import 'blacklight/allmaps/base';"
         end
       end
