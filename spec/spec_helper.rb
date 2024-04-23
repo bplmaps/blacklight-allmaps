@@ -10,6 +10,7 @@ require "rails-controller-testing" if Rails::VERSION::MAJOR >= 5
 require "rspec/rails"
 require "capybara/rspec"
 require "webdrivers"
+require "factory_bot_rails"
 
 Capybara.register_driver :headless_chrome do |app|
   Capybara::Selenium::Driver.load_selenium
@@ -42,6 +43,6 @@ RSpec.configure do |config|
   #     end
   config.infer_spec_type_from_file_location!
   config.fixture_path = "#{Blacklight::Allmaps.root}/spec/fixtures"
-
+  config.include FactoryBot::Syntax::Methods
   config.include Devise::Test::ControllerHelpers, type: :controller
 end

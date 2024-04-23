@@ -37,11 +37,23 @@
         const response = await fetch(annotationUrlByIIIFUri);
         if (!response.ok) {
           georefDiv.innerHTML = `<a href="https://editor.allmaps.org/#/collection?url=${manifestUrl}"><%= t('allmaps.georeference_link') %></a>`;
+
+          // If no annotation data is found, queue a background job to store the annotation data to the database
+          csrfToken = document.querySelector("meta[name='csrf-token']").getAttribute("content");
+          fetch("/allmaps/annotations/" + "<%= @document.id %>", { 
+            method: "PUT", 
+            headers: {
+            "X-CSRF-Token": csrfToken,
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          }})
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.error(error));
+
         } else {
           const annotationUrl = response.url;
           georefDiv.innerHTML = `<a href="https://viewer.allmaps.org/?url=${annotationUrl}"><%= t('allmaps.georeferenced_link') %></a>`;
-          
-          // TODO: Ping Blacklight::Allmaps::AnnotationsController to save the annotation data
         }
       } catch (error) {
         console.error("Fetch error:", error);

@@ -66,6 +66,10 @@ module Blacklight
         end
       end
 
+      def set_routes
+        inject_into_file "config/routes.rb", "mount Blacklight::Allmaps::Engine => '/'\n", before: /^end/
+      end
+
       def set_active_job_config
         inject_into_file "config/environments/development.rb", "  config.active_job.queue_adapter = :inline\n", after: "Rails.application.configure do\n"
       end
