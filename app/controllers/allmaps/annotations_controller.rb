@@ -1,11 +1,12 @@
 # frozen_string_literal: true
+
 module Allmaps
   class AnnotationsController < ApplicationController
     # JSON Only
     respond_to :json
 
     # Set @annotation before show and update
-    before_action :set_annotation, only: %i[ show update ]
+    before_action :set_annotation, only: %i[show update]
 
     # GET /annotations.json
     def index
@@ -34,13 +35,12 @@ module Allmaps
     end
 
     private
+
     # Find the annotation or throw a 404
     def set_annotation
-      begin
-        @annotation = Blacklight::Allmaps::Sidecar.where(solr_document_id: params[:id]).first!
-      rescue ActiveRecord::RecordNotFound
-        render json: { error: 'Record not found' }, status: :not_found
-      end
+      @annotation = Blacklight::Allmaps::Sidecar.where(solr_document_id: params[:id]).first!
+    rescue ActiveRecord::RecordNotFound
+      render json: {error: "Record not found"}, status: :not_found
     end
 
     # Only allow a list of trusted parameters through.

@@ -5,7 +5,7 @@ RSpec.describe Allmaps::AnnotationsController, type: :controller do
 
   # Setup for common prerequisites
   before(:each) do
-    request.headers['Accept'] = 'application/json'
+    request.headers["Accept"] = "application/json"
   end
 
   describe "GET #index" do
@@ -21,19 +21,19 @@ RSpec.describe Allmaps::AnnotationsController, type: :controller do
     context "when the annotation exists" do
       it "returns http success and the correct JSON structure" do
         annotation = FactoryBot.create(:annotation)
-        get :show, params: { id: annotation.solr_document_id }
+        get :show, params: {id: annotation.solr_document_id}
         expect(response).to have_http_status(:success)
         json_response = JSON.parse(response.body)
-        expect(json_response['id']).to eq(annotation.id)
+        expect(json_response["id"]).to eq(annotation.id)
       end
     end
 
     context "when the annotation does not exist" do
       it "returns a not found status" do
-        get :show, params: { id: 'nonexistent_id' }
+        get :show, params: {id: "nonexistent_id"}
         expect(response).to have_http_status(:not_found)
         json_response = JSON.parse(response.body)
-        expect(json_response['error']).to eq('Record not found')
+        expect(json_response["error"]).to eq("Record not found")
       end
     end
   end
@@ -44,7 +44,7 @@ RSpec.describe Allmaps::AnnotationsController, type: :controller do
         ActiveJob::Base.queue_adapter = :test
 
         annotation = FactoryBot.create(:annotation)
-        put :update, params: { id: annotation.solr_document_id }
+        put :update, params: {id: annotation.solr_document_id}
         expect(response).to have_http_status(:ok)
         expect { Blacklight::Allmaps::StoreSidecarAnnotation.perform_later }.to have_enqueued_job
       end
@@ -52,10 +52,10 @@ RSpec.describe Allmaps::AnnotationsController, type: :controller do
 
     context "when the annotation does not exist" do
       it "returns a not found status" do
-        put :update, params: { id: 'nonexistent_id' }
+        put :update, params: {id: "nonexistent_id"}
         expect(response).to have_http_status(:not_found)
         json_response = JSON.parse(response.body)
-        expect(json_response['error']).to eq('Record not found')
+        expect(json_response["error"]).to eq("Record not found")
       end
     end
   end
