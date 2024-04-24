@@ -52,68 +52,12 @@ module Blacklight
         end
       end
 
-      def add_bl_stylesheets
-        return unless ENV["LIGHT"] == "blacklight"
-        append_to_file "app/assets/stylesheets/blacklight.scss" do
-          "@import 'blacklight/allmaps/base';"
-        end
-      end
-
-      def add_gbl_stylesheets
-        return unless ENV["LIGHT"] == "geoblacklight"
-        append_to_file "app/assets/stylesheets/application.scss" do
-          "@import 'blacklight/allmaps/base';"
-        end
-      end
-
       def set_routes
         inject_into_file "config/routes.rb", "mount Blacklight::Allmaps::Engine => '/'\n", before: /^end/
       end
 
       def set_active_job_config
         inject_into_file "config/environments/development.rb", "  config.active_job.queue_adapter = :inline\n", after: "Rails.application.configure do\n"
-      end
-
-      def add_geoblacklight
-        return unless ENV["LIGHT"] == "geoblacklight"
-        append_to_file "Gemfile", '"geoblacklight", "~> 4.4"'
-      end
-
-      def include_blacklight_allmaps_solrdocument
-        return unless ENV["LIGHT"] == "blacklight"
-        inject_into_file "app/models/solr_document.rb", after: "include Blacklight::Solr::Document" do
-          "\n include Blacklight::Allmaps::SolrDocument"
-        end
-      end
-
-      def add_gbl_tabbed_viewer
-        return unless ENV["LIGHT"] == "geoblacklight"
-        # Use the tabbed viewer
-        inject_into_file "app/controllers/catalog_controller.rb", after: "config.show.partials << \"show_default_viewer_container\"" do
-          "\n
-    # Blacklight::Allmaps Tabbed Viewer
-    config.show.partials << \"show_allmaps_tabbed_viewer_container\""
-        end
-
-        # Remove the default viewer
-        gsub_file("app/controllers/catalog_controller.rb", "config.show.partials << \"show_default_viewer_container\"", "#config.show.partials << \"show_default_viewer_container\"")
-      end
-
-      def add_bl_allmaps_viewer
-        return unless ENV["LIGHT"] == "blacklight"
-        # Use the allmaps viewer
-        inject_into_file "app/controllers/catalog_controller.rb", after: "#config.show.thumbnail_field = 'thumbnail_path_ss'" do
-          "\n
-    # Blacklight::Allmaps Viewer
-    config.show.partials.insert(1, :blacklight_allmaps)"
-        end
-      end
-
-      def add_bl_georeferenced_facet
-        return unless ENV["LIGHT"] == "blacklight"
-        inject_into_file "app/controllers/catalog_controller.rb", after: "config.add_facet_field 'subject_era_ssim', label: 'Era'" do
-          "\n    config.add_facet_field 'bl_georeferenced_bsi', label: I18n.t('allmaps.bl_facet_label')"
-        end
       end
     end
   end
