@@ -18,6 +18,7 @@ class TestAppGenerator < Rails::Generators::Base
 
     Bundler.with_unbundled_env do
       run "bundle install"
+      run "bundle lock --add-platform ruby"
     end
   end
 
