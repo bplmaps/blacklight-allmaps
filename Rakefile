@@ -18,21 +18,12 @@ task default: :ci
 desc "Run specs"
 RSpec::Core::RakeTask.new
 
-task ci: ["blacklight_allmaps:generate"] do
-  within_test_app do
-    system "rake blacklight_allmaps:seed"
-  end
-
+task ci: ["engine_cart:generate"] do
+  system "rake blacklight_allmaps:seed"
   Rake::Task["spec"].invoke
 end
 
 namespace :blacklight_allmaps do
-  
-  desc "Create the test rails app"
-  task generate: ["engine_cart:generate"] do
-    # Intentionally Empty Block
-  end
-
   desc "Put sample data into solr"
   task seed: ["engine_cart:generate"] do
     within_test_app do
