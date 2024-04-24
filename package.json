@@ -1,6 +1,6 @@
 {
   "name": "blacklight-allmaps",
-  "version": "0.2.0",
+  "version": "0.3.1",
   "description": "The frontend code and styles for Blacklight Allmaps",
   "main": "app/assets/javascripts/blacklight/allmaps",
   "module": "app/assets/javascripts/blacklight/allmaps/blacklight-allmaps.esm.js",

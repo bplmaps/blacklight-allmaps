@@ -9,3 +9,9 @@ initializeGeoBlacklightMap();
 
 import { initializeBlacklightMap } from "./initialize_blacklight_map";
 initializeBlacklightMap();
+
+import { updateGeorefLinks } from './update_georef_links.js';
+
+document.addEventListener('DOMContentLoaded', () => {
+  updateGeorefLinks();
+});
