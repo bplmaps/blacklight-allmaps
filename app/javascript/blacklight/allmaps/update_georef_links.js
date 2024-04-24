@@ -27,7 +27,7 @@ export const updateGeorefLinks = async () => {
 
       } else {
         const annotationUrl = response.url;
-        georefDiv.innerHTML = `<a href="https://viewer.allmaps.org/?url=${annotationUrl}" target="_blank">View georeferenced item</a>`;
+        georefDiv.innerHTML = `<a href="https://viewer.allmaps.org/?url=${annotationUrl}" target="_blank">View this georeferenced item</a>`;
       }
     } catch (error) {
       console.error("Fetch error:", error);
