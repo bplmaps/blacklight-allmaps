@@ -6,20 +6,17 @@ gemspec
 
 group :test do
   gem "capybara", require: false
-  # gem "database_cleaner", require: false
   gem "engine_cart", require: false
-  # gem "factory_bot_rails", require: false
-  # gem "foreman", require: false
+  gem "factory_bot_rails", require: false
   gem "rails-controller-testing", require: false
   gem "rspec-rails", require: false
-  # gem "simplecov", require: false
   gem "standardrb", require: false
   gem "webdrivers", require: false
-  # gem "webmock", require: false
 end
 
 # Start debugger with binding.b [https://github.com/ruby/debug]
 # gem "debug", ">= 1.0.0"
+
 # BEGIN ENGINE_CART BLOCK
 # engine_cart: 2.6.0
 # engine_cart stanza: 2.5.0
@@ -43,5 +40,11 @@ else
       gem "rails", ENV["RAILS_VERSION"]
     end
   end
+end
+
+if File.exist?("spec/test_app_templates/Gemfile.extra")
+  # rubocop:disable Security/Eval
+  eval File.read("spec/test_app_templates/Gemfile.extra"), nil, "spec/test_app_templates/Gemfile.extra"
+  # rubocop:enable Security/Eval
 end
 # END ENGINE_CART BLOCK

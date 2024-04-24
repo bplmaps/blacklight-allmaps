@@ -62,3 +62,7 @@ following steps:
 1. run `npm install` to download dependencies
 1. run `npm run prepare` to build the bundle
 1. run `npm publish` to push the javascript package to https://npmjs.org/package/blacklight-allmaps
+
+## Running the Test suite
+
+LIGHT=geoblacklight bundle exec rake ci
