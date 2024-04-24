@@ -15,7 +15,10 @@ module Blacklight
           if response.code == 200
             # @TODO: validate the response body is a valid IIIF Manifest
             sidecar.iiif_manifest = response.body
-            sidecar.manifest_id = JSON.parse(sidecar.iiif_manifest)["@id"]
+
+            # Store the Manifest ID
+            # - Could be either "@id" or "id"
+            sidecar.manifest_id = JSON.parse(sidecar.iiif_manifest)["@id"] || JSON.parse(sidecar.iiif_manifest)["id"]
           end
 
           # Store the Allmaps Annotation
