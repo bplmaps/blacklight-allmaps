@@ -1,12 +1,16 @@
+require "rails"
 require "rake"
 require "bundler"
+
 Bundler::GemHelper.install_tasks
 
+require "bundler/setup"
 require "bundler/gem_tasks"
 
 require "rspec/core/rake_task"
 require "engine_cart/rake_task"
 require "solr_wrapper"
+require "solr_wrapper/rake_task"
 require "blacklight/allmaps/rake_task"
 
 task default: :ci
