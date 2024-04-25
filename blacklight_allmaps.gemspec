@@ -25,6 +25,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rails-controller-testing"
   spec.add_development_dependency "rspec-rails"
   spec.add_development_dependency "engine_cart", "~> 2.1"
+  spec.add_development_dependency "factory_bot_rails"
   spec.add_development_dependency "capybara", "~> 3"
   spec.add_development_dependency "webdrivers"
   spec.add_development_dependency "standard", "~> 1.34"
