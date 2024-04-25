@@ -5,9 +5,8 @@ module Blacklight
   module Allmaps
     module SolrDocument
       # Blacklight
-      # @TODO: Make this configurable
       def iiif_manifest_url
-        self["iiif_manifest_url_ssi"]
+        self[CatalogController.blacklight_config.default_iiif_manifest_field]
       end
     end
   end

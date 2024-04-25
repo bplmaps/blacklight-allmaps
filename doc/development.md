@@ -24,7 +24,7 @@ LIGHT=blacklight bundle exec rake blacklight_allmaps:solr
 cd .internal_test_app
 rake blacklight_allmaps:index:bl_fixtures
 rake blacklight_allmaps:sidecars:harvest:allmaps
-rake blacklight_allmaps:index:bl_georeferenced_facet
+rake blacklight_allmaps:index:georeferenced_facet
 rails s
 ```
 
@@ -48,7 +48,7 @@ LIGHT=geoblacklight bundle exec rake blacklight_allmaps:solr
 cd .internal_test_app
 rake blacklight_allmaps:index:gbl_fixtures
 rake blacklight_allmaps:sidecars:harvest:allmaps
-rake blacklight_allmaps:index:gbl_georeferenced_facet
+rake blacklight_allmaps:index:georeferenced_facet
 rails s
 ```
 
@@ -65,4 +65,8 @@ following steps:
 
 ## Running the Test suite
 
-LIGHT=geoblacklight bundle exec rake ci
+```LIGHT=blacklight bundle exec rake ci```
+
+or 
+
+```LIGHT=geoblacklight bundle exec rake ci```
