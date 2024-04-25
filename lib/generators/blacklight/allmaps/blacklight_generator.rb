@@ -10,7 +10,7 @@ module Blacklight
       desc <<-DESCRIPTION
         This generator makes the following changes to your application:
         1. Copies stylesheets to Blacklight app
-        2. Adds Blacklight::Allmaps viewer to CatalogController
+        2. Adds Blacklight::Allmaps configuration to CatalogController
         3. Adds georeferenced facet to CatalogController
         4. Includes Blacklight::Allmaps::SolrDocument in SolrDocument
       DESCRIPTION
@@ -21,12 +21,14 @@ module Blacklight
         end
       end
 
-      def add_bl_allmaps_viewer
-        # Use the allmaps viewer
+      def add_configuration
         inject_into_file "app/controllers/catalog_controller.rb", after: "#config.show.thumbnail_field = 'thumbnail_path_ss'" do
           "\n
     # Blacklight::Allmaps Viewer
-    config.show.partials.insert(1, :blacklight_allmaps)"
+    config.show.partials.insert(1, :blacklight_allmaps)
+    config.default_solr_unique_key = \"id\"
+    config.default_georeferenced_field = \"bl_georeferenced_bsi\"
+    config.default_iiif_manifest_field = \"iiif_manifest_url_ssi\""
         end
       end
 

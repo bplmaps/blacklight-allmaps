@@ -10,7 +10,7 @@ module Blacklight
         document.iiif_manifest_url ? true : false
       rescue
         # Blacklight
-        document["iiif_manifest_url_ssi"] ? true : false
+        document[CatalogController.blacklight_config.default_iiif_manifest_field] ? true : false
       end
     end
   end

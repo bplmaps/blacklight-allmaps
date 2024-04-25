@@ -19,12 +19,12 @@ namespace :blacklight_allmaps do
     end
 
     desc "Index - add Allmaps facet data to GeoBlacklight solr"
-    task gbl_georeferenced_facet: [:environment] do
+    task georeferenced_facet: [:environment] do
       # Steps
       # 1. Use cursor to paginate all documents in Solr
       # 2. Determine which documents have georeferenced data
       # 3. Clean JSON for re-indexing
-      # 4. Add gbl_georeferenced_b values
+      # 4. Add georeferenced values
       # 5. Re-index the georeferenced documents
 
       # 1. Get all the documents from Solr
@@ -36,13 +36,13 @@ namespace :blacklight_allmaps do
             fl: "*",  # all fields
             cursorMark: cursor_mark, # use the cursor mark to handle paging
             rows: 1000,
-            sort: "id asc" # must sort by id to use the cursor mark
+            sort: "#{CatalogController.blacklight_config.default_solr_unique_key} asc" # must sort by id to use the cursor mark
           }
         )
 
         response["response"]["docs"].each do |doc|
           # 2. Determine which documents have georeferenced data
-          solr_document = SolrDocument.find(doc["id"])
+          solr_document = SolrDocument.find(doc[CatalogController.blacklight_config.default_solr_unique_key])
           if solr_document.sidecar_allmaps.present? && solr_document.sidecar_allmaps.annotated?
 
             # 3. Clean JSON for re-indexing
@@ -58,59 +58,8 @@ namespace :blacklight_allmaps do
 
             cleaned_doc = doc.except!(*keys_for_deletion)
 
-            # 4. Add gbl_georeferenced_b value
-            # @TODO: add allmaps_id?
-            cleaned_doc["gbl_georeferenced_b"] = true
-
-            # 5. Re-index the georeferenced documents
-            Blacklight.default_index.connection.add cleaned_doc
-          end
-        end
-
-        break if response["nextCursorMark"] == cursor_mark # this means the result set is finished
-        cursor_mark = response["nextCursorMark"]
-      end
-      Blacklight.default_index.connection.commit
-    end
-
-    desc "Index - add Allmaps facet data to Blacklight solr"
-    task bl_georeferenced_facet: [:environment] do
-      # Steps
-      # 1. Use cursor to paginate all documents in Solr
-      # 2. Determine which documents have georeferenced data
-      # 3. Clean JSON for re-indexing
-      # 4. Add bl_georeferenced_bsi values
-      # 5. Re-index the georeferenced documents
-
-      # 1. Get all the documents from Solr
-      cursor_mark = "*"
-      loop do
-        response = Blacklight.default_index.connection.get(
-          "select", params: {
-            q: "*:*", # all docs
-            fl: "*",  # all fields
-            cursorMark: cursor_mark, # use the cursor mark to handle paging
-            rows: 1000,
-            sort: "id asc" # must sort by id to use the cursor mark
-          }
-        )
-
-        response["response"]["docs"].each do |doc|
-          # 2. Determine which documents have georeferenced data
-          solr_document = SolrDocument.find(doc["id"])
-          if solr_document.sidecar_allmaps.present? && solr_document.sidecar_allmaps.annotated?
-
-            # 3. Clean JSON for re-indexing
-            keys_for_deletion = %w[
-              _version_
-              timestamp
-            ]
-
-            cleaned_doc = doc.except!(*keys_for_deletion)
-
-            # 4. Add gbl_georeferenced_b value
-            # @TODO: add allmaps_id?
-            cleaned_doc["bl_georeferenced_bsi"] = true
+            # 4. Add georeferenced value
+            cleaned_doc[CatalogController.blacklight_config.default_georeferenced_field] = true
 
             # 5. Re-index the georeferenced documents
             Blacklight.default_index.connection.add cleaned_doc
