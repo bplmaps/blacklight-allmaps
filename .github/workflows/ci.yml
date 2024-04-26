@@ -24,8 +24,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        ruby_version: ['3.3.0']
-        rails_version: [7.0.8]
+        ruby_version: ['3.2', '3.3']
+        rails_version: [7.1]
 
     name: Test Blacklight / Ruby ${{ matrix.ruby_version }} / Rails ${{ matrix.rails_version }}
     steps:
@@ -34,7 +34,6 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ matrix.ruby_version }}
-          rubygems: '3.5.7'
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
@@ -66,8 +65,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        ruby_version: ['3.3.0']
-        rails_version: [7.0.8]
+        ruby_version: ['3.2', '3.3']
+        rails_version: [7.1]
 
     name: Test GeoBlacklight / Ruby ${{ matrix.ruby_version }} / Rails ${{ matrix.rails_version }}
     steps:
@@ -76,7 +75,6 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ matrix.ruby_version }}
-          rubygems: '3.5.7'
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
