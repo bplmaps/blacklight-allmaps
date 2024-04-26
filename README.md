@@ -36,6 +36,27 @@ LIGHT=blacklight bundle exec rails generate blacklight:allmaps:install
 LIGHT=geoblacklight bundle exec rails generate blacklight:allmaps:install
 ```
 
+## CatalogController Configuration
+
+Configure options for local use are set into the `catalog_controller.rb` file. 
+
+### Blacklight
+
+```ruby
+    # Blacklight::Allmaps Viewer
+    config.show.partials.insert(1, :blacklight_allmaps)
+    config.default_solr_unique_key = "id"
+    config.default_georeferenced_field = "bl_georeferenced_bsi"
+    config.default_iiif_manifest_field = "iiif_manifest_url_ssi"
+```
+
+### GeoBlacklight
+```ruby
+    # Blacklight::Allmaps Viewer
+    config.default_solr_unique_key = "id"
+    config.default_georeferenced_field = "gbl_georeferenced_b"
+```
+
 ## Rake Tasks
 
 ### Seed Fixtures
@@ -68,11 +89,8 @@ We expose the georeferenced items in the Blacklight user interface via a Georefe
 ![Screen shot](doc/georeferenced_facet.png)
 
 ```bash
-# For Blacklight...
-LIGHT=blacklight rake blacklight_allmaps:index:bl_georeferenced_facet
-
-# For GeoBlacklight...
-LIGHT=geoblacklight rake blacklight_allmaps:index:gbl_georeferenced_facet
+# For Blacklight or GeoBlacklight
+rake blacklight_allmaps:index:georeferenced_facet
 ```
 
 ## ActiveRecord Objects — Blacklight::Allmaps::Sidecar 
@@ -81,7 +99,8 @@ Blacklight::Allmaps adopts the SolrDocumentSidecar "sidecar" pattern from [Spotl
 
 We use this `document.sidecar_allmaps` object to hold the results of the Allmaps Annotation harvest task.
 
-The Blacklight::Allmaps::Sidecar object contains:
+The `Blacklight::Allmaps::Sidecar` object contains:
+
 | Field | Value |
 | --- | --- |
 | id | primary key |
@@ -113,6 +132,21 @@ document.sidecar_allmaps =>
  solr_version: 1794605692067250176,
  created_at: Tue, 26 Mar 2024 15:47:49.422826000 UTC +00:00,
  updated_at: Tue, 26 Mar 2024 16:39:42.427682000 UTC +00:00>
+```
+
+## Allmaps::AnnotationsController
+
+We've added an annotations controller to the application to expose the `Blacklight::Allmaps::Sidecar` data we've harvested. This controller returns only JSON. 
+
+The `#fetch` method will query Allmaps in real time for updated annotation data, should a nightly harvest (rake) be insufficient for Solr indexing or local development needs.
+
+```
+Routes for Blacklight::Allmaps::Engine:
+fetch_allmaps_annotation GET   /allmaps/annotations/:id/fetch(.:format) allmaps/annotations#fetch {:format=>:json}
+     allmaps_annotations GET   /allmaps/annotations(.:format)           allmaps/annotations#index {:format=>:json}
+      allmaps_annotation GET   /allmaps/annotations/:id(.:format)       allmaps/annotations#show {:format=>:json}
+                         PATCH /allmaps/annotations/:id(.:format)       allmaps/annotations#update {:format=>:json}
+                         PUT   /allmaps/annotations/:id(.:format)       allmaps/annotations#update {:format=>:json}
 ```
 
 ## Contributing
