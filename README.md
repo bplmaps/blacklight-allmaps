@@ -82,6 +82,13 @@ The rake task here kicks off a background harvest process that walks through you
 rake blacklight_allmaps:sidecars:harvest:allmaps
 ```
 
+Alternatively, you can harvest Allmaps data for a list of identifers
+
+```bash
+# For Blacklight or GeoBlacklight
+rake "blacklight_allmaps:sidecars:harvest_ids[id1 id2 ...]"
+```
+
 ### Populate the Georeferenced Facet
 
 We expose the georeferenced items in the Blacklight user interface via a Georeferenced facet:

@@ -46,5 +46,14 @@ namespace :blacklight_allmaps do
         puts "orphaned / #{sc.document_id} / destroyed"
       end
     end
+
+    desc "Sidecars - Harvest list of document ids"
+    task :harvest_ids, [:ids] => :environment do |t, args|
+      docs = args[:ids].split(' ')
+      docs.each do |doc|
+        puts "Harvesting Allmaps data for #{doc}"
+        Blacklight::Allmaps::StoreSidecarAnnotation.perform_later(doc)
+      end
+    end
   end
 end
