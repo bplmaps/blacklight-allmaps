@@ -10,7 +10,11 @@ class TestAppGenerator < Rails::Generators::Base
   # after setting up the application
 
   def add_gems
-    gem "blacklight", "~> 7.0"
+    if ENV['BLACKLIGHT_VERSION']
+      gem "blacklight", ENV['BLACKLIGHT_VERSION']
+    else
+      gem "blacklight", "~> 7.0"
+    end
 
     if ENV["LIGHT"] == "geoblacklight"
       gem "geoblacklight", "~> 4.4"
