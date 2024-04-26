@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require "spec_helper"
-require "blacklight/allmaps/application_helper"
 
 # @TODO: GeoBlacklight dependent
 describe Blacklight::Allmaps::ApplicationHelper, type: :helper do

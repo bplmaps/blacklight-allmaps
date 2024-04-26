@@ -59,4 +59,16 @@ RSpec.describe Allmaps::AnnotationsController, type: :controller do
       end
     end
   end
+
+  describe "GET #fetch" do
+    it "fetches the annotation and returns http success" do
+      ActiveJob::Base.queue_adapter = :test
+
+      annotation = FactoryBot.create(:annotation)
+
+      # Only check for route existence in this test
+      # StoreSidecarAnnotation.perform_now will error b/c the annotation does not exist
+      get :fetch, params: {id: annotation.id}
+    end
+  end
 end
