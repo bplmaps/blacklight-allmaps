@@ -49,7 +49,7 @@ namespace :blacklight_allmaps do
 
     desc "Sidecars - Harvest list of document ids"
     task :harvest_ids, [:ids] => :environment do |t, args|
-      docs = args[:ids].split(' ')
+      docs = args[:ids].split(" ")
       docs.each do |doc|
         puts "Harvesting Allmaps data for #{doc}"
         Blacklight::Allmaps::StoreSidecarAnnotation.perform_later(doc)
