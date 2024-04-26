@@ -24,8 +24,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        ruby_version: ['3.2']
-        rails_version: [7.0.8]
+        ruby_version: [3.3]
+        rails_version: [7.1.3.2]
 
     name: Test Blacklight / Ruby ${{ matrix.ruby_version }} / Rails ${{ matrix.rails_version }}
     steps:
@@ -40,6 +40,8 @@ jobs:
           node-version: '20.x'
       - name: Create Solr container
         run: docker run -d -p 8983:8983 geoblacklight/solr:8.9-v1.0.0 server/scripts/ci-start.sh
+      - name: Lock platform version
+        run: bundle lock --add-platform ruby
       - name: Install dependencies
         run: bundle install
         env:
@@ -65,8 +67,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        ruby_version: ['3.2']
-        rails_version: [7.0.8]
+        ruby_version: [3.3]
+        rails_version: [7.1.3.2]
 
     name: Test GeoBlacklight / Ruby ${{ matrix.ruby_version }} / Rails ${{ matrix.rails_version }}
     steps:
@@ -81,6 +83,8 @@ jobs:
           node-version: '20.x'
       - name: Create Solr container
         run: docker run -d -p 8983:8983 geoblacklight/solr:8.9-v1.0.0 server/scripts/ci-start.sh
+      - name: Lock platform version
+        run: bundle lock --add-platform ruby
       - name: Install dependencies
         run: bundle install
         env:
