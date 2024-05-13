@@ -22,7 +22,9 @@ module Blacklight
       end
 
       def add_geoblacklight
-        append_to_file "Gemfile", '\n"geoblacklight", "~> 4.4"'
+        append_to_file "Gemfile" do
+          '"geoblacklight", "~> 4.4"'
+        end
       end
 
       def add_configuration
