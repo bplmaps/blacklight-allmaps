@@ -25,12 +25,12 @@ module Blacklight
         gemfile_path = "Gemfile"
 
         # Check if the 'geoblacklight' gem is already included in the Gemfile
-        unless File.read(gemfile_path).include?('geoblacklight')
+        if File.read(gemfile_path).include?("geoblacklight")
+          say_status("skipped", "geoblacklight gem already included in the Gemfile", :yellow)
+        else
           append_to_file "Gemfile" do
             "\ngem \"geoblacklight\", \"~> 4.4\""
           end
-        else
-          say_status("skipped", "geoblacklight gem already included in the Gemfile", :yellow)
         end
       end
 
