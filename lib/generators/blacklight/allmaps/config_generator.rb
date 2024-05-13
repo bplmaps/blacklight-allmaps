@@ -54,6 +54,10 @@ module Blacklight
         end
       end
 
+      def add_yarn_package
+        run "yarn add blacklight-allmaps"
+      end
+
       def set_routes
         inject_into_file "config/routes.rb", "mount Blacklight::Allmaps::Engine => '/'\n", before: /^end/
       end
