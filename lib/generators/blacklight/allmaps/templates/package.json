@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "blacklight-allmaps": "^0.3.1",
+    "leaflet": "^1.9.4"
+  }
+}
