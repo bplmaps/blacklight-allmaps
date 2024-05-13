@@ -21,6 +21,11 @@ module Blacklight
         end
       end
 
+      def add_yarn_package
+        copy_file "package.json", "package.json"
+        run "yarn install"
+      end
+
       def add_configuration
         inject_into_file "app/controllers/catalog_controller.rb", after: "#config.show.thumbnail_field = 'thumbnail_path_ss'" do
           "\n
