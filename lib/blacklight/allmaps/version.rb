@@ -8,7 +8,7 @@ module Blacklight
 
     # returns the full path the the plugin installation
     def self.root
-      @root ||= File.expand_path(File.dirname(File.dirname(File.dirname(File.dirname(__FILE__)))))
+      @root ||= File.expand_path(File.dirname(__FILE__, 4))
     end
   end
 end
