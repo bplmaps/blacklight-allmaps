@@ -1,4 +1,6 @@
 require_relative "lib/blacklight/allmaps/version"
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name = "blacklight_allmaps"
@@ -10,6 +12,8 @@ Gem::Specification.new do |spec|
   spec.summary = "Blacklight::Allmaps plugin"
   spec.description = "Description of Blacklight::Allmaps"
   spec.license = "Apache 2.0"
+
+  spec.require_paths = ['lib']
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = spec.homepage
