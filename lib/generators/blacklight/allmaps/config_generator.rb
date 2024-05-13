@@ -20,6 +20,7 @@ module Blacklight
         append_to_file "config/initializers/assets.rb" do
           "
           # Blacklight Allmaps
+          Rails.application.config.assets.paths << Rails.root.join('node_modules')
           Rails.application.config.assets.paths << Rails.root.join('vendor', 'assets', 'images')
           Rails.application.config.assets.precompile += %w( blacklight/allmaps/allmaps-logo.svg )"
         end
@@ -49,7 +50,7 @@ module Blacklight
         inject_into_file "app/assets/javascripts/application.js", after: "//= require blacklight/blacklight" do
           "\n
     // Required by Blacklight::Allmaps
-    //= require blacklight/allmaps/blacklight-allmaps"
+    //= require blacklight-allmaps/app/assets/javascripts/blacklight/allmaps/blacklight-allmaps.js"
         end
       end
 
