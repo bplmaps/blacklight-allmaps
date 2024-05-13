@@ -11,7 +11,7 @@ module Blacklight
 
         if ApplicationController.helpers.georeferenceable?(solr_document)
           # Sleep for a random amount of time to crawl politely
-          sleep(rand(1..5)) 
+          sleep(rand(1..5))
 
           # Store the IIIF Manifest
           response = HTTParty.get(solr_document.iiif_manifest_url, follow_redirects: true)
