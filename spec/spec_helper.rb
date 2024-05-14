@@ -26,10 +26,14 @@ end
 Capybara.javascript_driver = :headless_chrome
 
 require "blacklight/allmaps"
+require "blacklight/allmaps/version"
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
 Dir[Pathname.new(File.expand_path("support/**/*.rb", __dir__))].sort.each { |f| require f }
+
+puts "\n\n=== Testing against Blacklight\n\n" unless defined?(Geoblacklight)
+puts "\n\n=== Testing against GeoBlacklight\n\n" if defined?(Geoblacklight)
 
 RSpec.configure do |config|
   # rspec-rails 3 will no longer automatically infer an example group's spec type
@@ -42,7 +46,8 @@ RSpec.configure do |config|
   #       # Equivalent to being in spec/controllers
   #     end
   config.infer_spec_type_from_file_location!
-  config.fixture_path = "#{Blacklight::Allmaps.root}/spec/fixtures"
+  config.fixture_paths = ["spec/fixtures"]
+
   config.include FactoryBot::Syntax::Methods
   config.include Devise::Test::ControllerHelpers, type: :controller
 end

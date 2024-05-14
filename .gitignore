@@ -18,4 +18,3 @@ yarn.lock
 node_modules
 package-lock.json
 dist
-/app/assets/javascripts/blacklight/allmaps

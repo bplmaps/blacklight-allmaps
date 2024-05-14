@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "blacklight"
+require "blacklight/allmaps/version"
 
 namespace :blacklight_allmaps do
   namespace :index do

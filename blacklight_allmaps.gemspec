@@ -1,4 +1,6 @@
-require_relative "lib/blacklight/allmaps/version"
+lib = File.expand_path("lib", __dir__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require "blacklight/allmaps/version"
 
 Gem::Specification.new do |spec|
   spec.name = "blacklight_allmaps"
@@ -11,12 +13,11 @@ Gem::Specification.new do |spec|
   spec.description = "Description of Blacklight::Allmaps"
   spec.license = "Apache 2.0"
 
+  spec.files = `git ls-files -z`.split("\x0")
+  spec.require_paths = ["lib"]
+
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = spec.homepage
-
-  spec.files = Dir.chdir(File.expand_path(__dir__)) do
-    Dir["{app,config,db,lib}/**/*", "LICENSE", "Rakefile", "README.md"]
-  end
 
   spec.add_dependency "blacklight", ">= 7.25.2", "< 9"
   spec.add_dependency "httparty", "~> 0.20"

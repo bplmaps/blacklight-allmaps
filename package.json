@@ -36,6 +36,7 @@
   ],
   "dependencies": {
     "@allmaps/leaflet": "^1.0.0-beta.33",
+    "blacklight-allmaps": "^0.3.1",
     "leaflet": "^1.9.4",
     "leaflet-fullscreen": "^1.0.2"
   }

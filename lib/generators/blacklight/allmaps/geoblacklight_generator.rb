@@ -22,7 +22,16 @@ module Blacklight
       end
 
       def add_geoblacklight
-        append_to_file "Gemfile", '"geoblacklight", "~> 4.4"'
+        gemfile_path = "Gemfile"
+
+        # Check if the 'geoblacklight' gem is already included in the Gemfile
+        if File.read(gemfile_path).include?("geoblacklight")
+          say_status("skipped", "geoblacklight gem already included in the Gemfile", :yellow)
+        else
+          append_to_file "Gemfile" do
+            "\ngem \"geoblacklight\", \"~> 4.4\""
+          end
+        end
       end
 
       def add_configuration
