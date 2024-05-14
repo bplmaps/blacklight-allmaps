@@ -10,9 +10,10 @@ module Blacklight
       desc <<-DESCRIPTION
         This generator makes the following changes to your application:
         1. Copies stylesheets to Blacklight app
-        2. Adds Blacklight::Allmaps configuration to CatalogController
-        3. Adds georeferenced facet to CatalogController
-        4. Includes Blacklight::Allmaps::SolrDocument in SolrDocument
+        2. Add yarn package
+        3. Adds Blacklight::Allmaps configuration to CatalogController
+        4. Adds georeferenced facet to CatalogController
+        5. Includes Blacklight::Allmaps::SolrDocument in SolrDocument
       DESCRIPTION
 
       def add_bl_stylesheets
