@@ -68,7 +68,7 @@ To populate Solr with some example data, you can run these tasks
 LIGHT=blacklight rake blacklight_allmaps:index:bl_fixtures
 
 # For GeoBlacklight...
-LIGHT=geoblacklight rake rake blacklight_allmaps:index:gbl_fixtures
+LIGHT=geoblacklight rake blacklight_allmaps:index:gbl_fixtures
 ```
 
 ### Harvest Allmaps IIIF Annotation Data
