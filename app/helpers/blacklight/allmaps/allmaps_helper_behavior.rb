@@ -1,7 +1,6 @@
 module Blacklight
   module Allmaps
-    module ApplicationHelper
-      # @TODO: Document how to customize this helper
+    module AllmapsHelperBehavior
       def georeferenceable?(document = @document)
         # A IIIF Manifest is required for georeferencing
         # However, additional checks might be warranted
@@ -11,6 +10,10 @@ module Blacklight
       rescue
         # Blacklight
         document[CatalogController.blacklight_config.default_iiif_manifest_field] ? true : false
+      end
+
+      def allmaps_id(document = @document)
+        document.sidecar_allmaps.allmaps_id
       end
     end
   end

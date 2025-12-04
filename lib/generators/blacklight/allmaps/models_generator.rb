@@ -37,6 +37,10 @@ module Blacklight
 
     sidecar
   end
+
+  def georeferenced?
+    sidecar_allmaps.georeferenced?
+  end
         SIDECAR
 
         inject_into_file "app/models/solr_document.rb", sidecar, before: /^end/

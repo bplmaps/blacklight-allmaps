@@ -1,5 +1,5 @@
 <% unless defined?(Geoblacklight) %>
-  <% if @document.sidecar_allmaps.georeferenced? %>
+  <% if @document.georeferenced? %>
     <%= render partial: 'allmaps/show/blacklight', locals: { document: @document } %>
   <% end %>
 <% end %>

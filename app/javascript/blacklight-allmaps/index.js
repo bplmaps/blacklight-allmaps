@@ -12,6 +12,6 @@ initializeBlacklightMap();
 
 import { updateGeorefLinks } from 'blacklight-allmaps/update_georef_links';
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('turbo:load', () => {
   updateGeorefLinks();
 });
