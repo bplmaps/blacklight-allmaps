@@ -1,16 +1,13 @@
-require "blacklight"
+# frozen_string_literal: true
+
 require "blacklight/allmaps/version"
-require "blacklight/allmaps/engine"
 
 module Blacklight
   module Allmaps
-    def self.version
-      @version ||= VERSION
-    end
+    require "blacklight/allmaps/engine"
 
-    # returns the full path the the plugin installation
     def self.root
-      @root ||= __dir__
+      @root ||= File.expand_path(File.dirname(File.dirname(__FILE__)))
     end
   end
 end
