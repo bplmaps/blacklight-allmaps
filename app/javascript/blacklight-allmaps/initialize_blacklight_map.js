@@ -1,8 +1,11 @@
 // initialize_blacklight_map.js
-import L from "leaflet";
+// import L from "leaflet";
+import "leaflet";
 import "leaflet-fullscreen";
-import LayerOpacityControl from "blacklight-allmaps/leaflet_layer_opacity";
-import { WarpedMapLayer } from "@allmaps/leaflet";
+// import LayerOpacityControl from "blacklight-allmaps/leaflet_layer_opacity";
+// import { WarpedMapLayer, WarpedMapEvent, WarpedMapEventType } from "@allmaps/leaflet";
+// import * as Allmaps from "@allmaps/leaflet"
+import "@allmaps/leaflet";
 
 export function initializeBlacklightMap() {
   document.addEventListener("DOMContentLoaded", () => {
@@ -13,7 +16,7 @@ export function initializeBlacklightMap() {
   
       const map = L.map("blacklight-allmaps-map", {
         center: [0, 0],
-        zoom: 15,
+        zoom: 8,
         zoomAnimationThreshold: 1
       });
   
@@ -30,10 +33,10 @@ export function initializeBlacklightMap() {
   
       // Annotation URL assumes the ID is passed dynamically to this function
       const annotationUrl = `https://annotations.allmaps.org/manifests/${allmaps_id}`;
-      const warpedMapLayer = new WarpedMapLayer(annotationUrl).addTo(map);
+      const warpedMapLayer = new Allmaps.WarpedMapLayer(annotationUrl).addTo(map);
   
       // Layer opacity control
-      map.addControl(new LayerOpacityControl(warpedMapLayer));
+      // map.addControl(new LayerOpacityControl(warpedMapLayer));
   
       map.on("warpedmapadded", () => {
         map.fitBounds(warpedMapLayer.getBounds());
