@@ -1,5 +1,5 @@
 // leaflet_layer_opacity.js
-import L from "leaflet";
+import "leaflet";
 
 class LayerOpacityControl extends L.Control {
   initialize(layer) {

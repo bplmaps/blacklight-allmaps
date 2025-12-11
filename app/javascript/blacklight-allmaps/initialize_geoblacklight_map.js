@@ -1,8 +1,8 @@
 // initialize_geoblacklight_map.js
-import L from "leaflet";
+import "leaflet";
 import "leaflet-fullscreen";
 import LayerOpacityControl from "blacklight-allmaps/leaflet_layer_opacity";
-import { WarpedMapLayer } from "@allmaps/leaflet";
+import "@allmaps/leaflet";
 
 export function initializeGeoBlacklightMap() {
   document.addEventListener("DOMContentLoaded", () => {
@@ -31,7 +31,7 @@ export function initializeGeoBlacklightMap() {
 
       // Annotation URL assumes the ID is passed dynamically to this function
       const annotationUrl = `https://annotations.allmaps.org/manifests/${allmaps_id}`;
-      const warpedMapLayer = new L.WarpedMapLayer(annotationUrl).addTo(map);
+      const warpedMapLayer = new Allmaps.WarpedMapLayer(annotationUrl).addTo(map);
 
       // Layer opacity control
       map.addControl(new LayerOpacityControl(warpedMapLayer));
