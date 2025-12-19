@@ -6,12 +6,13 @@ import LayerOpacityControl from "blacklight-allmaps/leaflet_layer_opacity";
 import "@allmaps/leaflet";
 
 export function initializeBlacklightMap() {
-  document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("turbo:load", () => {
     if (document.getElementById("blacklight-allmaps-map") != null) {
       const element = document.getElementById("blacklight-allmaps-map");
       const allmaps_id = element.getAttribute("data-allmaps-id");
+      const geoTab = document.getElementById("georeferenced-tab-content");
       if (!element) return; // Exit if the element doesn't exist
-  
+
       const map = L.map("blacklight-allmaps-map", {
         center: [0, 0],
         zoom: 8,
@@ -28,17 +29,23 @@ export function initializeBlacklightMap() {
       map.addControl(new L.Control.Fullscreen({
         position: "topright"
       }));
-  
+
       // Annotation URL assumes the ID is passed dynamically to this function
       const annotationUrl = `https://annotations.allmaps.org/manifests/${allmaps_id}`;
       const warpedMapLayer = new Allmaps.WarpedMapLayer(annotationUrl).addTo(map);
-  
+
       // Layer opacity control
       map.addControl(new LayerOpacityControl(warpedMapLayer));
-  
-      map.on("warpedmapadded", () => {
-        map.fitBounds(warpedMapLayer.getBounds());
-      });  
+
+      const observer = new MutationObserver(function() {
+        if (geoTab.style.display !== "none") {
+          map.invalidateSize();
+          warpedMapLayer.addTo(map);
+          map.fitBounds(warpedMapLayer.getBounds());
+        }
+      });
+
+      observer.observe(geoTab, { attributes: true });
     }
   });
 }
