@@ -2,7 +2,7 @@
 <%= render :partial => 'show_tools' %>
 
 <% if georeferenceable? %>
-  <%= render partial: "allmaps/sidebar/allmaps", document: @document %>
+  <%= render partial: "allmaps/sidebar/allmaps", locals: { document: @document } %>
 <% end %>
 
 <div class="sidebar-buttons">

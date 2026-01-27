@@ -5,6 +5,6 @@
   <%= render 'show_tools', document: @document %>
   <%= render(Blacklight::Document::MoreLikeThisComponent.new(document: @document)) %>
   <% if georeferenceable? %>
-    <%= render partial: "allmaps/sidebar/allmaps", document: @document %>
+    <%= render partial: "allmaps/sidebar/allmaps", locals: { document: @document } %>
   <% end %>
 <% end %>
