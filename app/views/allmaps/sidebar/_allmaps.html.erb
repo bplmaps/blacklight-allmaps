@@ -1,12 +1,12 @@
-<div class="card mb-3 mt-3" id="allmaps-sidebar" data-document-id="<%= @document.id %>" data-iiif-manifest="<%= @document.iiif_manifest_url %>">
+<div class="card mb-3 mt-3" id="allmaps-sidebar" data-document-id="<%= document.id %>" data-iiif-manifest="<%= document.iiif_manifest_url %>">
   <div class="card-header">
     <h2 class="mb-0 h6"><%= t('home.georeferencing') %></h2>
   </div>
 
   <div class="card-body" id="georeferencing">
-    <% if @document.georeferenced? %>
+    <% if document.georeferenced? %>
       <div id="georef_present">
-        <%= link_to t('allmaps.georeferenced_link'), 'https://viewer.allmaps.org/?url=https://annotations.allmaps.org/?url=' + @document.iiif_manifest_url, target: '_blank' %>
+        <%= link_to t('allmaps.georeferenced_link'), 'https://viewer.allmaps.org/?url=https://annotations.allmaps.org/?url=' + document.iiif_manifest_url, target: '_blank' %>
       </div>
     <% else %>    
       <%# content will be updated via updateGeorefLinks(); %>
