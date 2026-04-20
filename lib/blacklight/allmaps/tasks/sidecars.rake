@@ -40,10 +40,10 @@ namespace :blacklight_allmaps do
       # Remove all sidecars that have no corresponding SolrDocument
       sidecars = Blacklight::Allmaps::Sidecar.all
       sidecars.each do |sc|
-        ::SolrDocument.find(sc.document_id)
+        ::SolrDocument.find(sc.solr_document_id)
       rescue
         sc.destroy
-        puts "orphaned / #{sc.document_id} / destroyed"
+        puts "orphaned / #{sc.solr_document_id} / destroyed"
       end
     end
 
